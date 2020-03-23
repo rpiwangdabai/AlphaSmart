@@ -38,4 +38,3 @@ fund_data_choosen = fund_data_choosen.loc[fund_data_choosen['status'] == 'L' ]
 
 # df = ts_pro.fund_nav(ts_code='000527.OF')
 
-

@@ -19,3 +19,6 @@ data = pd.DataFrame([1,2,3],columns = ['A'])
 #save dataframe to sql 
 pd.io.sql.to_sql(data, 'test', conn,index = None)
 
+
+
+

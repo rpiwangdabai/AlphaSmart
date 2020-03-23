@@ -12,6 +12,7 @@ Download data through tushare and save the fund data to sql
 
 import tushare as ts 
 import pandas as pd
+import numpy as np
 from sqlalchemy import create_engine
 import time
 
@@ -29,7 +30,7 @@ conn = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/fund',
 
 '''-----------download fund data and save to sql-----------'''
 #load data ticks     
-funds_data = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/data/Tushare/fundcode_before1603_1803.csv')
+funds_data = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/data/Tushare/fundcode_before1703_1803.csv')
 fund_tick = list(funds_data['ts_code'])
 
 # id count
@@ -47,10 +48,13 @@ while fund_tick:
     except ValueError:
         continue
     
-
-
-
-
+'''-----------download index data and save to sql-----------'''
+# get data
+index_data = ts_pro.index_daily(ts_code='399300.SZ')
+# cal log return
+index_data['log_ret'] = np.log(index_data.close) - np.log(index_data.close.shift(-1))
+# save to sql
+pd.io.sql.to_sql(index_data, '399300.SZ', conn,index = None)
 
 
 
