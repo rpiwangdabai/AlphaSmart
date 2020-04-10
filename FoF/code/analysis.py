@@ -97,12 +97,12 @@ while ticks:
     
     print(i)
     i += 1 
-    print(tick)
 
 
 data['sharp_ration'] = sharp_ratio
 data['mean'] = mean
 data['std'] = std
+
 
 
 
