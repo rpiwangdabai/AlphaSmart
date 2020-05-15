@@ -56,14 +56,12 @@ def solve_weights(R, C, rf):
 
 ''''---------load data---------'''
 # load seleted fund data ticks
-data = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/data/Fund correlation/selcted_fund.csv')
+data = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/strategy-two/selcted_fund.csv')
 ticks = collections.deque(data['Ticks'])
 data_weight = np.array(data['规模'])
 # load data from sql database
 engine = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/fund', 
                      encoding ='utf8')
-data_log_ret = pd.DataFrame()
-
 i = 0
 portfolio_log_ret = pd.DataFrame()
 while ticks:
@@ -90,20 +88,7 @@ size = portfolio_log_ret.shape[0]
 drop_row = [i for i in range(size-40,size)]
 portfolio_log_ret = portfolio_log_ret.drop(drop_row)
 portfolio_log_ret = portfolio_log_ret.drop(['end_date'], axis = 1)
-    
-    
-    
-    
-    
-    # tick = ticks.popleft()
-    # sql_cmd = "SELECT * FROM `" + tick + '`;'
-    # fund_data = pd.read_sql(sql=sql_cmd, con=engine)
-    # data_log_ret[tick] = fund_data['log_ret']
-    
-
-
 data_log_ret = portfolio_log_ret.copy()
-
 
     
       
@@ -145,9 +130,9 @@ tau = 0.025
 # P[1][11] = 0.2
 # P[1][12] = 0.2
 
-P = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/data/Fund correlation/view.csv',header = None)
+P = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/strategy-two/view.csv',header = None)
 P = np.array(P.values)
-Q = np.array([0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1])
+Q = np.array([0.4, 0.03, 0.05])
 
 def blacklitterman(W, R, C, P, Q, tau, rf):
     mean, var = port_mean_var(W, R, C) # portfolio mean and var under equilibrium weights

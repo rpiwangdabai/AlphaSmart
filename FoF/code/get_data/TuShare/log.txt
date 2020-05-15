@@ -1,0 +1,3 @@
+2020-05-15 10:02:24,705 - root - WARNING - some data download failed, check error ticks
+2020-05-15 10:46:52,460 - root - WARNING - funds download successed !
+2020-05-15 10:46:52,460 - root - WARNING - funds download successed !
