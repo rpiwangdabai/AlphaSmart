@@ -152,11 +152,11 @@ if __name__ == '__main__':
     
     '''-----------set up-----------'''
     # set token
-    token = '260e5250528465a7bebe4c3f4beaea74d14a3ffcbc8aceab9cd6298c'
+    token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
     # set data_base_address
     data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
     # ticks data
-    stocks_data = pd.read_csv('/Users/Roy/Documents/Investment/Investment_lab/Stocks/index/stock_ticks.csv')
+    stocks_data = pd.read_csv('/Users/Roy/Documents/Investment/lab/Stocks/index/stock_ticks.csv')
     stocks_tick = list(stocks_data['ts_code'])
     
     '''-----------download stock data and save to sql-----------'''
@@ -164,7 +164,6 @@ if __name__ == '__main__':
     failed_ticks = d_a_s.get_data_and_save_bulk(stocks_tick)
     
 
-    
     
     
     
