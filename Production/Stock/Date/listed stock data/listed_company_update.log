@@ -1,0 +1,220 @@
+Wed, 15 Jul 2020 22:05:31 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 16 Jul 2020 12:33:36 stock_daily_price.py[line:124] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 120, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 74, in get_data_and_save_bulk
+    ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 436, in read_sql
+    chunksize=chunksize,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1218, in read_query
+    result = self.execute(*args)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1087, in execute
+    return self.connectable.execute(*args, **kwargs)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2191, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 976, in execute
+    return self._execute_text(object_, multiparams, params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1151, in _execute_text
+    parameters,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+[SQL: SELECT * FROM `liseted stock list`;]
+(Background on this error at: http://sqlalche.me/e/f405)
+
+Thu, 16 Jul 2020 12:33:56 stock_daily_price.py[line:124] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 120, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 74, in get_data_and_save_bulk
+    ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 436, in read_sql
+    chunksize=chunksize,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1218, in read_query
+    result = self.execute(*args)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1087, in execute
+    return self.connectable.execute(*args, **kwargs)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2191, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 976, in execute
+    return self._execute_text(object_, multiparams, params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1151, in _execute_text
+    parameters,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+[SQL: SELECT * FROM `liseted stock list`;]
+(Background on this error at: http://sqlalche.me/e/f405)
+
+Thu, 16 Jul 2020 12:34:23 stock_daily_price.py[line:124] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 120, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Date/individual stock data/price/stock_daily_price.py", line 74, in get_data_and_save_bulk
+    ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 436, in read_sql
+    chunksize=chunksize,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1218, in read_query
+    result = self.execute(*args)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1087, in execute
+    return self.connectable.execute(*args, **kwargs)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2191, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 976, in execute
+    return self._execute_text(object_, multiparams, params)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1151, in _execute_text
+    parameters,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'stocks_daily.liseted stock list' doesn't exist")
+[SQL: SELECT * FROM `liseted stock list`;]
+(Background on this error at: http://sqlalche.me/e/f405)
+
