@@ -1,0 +1,351 @@
+Thu, 06 Aug 2020 15:28:55 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:35:08 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:36:06 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:36:07 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 521, in to_sql
+    method=method,
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1316, in to_sql
+    table.create()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 648, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1363, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\sql\schema.py", line 4261, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (000001.SZ)
+
+Thu, 06 Aug 2020 15:36:36 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:36:37 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 521, in to_sql
+    method=method,
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1316, in to_sql
+    table.create()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 648, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1363, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\sql\schema.py", line 4261, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (000001.SZ)
+
+Thu, 06 Aug 2020 15:36:59 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\basic\stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 521, in to_sql
+    method=method,
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1316, in to_sql
+    table.create()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 648, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1363, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\sql\schema.py", line 4261, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (000001.SZ)
+
+Thu, 06 Aug 2020 15:38:45 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:56:42 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 15:56:54 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 15:57:52 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 15:57:53 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:03:32 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:10:18 utils.py[line:129] INFO Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+Thu, 06 Aug 2020 16:10:18 utils.py[line:141] INFO NumExpr defaulting to 8 threads.
+Thu, 06 Aug 2020 16:10:19 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:10:20 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:10:25 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:10:26 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:10:28 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:15:32 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:15:33 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:16:03 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:16:04 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:16:05 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:16:06 stock_daily_price.py[line:126] ERROR 错误日志：
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 773, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 652, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 489, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 327, in __init__
+    self.connect()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 588, in connect
+    self._request_authentication()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 853, in _request_authentication
+    auth_packet = self._read_packet()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'stocks_daily'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\price\stock_daily_price.py", line 122, in run
+    self.get_data_and_save_bulk('None')
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\price\stock_daily_price.py", line 101, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(table_name), self.conn,index = None,if_exists = 'replace') ## change
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 521, in to_sql
+    method=method,
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1316, in to_sql
+    table.create()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 644, in create
+    if self.exists():
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 631, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1341, in has_table
+    self.connectable.dialect.has_table, name, schema or self.meta.schema
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2162, in run_callable
+    with self._contextual_connect() as conn:
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2242, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2280, in _wrap_pool_connect
+    e, dialect, self
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1547, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 773, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 652, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 489, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 327, in __init__
+    self.connect()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 588, in connect
+    self._request_authentication()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 853, in _request_authentication
+    auth_packet = self._read_packet()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1049, "Unknown database 'stocks_daily'")
+(Background on this error at: http://sqlalche.me/e/e3q8)
+
+Thu, 06 Aug 2020 16:17:55 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:17:56 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:17:57 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:18:02 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:18:10 stock_daily_price.py[line:126] ERROR 错误日志：
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 773, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 652, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 489, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 327, in __init__
+    self.connect()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 588, in connect
+    self._request_authentication()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 853, in _request_authentication
+    auth_packet = self._read_packet()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'stocks_daily'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\price\stock_daily_price.py", line 122, in run
+    self.get_data_and_save_bulk('None')
+  File "D:\RoyMa\Python\Investment\Production\Stock\Data\individual_stock_data\price\stock_daily_price.py", line 101, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(table_name), self.conn,index = None,if_exists = 'replace') ## change
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 521, in to_sql
+    method=method,
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1316, in to_sql
+    table.create()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 644, in create
+    if self.exists():
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 631, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\io\sql.py", line 1341, in has_table
+    self.connectable.dialect.has_table, name, schema or self.meta.schema
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2162, in run_callable
+    with self._contextual_connect() as conn:
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2242, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2280, in _wrap_pool_connect
+    e, dialect, self
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1547, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 773, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\pool\base.py", line 652, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 489, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 327, in __init__
+    self.connect()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 588, in connect
+    self._request_authentication()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 853, in _request_authentication
+    auth_packet = self._read_packet()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1049, "Unknown database 'stocks_daily'")
+(Background on this error at: http://sqlalche.me/e/e3q8)
+
+Thu, 06 Aug 2020 16:18:48 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:18:50 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:18:51 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:18:56 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:18:57 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:18:57 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:18:59 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:19:00 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:19:01 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:19:06 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:19:08 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:19:09 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:19:11 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:19:12 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:19:13 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:37:31 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:37:32 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:37:33 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:37:36 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:37:38 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:37:41 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Thu, 06 Aug 2020 16:38:05 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:38:48 listed_data.py[line:77] INFO Job starting time at 06/08/2020 04:38:48
+Thu, 06 Aug 2020 16:38:48 listed_data.py[line:78] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:38:49 listed_data.py[line:77] INFO Job starting time at 06/08/2020 04:38:49
+Thu, 06 Aug 2020 16:38:49 listed_data.py[line:78] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:39:13 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:39:33 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:41:14 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:41:33 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:42:40 listed_data.py[line:91] INFO Job starting time at 06/08/2020 04:42:40
+Thu, 06 Aug 2020 16:42:42 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:43:00 listed_data.py[line:91] INFO Job starting time at 06/08/2020 04:43:00
+Thu, 06 Aug 2020 16:43:01 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 16:43:03 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Thu, 06 Aug 2020 16:43:05 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Thu, 06 Aug 2020 16:43:07 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Thu, 06 Aug 2020 16:43:12 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Thu, 06 Aug 2020 16:43:14 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!

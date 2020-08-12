@@ -10,7 +10,7 @@ import pandas as pd
 import logging
 from sqlalchemy import create_engine
 import traceback
-
+import time
 
 
 class ListedData():
@@ -29,7 +29,7 @@ class ListedData():
     --------
     """
     
-    def __init__(self, token, data_base_address):
+    def __init__(self, token, data_base_address,log_file_name = 'listed_company_update.log'):
 
         self.token = token
         self.data_base_address = data_base_address
@@ -42,7 +42,7 @@ class ListedData():
         logging.basicConfig(level=logging.INFO,
                             format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                             datefmt='%a, %d %b %Y %H:%M:%S',
-                            filename='listed_company_update.log',
+                            filename=log_file_name,
                             filemode='a')
 
         
@@ -88,6 +88,7 @@ class ListedData():
         '''
         
         try:
+            logging.info('Job starting time at ' + time.strftime("%d/%m/%Y") + ' ' + time.strftime("%I:%M:%S"))
             self.listed_stock_list_update()
         except Exception:
             logging.error("错误日志：\n" + traceback.format_exc())
@@ -102,6 +103,6 @@ if __name__ == '__main__':
     
     '''-----------download stock data and save to sql-----------'''
     ld = ListedData(token, data_base_address)
-    ld.listed_stock_list_update()  
+    ld.run()  
     
 

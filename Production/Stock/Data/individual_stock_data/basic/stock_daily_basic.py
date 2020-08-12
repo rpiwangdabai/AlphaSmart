@@ -13,9 +13,7 @@ import traceback
 
 class StockDailyBasic():
     """
-    Class for downloading stock daily capital flow data from Tushare.
-    IMPORTANT:
-        data begin from 20100105
+    Class for downloading stock daily basic data from Tushare.
     
     Parameters
     --------
@@ -37,7 +35,7 @@ class StockDailyBasic():
     --------
     """
     
-    def __init__(self, token, data_base_address,stock_ticks_data_base_address):
+    def __init__(self, token, data_base_address,filename = 'stock_daily_basic.log'):
         
         self.token = token
         self.data_base_address = data_base_address
@@ -46,12 +44,11 @@ class StockDailyBasic():
         self.ts_pro = ts.pro_api()
         # build up database connection
         self.conn = create_engine(self.data_base_address, encoding ='utf8')
-        self.conn_ticks = create_engine(stock_ticks_data_base_address, encoding ='utf8')
         
         logging.basicConfig(level=logging.INFO,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
-                filename='stock_daily_capital_flow.log',
+                filename=filename,
                 filemode='a')
 
 
@@ -61,8 +58,7 @@ class StockDailyBasic():
         
         Parameters
         --------
-            adj : str
-            None, qfq or hfq.
+            None
                 
         Returns
         --------
@@ -74,7 +70,7 @@ class StockDailyBasic():
         """
         # get all stocks ticks
         sql_cmd = "SELECT * FROM `liseted stock list`;"
-        ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn_ticks)
+        ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn)
         ticks = list(ticks_data['ts_code'])
         ticks = ticks[:1]
         # id count
@@ -87,9 +83,9 @@ class StockDailyBasic():
             i += 1 
             tick = ticks.pop()
             try:
-                data = self.ts_pro.moneyflow(ts_code=tick)
+                data = self.ts_pro.daily_basic(ts_code=tick)
             except BaseException :
-                data = self.ts_pro.moneyflow(ts_code=tick)
+                data = self.ts_pro.daily_basic(ts_code=tick)
                 
             if data.empty:
                 error_ticks.append(tick)
@@ -98,16 +94,18 @@ class StockDailyBasic():
             # time.sleep(0.3)
             # save data to sql
             try:
-                pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+                pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
             except ValueError:
                 error_ticks.append(tick)
                 continue
         if not error_ticks:
-            logging.info('Stock daily capital flow update successfully!')
+            logging.info('Stock daily basic download successed !')
 
         else:
             logging.warning('some data download failed, check error ticks')
             logging.warning(str(error_ticks))
+
+            
         return error_ticks
     
     def run(self):
@@ -119,7 +117,6 @@ class StockDailyBasic():
         
         try:
             self.get_data_and_save_bulk()
-
         except Exception:
             logging.error("错误日志：\n" + traceback.format_exc())
 
@@ -132,11 +129,10 @@ if __name__ == '__main__':
     # set token
     token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
     # set data_base_address
-    data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stock_daily_capital_flow'
-    stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
+    data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
     
     '''-----------download stock data and save to sql-----------'''
-    s_d_b = StockDailyBasic(token, data_base_address,stock_ticks_data_base_address)
+    s_d_b = StockDailyBasic(token, data_base_address)
     s_d_b.run()
     
 

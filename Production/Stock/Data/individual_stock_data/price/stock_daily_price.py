@@ -11,7 +11,7 @@ import logging
 from sqlalchemy import create_engine
 import traceback
 
-class StockDailyBasic():
+class StockDailyPrice():
     """
     Class for downloading stock daily price data from Tushare.
     
@@ -35,7 +35,7 @@ class StockDailyBasic():
     --------
     """
     
-    def __init__(self, token, data_base_address,stock_ticks_data_base_address):
+    def __init__(self, token, data_base_address,stock_ticks_data_base_address,filename = 'stock_daily_price.log'):
         
         self.token = token
         self.data_base_address = data_base_address
@@ -49,7 +49,7 @@ class StockDailyBasic():
         logging.basicConfig(level=logging.INFO,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
-                filename='stock_daily_price.log',
+                filename=filename,
                 filemode='a')
 
 
@@ -74,6 +74,8 @@ class StockDailyBasic():
         sql_cmd = "SELECT * FROM `liseted stock list`;"
         ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn_ticks)
         ticks = list(ticks_data['ts_code'])
+        # for quick testing only
+        ticks = ticks[:1]
         # id count
         i = 1
         # error ticks
@@ -96,7 +98,7 @@ class StockDailyBasic():
             # save data to sql
             table_name = tick + '_' + adj
             try:
-                pd.io.sql.to_sql(data, table_name, self.conn,index = None,if_exists = 'replace') ## change
+                pd.io.sql.to_sql(data, str.lower(table_name), self.conn,index = None,if_exists = 'replace') ## change
             except ValueError:
                 error_ticks.append(tick)
                 continue
@@ -132,11 +134,11 @@ if __name__ == '__main__':
     # set token
     token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
     # set data_base_address
-    data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily'
+    data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily'
     stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
     
     '''-----------download stock data and save to sql-----------'''
-    s_d_b = StockDailyBasic(token, data_base_address,stock_ticks_data_base_address)
+    s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address)
     s_d_b.run()
     
 

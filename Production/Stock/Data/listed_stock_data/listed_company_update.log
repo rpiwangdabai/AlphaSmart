@@ -218,3 +218,6 @@ sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 's
 [SQL: SELECT * FROM `liseted stock list`;]
 (Background on this error at: http://sqlalche.me/e/f405)
 
+Thu, 06 Aug 2020 14:53:44 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 14:59:05 listed_data.py[line:77] INFO listed stock list updated successfully!
+Thu, 06 Aug 2020 14:59:59 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
