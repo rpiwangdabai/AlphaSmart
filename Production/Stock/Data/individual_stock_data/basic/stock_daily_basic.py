@@ -72,7 +72,7 @@ class StockDailyBasic():
         sql_cmd = "SELECT * FROM `liseted stock list`;"
         ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn)
         ticks = list(ticks_data['ts_code'])
-        ticks = ticks[:1]
+        # ticks = ticks[:1]
         # id count
         i = 1
         # error ticks

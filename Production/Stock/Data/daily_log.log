@@ -349,3 +349,19 @@ Thu, 06 Aug 2020 16:43:05 stock_daily_capital_flow.py[line:107] INFO Stock daily
 Thu, 06 Aug 2020 16:43:07 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
 Thu, 06 Aug 2020 16:43:12 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
 Thu, 06 Aug 2020 16:43:14 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Wed, 26 Aug 2020 17:41:07 listed_data.py[line:91] INFO Job starting time at 26/08/2020 05:41:07
+Wed, 26 Aug 2020 17:41:09 listed_data.py[line:77] INFO listed stock list updated successfully!
+Wed, 26 Aug 2020 17:41:11 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Wed, 26 Aug 2020 17:41:12 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Wed, 26 Aug 2020 17:41:15 utils.py[line:129] INFO Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+Wed, 26 Aug 2020 17:41:15 utils.py[line:141] INFO NumExpr defaulting to 8 threads.
+Wed, 26 Aug 2020 17:41:15 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Wed, 26 Aug 2020 17:41:19 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Wed, 26 Aug 2020 17:41:22 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Wed, 26 Aug 2020 17:43:04 listed_data.py[line:91] INFO Job starting time at 26/08/2020 05:43:04
+Wed, 26 Aug 2020 17:43:06 listed_data.py[line:77] INFO listed stock list updated successfully!
+Wed, 26 Aug 2020 19:07:38 stock_daily_basic.py[line:102] INFO Stock daily basic download successed !
+Wed, 26 Aug 2020 20:19:54 stock_daily_capital_flow.py[line:107] INFO Stock daily capital flow update successfully!
+Wed, 26 Aug 2020 21:29:03 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
+Wed, 26 Aug 2020 22:13:05 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
+Wed, 26 Aug 2020 22:59:45 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
