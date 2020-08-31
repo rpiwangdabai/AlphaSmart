@@ -65,11 +65,15 @@ engine_daily = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stock
 sql_cmd = "SELECT * FROM `" + '000001.sz' + '`;'
 daily_basic = pd.read_sql(sql = sql_cmd, con = engine_daily)
 
+# # daily price
+# engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily', encoding ='utf8')
+# sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
+# daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
+
 # daily price
-engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily', encoding ='utf8')
+engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily', encoding ='utf8')
 sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
 daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
-
 
 
 # reset index to time index
@@ -85,13 +89,11 @@ daily_price['trade_date'] = pd.to_datetime(daily_price['trade_date'])
 daily_price.set_index('trade_date',inplace=True)
 daily_price = daily_price[::-1]
 
-data_merge_1 = pd.merge(daily_capital_flow,daily_price,left_index = True, right_index = True)
-del data_merge_1['ts_code_y']
-data_merge_2 = pd.merge(data_merge_1,daily_basic,left_index = True, right_index = True)
-del data_merge_2['ts_code_x']
-del data_merge_2['close_x']
-data_merge_2 = data_merge_2.rename(columns = {'close_y' : 'close'})
 
+del daily_basic['ts_code']
+del daily_price['ts_code']
+data_merge_1 = daily_capital_flow.join(daily_basic)
+data_merge_2 = data_merge_1.join(daily_price, lsuffix='_daily_close_price')
 data_merge_2 = data_merge_2.dropna()
 
 
@@ -129,7 +131,11 @@ for i in range(len(data_merge_2)-5):
 placeholder = [np.nan] * period
 label = label + placeholder
 data_merge_2['label'] = label
+
+data_merge_2 = data_merge_2.dropna()
         
+
+
 
 
 
