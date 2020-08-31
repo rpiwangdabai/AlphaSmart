@@ -85,6 +85,59 @@ daily_price['trade_date'] = pd.to_datetime(daily_price['trade_date'])
 daily_price.set_index('trade_date',inplace=True)
 daily_price = daily_price[::-1]
 
+data_merge_1 = pd.merge(daily_capital_flow,daily_price,left_index = True, right_index = True)
+del data_merge_1['ts_code_y']
+data_merge_2 = pd.merge(data_merge_1,daily_basic,left_index = True, right_index = True)
+del data_merge_2['ts_code_x']
+del data_merge_2['close_x']
+data_merge_2 = data_merge_2.rename(columns = {'close_y' : 'close'})
+
+data_merge_2 = data_merge_2.dropna()
+
+
+
+label = []
+
+inc_pct = 0.1
+dec_pct = 0.05
+period = 5
+
+for i in range(len(data_merge_2)-5):
+    date_price = data_merge_2.iloc[i]['close']
+    target_price = [date_price * (1 - dec_pct ), date_price * (1 + inc_pct)]
+    
+    flag = False
+    
+    for j in range(1,6):
+        if data_merge_2.iloc[i + j]['low'] <= target_price[0]:
+            print(i)
+            label.append(0)
+            flag = True
+            break
+        elif data_merge_2.iloc[i + j]['high'] >= target_price[1]:
+            label.append(1)
+            flag = True
+            break
+    
+    if flag:
+        continue
+        
+    period_ret = data_merge_2.iloc[i + j]['close'] / date_price - 1
+    label.append(period_ret)
+
+
+placeholder = [np.nan] * period
+label = label + placeholder
+data_merge_2['label'] = label
+        
+
+
+
+
+
+
+
+
 
 
 
