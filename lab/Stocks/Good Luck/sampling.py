@@ -65,15 +65,15 @@ engine_daily = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stock
 sql_cmd = "SELECT * FROM `" + '000001.sz' + '`;'
 daily_basic = pd.read_sql(sql = sql_cmd, con = engine_daily)
 
-# # daily price
-# engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily', encoding ='utf8')
-# sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
-# daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
-
 # daily price
-engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily', encoding ='utf8')
+engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily', encoding ='utf8')
 sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
 daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
+
+# # daily price
+# engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily', encoding ='utf8')
+# sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
+# daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
 
 
 # reset index to time index
@@ -135,30 +135,62 @@ data_merge_2['label'] = label
 data_merge_2 = data_merge_2.dropna()
         
 
+'''-----------------------------------------'''
+a = pd.DataFrame()
+a['columns'] = list(data_merge_2.columns)
+
+data_derivative_variables = pd.DataFrame(index = data_merge_2.index)
+
+set_one_variables = list(data_merge_2.columns)[1:19]
+
+
+'''----original variable proportion----'''
+
+sub_dataset = data_merge_2[set_one_variables[:16]]
+
+data_vol = sub_dataset.iloc[:, [i%2 == 0 for i in range(len(set_one_variables[:16]))]]
+data_amount = sub_dataset.iloc[:, [i%2 == 1 for i in range(len(set_one_variables[:16]))]]
+
+data_vol_proportion = data_vol.div(data_vol.sum(axis=1), axis=0)
+data_amount_proportion = data_amount.div(data_amount.sum(axis=1), axis=0)
+
+'''---columns_rename---'''
+col_ratio = []
+for col in data_vol_proportion.columns:
+    col_ratio.append(col + '_ratio')
+
+data_vol_proportion.columns = col_ratio
+
+col_ratio = []
+for col in data_amount_proportion.columns:
+    col_ratio.append(col + '_ratio')
+
+data_amount_proportion.columns = col_ratio
+
+data_proportion = data_amount_proportion.join(data_vol_proportion)
+
+
+'''----Z value variables----'''
+
+for column in set_one_variables:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_merge_2[column] - data_merge_2[column].rolling(window = 5).median()) / data_merge_2[column].rolling(window = 5).std()
+
+
+
+for column in data_proportion.columns:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_proportion[column] - data_proportion[column].rolling(window = 5).median()) / data_proportion[column].rolling(window = 5).std()
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+data_derivative_variables = data_derivative_variables.join(data_proportion)
 
 
 
