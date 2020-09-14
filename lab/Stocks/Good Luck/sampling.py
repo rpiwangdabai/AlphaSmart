@@ -5,47 +5,6 @@ Created on Wed Aug 19 07:35:59 2020
 @author: mazhu
 """
 
-import tushare as ts 
-import numpy as np
-import pandas as pd 
-
-token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
-
-# setup tushare token        
-ts.set_token(token)
-ts_pro = ts.pro_api()
-tick = '000001.SZ'
-
-
-data_price  = ts.pro_bar(ts_code=tick, adj = 'hfq')
-
-
-data_basic = ts_pro.daily_basic(ts_code=tick)
-
-data_money_flow = ts_pro.moneyflow(ts_code=tick)
-
-
-
-
-data_price['trade_date'] = pd.to_datetime(data_price['trade_date'])
-data_price.set_index('trade_date',inplace=True)
-
-
-data_basic['trade_date'] = pd.to_datetime(data_basic['trade_date'])
-data_basic.set_index('trade_date', inplace = True)
-
-data_money_flow['trade_date'] = pd.to_datetime(data_money_flow['trade_date'])
-data_money_flow.set_index('trade_date', inplace = True)
-
-
-test = data_money_flow.join(data_basic, how = 'inner')
-
-pd.merge(data_money_flow,data_basic,how = 'inner')
-
-
-
-
-
 import datetime
 import numpy as np
 from matplotlib import cm, pyplot as plt
@@ -143,8 +102,27 @@ data_derivative_variables = pd.DataFrame(index = data_merge_2.index)
 
 set_one_variables = list(data_merge_2.columns)[1:19]
 
+set_two_variables = list(data_merge_2.columns)[20:30]
 
-'''----original variable proportion----'''
+set_three_variables = list(data_merge_2.columns)[30:35]
+
+set_four_variables = list(data_merge_2.columns)[35:44]
+
+
+# =============================================================================
+# '''----set one variables ----'''
+# =============================================================================
+
+'''----set one variables Z value variables----'''
+
+for column in set_one_variables:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_merge_2[column] - data_merge_2[column].rolling(window = 5).median()) / data_merge_2[column].rolling(window = 5).std()
+
+'''----set one variables proportion variables----'''
+
 
 sub_dataset = data_merge_2[set_one_variables[:16]]
 
@@ -154,7 +132,7 @@ data_amount = sub_dataset.iloc[:, [i%2 == 1 for i in range(len(set_one_variables
 data_vol_proportion = data_vol.div(data_vol.sum(axis=1), axis=0)
 data_amount_proportion = data_amount.div(data_amount.sum(axis=1), axis=0)
 
-'''---columns_rename---'''
+#    '''---columns_rename---'''
 col_ratio = []
 for col in data_vol_proportion.columns:
     col_ratio.append(col + '_ratio')
@@ -169,16 +147,9 @@ data_amount_proportion.columns = col_ratio
 
 data_proportion = data_amount_proportion.join(data_vol_proportion)
 
+data_derivative_variables = data_derivative_variables.join(data_proportion)
 
-'''----Z value variables----'''
-
-for column in set_one_variables:
-    
-    column_name = column + '_z_value'
-    
-    data_derivative_variables[column_name] = (data_merge_2[column] - data_merge_2[column].rolling(window = 5).median()) / data_merge_2[column].rolling(window = 5).std()
-
-
+'''----set one variables proportion Z value variables---- '''
 
 for column in data_proportion.columns:
     
@@ -187,10 +158,61 @@ for column in data_proportion.columns:
     data_derivative_variables[column_name] = (data_proportion[column] - data_proportion[column].rolling(window = 5).median()) / data_proportion[column].rolling(window = 5).std()
 
 
+# =============================================================================
+# '''----set two variables proportion----'''
+# =============================================================================
+'''---set two variables original---'''
+data_derivative_variables = data_derivative_variables.join(data_merge_2[set_two_variables])
+
+'''---set two variables Z values variables---'''
+
+for column in set_two_variables:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_merge_2[column] - data_merge_2[column].rolling(window = 5).median()) / data_merge_2[column].rolling(window = 5).std()
 
 
 
-data_derivative_variables = data_derivative_variables.join(data_proportion)
+# =============================================================================
+# '''----set three variables proportion----'''
+# =============================================================================
+data_derivative_variables['float_share_to_total_ratio'] = data_merge_2['float_share'] / data_merge_2['total_share']
+data_derivative_variables['free_share_to_total_ratio'] = data_merge_2['free_share'] / data_merge_2['total_share']
+data_derivative_variables['circ_mv_to_total_ratio'] = data_merge_2['circ_mv'] / data_merge_2['total_mv']
+
+
+# =============================================================================
+# '''----set four variables proportion----'''
+# =============================================================================
+
+data_derivative_variables['open_to_pre_close'] = data_merge_2['open'] / data_merge_2['pre_close']
+data_derivative_variables['high_to_pre_close'] = data_merge_2['high'] / data_merge_2['pre_close']
+data_derivative_variables['low_to_pre_close'] = data_merge_2['low'] / data_merge_2['pre_close']
+data_derivative_variables['low_to_high'] = data_merge_2['low'] / data_merge_2['high']
+data_derivative_variables['high_to_low'] = data_merge_2['high'] / data_merge_2['low']
+
+new_variables = ['open_to_pre_close','high_to_pre_close','low_to_pre_close','low_to_high','high_to_low']
+
+for column in set_four_variables:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_merge_2[column] - data_merge_2[column].rolling(window = 5).median()) / data_merge_2[column].rolling(window = 5).std()
+
+
+for column in new_variables:
+    
+    column_name = column + '_z_value'
+    
+    data_derivative_variables[column_name] = (data_derivative_variables[column] - data_derivative_variables[column].rolling(window = 5).median()) / data_derivative_variables[column].rolling(window = 5).std()
+
+
+
+
+
+
+
 
 
 
