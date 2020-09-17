@@ -221,5 +221,3 @@ data_derivative_variables['label'] = data_merge_2['label']
 
 
 
-
-
