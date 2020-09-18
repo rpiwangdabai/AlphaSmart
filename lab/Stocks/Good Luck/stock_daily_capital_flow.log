@@ -1,0 +1,15 @@
+Fri, 18 Sep 2020 17:54:06 testing.py[line:132] ERROR ¥ÌŒÛ»’÷æ£∫
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\lab\Stocks\Good Luck\testing.py", line 129, in run
+    self.variable_data_merge()
+  File "D:\RoyMa\Python\Investment\lab\Stocks\Good Luck\testing.py", line 100, in variable_data_merge
+    exec(merge_script)
+  File "<string>", line 2
+    if len( buy_sm_vol) == 0:
+    ^
+IndentationError: unexpected indent
+
+Fri, 18 Sep 2020 17:56:28 testing.py[line:114] INFO Stock daily capital flow update successfully!
+Fri, 18 Sep 2020 18:01:32 testing.py[line:116] INFO Stock_daily_capital_flowvariable merge ssuccessfully!
+Fri, 18 Sep 2020 18:02:06 testing.py[line:116] INFO Stock_daily_capital_flow variable merge ssuccessfully!
+Fri, 18 Sep 2020 18:06:52 variables_merge.py[line:116] INFO Stock_daily_capital_flow variable merge ssuccessfully!
