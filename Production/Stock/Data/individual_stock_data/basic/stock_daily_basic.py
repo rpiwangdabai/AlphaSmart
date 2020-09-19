@@ -94,7 +94,7 @@ class StockDailyBasic():
             # time.sleep(0.3)
             # save data to sql
             try:
-                pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+                pd.io.sql.to_sql(data, tick[:6], self.conn,index = None,if_exists = 'replace') ## change
             except ValueError:
                 error_ticks.append(tick)
                 continue

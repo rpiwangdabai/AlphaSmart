@@ -365,3 +365,185 @@ Wed, 26 Aug 2020 20:19:54 stock_daily_capital_flow.py[line:107] INFO Stock daily
 Wed, 26 Aug 2020 21:29:03 stock_daily_price.py[line:107] INFO Stock daily price_None data download successed!
 Wed, 26 Aug 2020 22:13:05 stock_daily_price.py[line:107] INFO Stock daily price_hfq data download successed!
 Wed, 26 Aug 2020 22:59:45 stock_daily_price.py[line:107] INFO Stock daily price_qfq data download successed!
+Fri, 18 Sep 2020 21:57:33 listed_data.py[line:91] INFO Job starting time at 18/09/2020 09:57:33
+Fri, 18 Sep 2020 21:57:34 listed_data.py[line:77] INFO listed stock list updated successfully!
+Fri, 18 Sep 2020 21:57:34 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 518, in to_sql
+    method=method,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1319, in to_sql
+    table.create()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 647, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1366, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 4266, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (688600.sh)
+
+Fri, 18 Sep 2020 21:58:21 stock_daily_capital_flow.py[line:125] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 91, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 122, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 93, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+Fri, 18 Sep 2020 21:58:24 stock_daily_price.py[line:126] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 122, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 93, in get_data_and_save_bulk
+    if data.empty:
+AttributeError: 'NoneType' object has no attribute 'empty'
+
+Fri, 18 Sep 2020 22:00:36 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 518, in to_sql
+    method=method,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1319, in to_sql
+    table.create()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 647, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1366, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 4266, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (688600.sh)
+
+Fri, 18 Sep 2020 22:00:38 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 518, in to_sql
+    method=method,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1319, in to_sql
+    table.create()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 647, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1366, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 4266, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (688600.sh)
+
+Fri, 18 Sep 2020 22:02:43 stock_daily_basic.py[line:121] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 119, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/basic/stock_daily_basic.py", line 97, in get_data_and_save_bulk
+    pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 518, in to_sql
+    method=method,
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1319, in to_sql
+    table.create()
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 647, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/pandas/io/sql.py", line 1366, in drop_table
+    self.meta.reflect(only=[table_name], schema=schema)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 4266, in reflect
+    "in %r%s: (%s)" % (bind.engine, s, ", ".join(missing))
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(mysql+pymysql://root:***@localhost:3306/stocks_daily_basic): (688600.sh)
+
+Fri, 18 Sep 2020 22:21:50 listed_data.py[line:91] INFO Job starting time at 18/09/2020 10:21:50
+Fri, 18 Sep 2020 22:21:51 listed_data.py[line:77] INFO listed stock list updated successfully!
+Fri, 18 Sep 2020 22:58:05 stock_daily_basic.py[line:105] WARNING some data download failed, check error ticks
+Fri, 18 Sep 2020 22:58:05 stock_daily_basic.py[line:106] WARNING ['688536.SH', '688127.SH', '605116.SH', '003006.SZ', '003003.SZ']
+Fri, 18 Sep 2020 22:58:58 stock_daily_capital_flow.py[line:125] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 91, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 122, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 93, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+Fri, 18 Sep 2020 22:59:03 stock_daily_price.py[line:126] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 122, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 93, in get_data_and_save_bulk
+    if data.empty:
+AttributeError: 'NoneType' object has no attribute 'empty'
+
+Sat, 19 Sep 2020 11:01:02 stock_daily_capital_flow.py[line:125] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 91, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 122, in run
+    self.get_data_and_save_bulk()
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/capitalflow/stock_daily_capital_flow.py", line 93, in get_data_and_save_bulk
+    data = self.ts_pro.moneyflow(ts_code=tick)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/client.py", line 44, in query
+    raise Exception(result['msg'])
+Exception: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+
+Sat, 19 Sep 2020 11:04:17 stock_daily_price.py[line:126] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 122, in run
+    self.get_data_and_save_bulk('None')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 93, in get_data_and_save_bulk
+    if data.empty:
+AttributeError: 'NoneType' object has no attribute 'empty'
+
+Sat, 19 Sep 2020 11:55:35 stock_daily_capital_flow.py[line:111] WARNING some data download failed, check error ticks
+Sat, 19 Sep 2020 11:55:35 stock_daily_capital_flow.py[line:112] WARNING ['688536.SH', '688127.SH', '605116.SH', '003006.SZ', '003003.SZ']
+Sat, 19 Sep 2020 12:16:43 stock_daily_price.py[line:114] WARNING some data download failed, check error ticks
+Sat, 19 Sep 2020 12:16:43 stock_daily_price.py[line:115] WARNING ['688536.SH', '688127.SH', '605116.SH', '003006.SZ', '003003.SZ']
+Sat, 19 Sep 2020 14:28:49 stock_daily_price.py[line:130] ERROR 错误日志：
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 90, in get_data_and_save_bulk
+    data = ts.pro_bar(ts_code=tick, adj=adj)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/data_pro.py", line 193, in pro_bar
+    raise IOError('ERROR.')
+OSError: ERROR.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 127, in run
+    self.get_data_and_save_bulk('hfq')
+  File "/Users/Roy/Documents/Investment/Production/Stock/Data/individual_stock_data/price/stock_daily_price.py", line 92, in get_data_and_save_bulk
+    data = ts.pro_bar(ts_code=tick, adj=adj)
+  File "/Users/Roy/anaconda3/envs/quant/lib/python3.6/site-packages/tushare/pro/data_pro.py", line 193, in pro_bar
+    raise IOError('ERROR.')
+OSError: ERROR.
+

@@ -29,11 +29,6 @@ engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306
 sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
 daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
 
-# # daily price
-# engine_daily_price = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily', encoding ='utf8')
-# sql_cmd = "SELECT * FROM `" + '000001.sz_hfq' + '`;'
-# daily_price = pd.read_sql(sql = sql_cmd, con = engine_daily_price)
-
 
 # reset index to time index
 daily_capital_flow['trade_date'] = pd.to_datetime(daily_capital_flow['trade_date'])

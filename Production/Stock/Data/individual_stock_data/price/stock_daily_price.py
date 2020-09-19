@@ -10,6 +10,7 @@ import pandas as pd
 import logging
 from sqlalchemy import create_engine
 import traceback
+import time
 
 class StockDailyPrice():
     """
@@ -89,16 +90,19 @@ class StockDailyPrice():
                 data = ts.pro_bar(ts_code=tick, adj=adj)
             except BaseException :
                 data = ts.pro_bar(ts_code=tick, adj=adj)
-                
+            
+            if isinstance(data, type(None)):
+                error_ticks.append(tick)
+                continue
             if data.empty:
                 error_ticks.append(tick)
                 continue
             # set lag
-            # time.sleep(0.3)
+            time.sleep(0.3)
             # save data to sql
-            table_name = tick + '_' + adj
+            table_name = tick[:6] + '_' + adj
             try:
-                pd.io.sql.to_sql(data, str.lower(table_name), self.conn,index = None,if_exists = 'replace') ## change
+                pd.io.sql.to_sql(data, table_name, self.conn,index = None,if_exists = 'replace') ## change
             except ValueError:
                 error_ticks.append(tick)
                 continue

@@ -10,6 +10,7 @@ import pandas as pd
 import logging
 from sqlalchemy import create_engine
 import traceback
+import time
 
 class StockDailyCapitalFlow():
     """
@@ -91,15 +92,15 @@ class StockDailyCapitalFlow():
                 data = self.ts_pro.moneyflow(ts_code=tick)
             except BaseException :
                 data = self.ts_pro.moneyflow(ts_code=tick)
-                
+             
             if data.empty:
                 error_ticks.append(tick)
                 continue
             # set lag
-            # time.sleep(0.3)
+            time.sleep(0.3)
             # save data to sql
             try:
-                pd.io.sql.to_sql(data, str.lower(tick), self.conn,index = None,if_exists = 'replace') ## change
+                pd.io.sql.to_sql(data, tick[:6], self.conn,index = None,if_exists = 'replace') ## change
             except ValueError:
                 error_ticks.append(tick)
                 continue
