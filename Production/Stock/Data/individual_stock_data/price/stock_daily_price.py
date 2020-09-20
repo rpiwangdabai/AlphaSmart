@@ -98,7 +98,7 @@ class StockDailyPrice():
                 error_ticks.append(tick)
                 continue
             # set lag
-            time.sleep(0.3)
+            # time.sleep(0.3)
             # save data to sql
             table_name = tick[:6] + '_' + adj
             try:
@@ -115,7 +115,7 @@ class StockDailyPrice():
             logging.warning(str(error_ticks))
         return error_ticks
     
-    def run(self):
+    def run(self, status):
         '''
         
         running
@@ -123,9 +123,7 @@ class StockDailyPrice():
         '''
         
         try:
-            self.get_data_and_save_bulk('None')
-            self.get_data_and_save_bulk('hfq')
-            self.get_data_and_save_bulk('qfq')
+            self.get_data_and_save_bulk(status)
         except Exception:
             logging.error("错误日志：\n" + traceback.format_exc())
 

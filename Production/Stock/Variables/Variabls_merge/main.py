@@ -29,8 +29,6 @@ vm.run()
     
 
 print('Stock Daily Database Running')
-
-
 '''-----------set up-----------'''    # set data_base_address
 data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily'
 
@@ -38,3 +36,7 @@ data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily'
 vm = VariableMerge(data_base_address,data_base_name = 'Stock_daily')
 vm.run()
     
+
+
+
+

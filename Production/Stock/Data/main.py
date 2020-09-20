@@ -50,16 +50,35 @@ s_d_b.run()
 # =============================================================================
 # stock daily price update 
 # =============================================================================
+'''------None-----'''
+
 '''------stock daily price update------'''
 # set data_base_address
-data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily'
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_none'
 stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
 '''-----------download stock data and save to sql-----------'''
 s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)
-s_d_b.run()
+s_d_b.run('None')
 
+'''------qfq-----'''
 
+'''------stock daily price update------'''
+# set data_base_address
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_qfq'
+stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
+'''-----------download stock data and save to sql-----------'''
+s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)
+s_d_b.run('qfq')
+
+'''------hfq-----'''
+
+'''------stock daily price update------'''
+# set data_base_address
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_hfq'
+stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
+'''-----------download stock data and save to sql-----------'''
+s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)
+s_d_b.run('hfq')
     
 
 
-    
