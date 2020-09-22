@@ -13,3 +13,17 @@ Fri, 18 Sep 2020 17:56:28 testing.py[line:114] INFO Stock daily capital flow upd
 Fri, 18 Sep 2020 18:01:32 testing.py[line:116] INFO Stock_daily_capital_flowvariable merge ssuccessfully!
 Fri, 18 Sep 2020 18:02:06 testing.py[line:116] INFO Stock_daily_capital_flow variable merge ssuccessfully!
 Fri, 18 Sep 2020 18:06:52 variables_merge.py[line:116] INFO Stock_daily_capital_flow variable merge ssuccessfully!
+Sat, 19 Sep 2020 00:00:20 variables_merge.py[line:134] ERROR ¥ÌŒÛ»’÷æ£∫
+Traceback (most recent call last):
+  File "D:\RoyMa\Python\Investment\Production\Stock\Variables\Variabls_merge\variables_merge.py", line 131, in run
+    self.variable_data_merge()
+  File "D:\RoyMa\Python\Investment\Production\Stock\Variables\Variabls_merge\variables_merge.py", line 92, in variable_data_merge
+    target_data = daily_price[['trade_date',column]]
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\core\frame.py", line 2806, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1, raise_missing=True)[1]
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\core\indexing.py", line 1552, in _get_listlike_indexer
+    keyarr, indexer, o._get_axis_number(axis), raise_missing=raise_missing
+  File "C:\Users\Lenovo\anaconda3\lib\site-packages\pandas\core\indexing.py", line 1645, in _validate_read_indexer
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['buy_sm_vol'] not in index"
+

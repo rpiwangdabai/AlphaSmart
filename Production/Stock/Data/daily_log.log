@@ -871,3 +871,6 @@ Sun, 20 Sep 2020 15:17:14 stock_daily_price.py[line:114] WARNING some data downl
 Sun, 20 Sep 2020 15:17:14 stock_daily_price.py[line:115] WARNING ['688536.SH', '688127.SH', '605116.SH', '003006.SZ', '003003.SZ']
 Sun, 20 Sep 2020 15:17:21 stock_daily_price.py[line:114] WARNING some data download failed, check error ticks
 Sun, 20 Sep 2020 15:17:21 stock_daily_price.py[line:115] WARNING ['688536.SH', '688127.SH', '605116.SH', '003006.SZ', '003003.SZ']
+Tue, 22 Sep 2020 16:26:36 utils.py[line:129] INFO Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+Tue, 22 Sep 2020 16:26:36 utils.py[line:141] INFO NumExpr defaulting to 8 threads.
+Tue, 22 Sep 2020 17:48:19 stock_daily_price.py[line:111] INFO Stock daily price_qfq data download successed!
