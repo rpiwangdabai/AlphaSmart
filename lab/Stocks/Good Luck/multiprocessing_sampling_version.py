@@ -51,7 +51,7 @@ def sampling_merge(status,data_base_address,filename,core_index):
     end = int(core_index * round(len(tables_name) / core_number))
 
     '''-------------'''
-    tables_name = tables_name[:100]
+    tables_name = tables_name[:24]
 
     #error ticks list
     error_ticks = []
@@ -245,7 +245,8 @@ def sampling_merge(status,data_base_address,filename,core_index):
         else:
             logging.warning('Some stocks variables claculation failed, check error ticks' + str(core_index))
             logging.warning(str(error_ticks))
-        
+         
+    return
         
                 
 # =============================================================================
