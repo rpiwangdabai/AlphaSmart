@@ -96,8 +96,6 @@ def sampling_merge(status,data_base_address,filename,core_index):
         data_merge_1 = daily_capital_flow.join(daily_basic)
         data_merge_2 = data_merge_1.join(daily_price, lsuffix='_daily_close_price')
         data_merge_2 = data_merge_2.dropna()
-
-
         
         if data_merge_2.empty:
             continue
