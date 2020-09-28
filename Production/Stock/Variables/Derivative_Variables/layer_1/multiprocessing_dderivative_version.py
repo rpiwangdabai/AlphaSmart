@@ -51,8 +51,6 @@ def sampling_merge(status,data_base_address,filename,core_index):
     cur = conn.execute('''SHOW TABLES''')
     tables_name = cur.fetchall()
     
-
-    
     # core number
     core_number = cpu_count()
     start = int((core_index - 1) * round(len(tables_name) / core_number))
@@ -100,6 +98,10 @@ def sampling_merge(status,data_base_address,filename,core_index):
         data_merge_2 = data_merge_2.dropna()
 
 
+        
+        if data_merge_2.empty:
+            continue
+        
         # list for saving triple barrier labels
         label = []
         
@@ -126,13 +128,9 @@ def sampling_merge(status,data_base_address,filename,core_index):
         placeholder = [np.nan] * forward_period
         label = label + placeholder
         data_merge_2['label'] = label
-        data_merge_2 = data_merge_2.dropna()
 
 
-        '''-----------------set variables----------------'''
-        a = pd.DataFrame()
-        a['columns'] = list(data_merge_2.columns)
-        
+        '''-----------------set variables----------------'''        
         data_derivative_variables = pd.DataFrame(index = data_merge_2.index)
         
         set_one_variables = list(data_merge_2.columns)[1:19]
