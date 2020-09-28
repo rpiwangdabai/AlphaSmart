@@ -56,10 +56,10 @@ class Sampling():
         #error ticks list
         error_ticks = []
         # get data and merge by loop
-        i = 1
+        t = 1
         for table in tables_name:
-                print(i)
-                i += 1
+                print(t)
+                t += 1
                 table = table[0]
                 print(table)
                 sql_cmd = "SELECT * FROM `" + table + '`;'

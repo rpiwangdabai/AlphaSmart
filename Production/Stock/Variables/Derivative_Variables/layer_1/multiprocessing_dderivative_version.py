@@ -12,17 +12,23 @@ import logging
 from sqlalchemy import create_engine
 from multiprocessing import cpu_count
 from multiprocessing import Pool
+import time
+import os
 
 # =============================================================================
 #  samling_merge_dict
 # =============================================================================
 def sampling_merge(status,data_base_address,filename,core_index):
     
-    logging.basicConfig(level=logging.INFO,
-    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-    datefmt='%a, %d %b %Y %H:%M:%S',
-    filename=filename,
-    filemode='a')
+    print ('运行任务 %s ，子进程号为(%s)...' % (core_index, os.getpid()))
+    print ("我就是子进程号为(%s)处理的内容" % (os.getpid()))
+    start_time = time.time()
+    
+    # logging.basicConfig(level=logging.INFO,
+    # format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+    # datefmt='%a, %d %b %Y %H:%M:%S',
+    # filename=filename,
+    # filemode='a')
     
     # capital flow database address
     engine_capital_flow_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/' + data_base_address['capital_flow']
@@ -44,26 +50,25 @@ def sampling_merge(status,data_base_address,filename,core_index):
     conn = create_engine(engine_capital_flow_address, encoding ='utf8')
     cur = conn.execute('''SHOW TABLES''')
     tables_name = cur.fetchall()
-     
+    
+
+    
     # core number
     core_number = cpu_count()
     start = int((core_index - 1) * round(len(tables_name) / core_number))
     end = int(core_index * round(len(tables_name) / core_number))
 
-    '''-------------'''
-    tables_name = tables_name[:24]
-
     #error ticks list
     error_ticks = []
     # get data and merge by loop
-    i = 1
+    t = 1
     for table in tables_name[start:end]:
-        print(i)
-        i += 1
+        print(t)
+        t += 1
         table = table[0]
         print(table)
         sql_cmd = "SELECT * FROM `" + table + '`;'
-        sql_cmd_price = "SELECT * FROM `" + table[:6] + '_' + status + '`;'
+        sql_cmd_price = "SELECT * FROM `" + table + '_' + status + '`;'
         try:
             # capital flow data
             daily_capital_flow = pd.read_sql(sql = sql_cmd, con = engine_capital_flow)
@@ -232,21 +237,22 @@ def sampling_merge(status,data_base_address,filename,core_index):
             
         
         '''--------------saving-------------'''
-        try:
-            pd.io.sql.to_sql(data_derivative_variables, table, engine_daily_stock_variabels ,index = None,if_exists = 'replace') ## change
-        except ValueError:
-            error_ticks.append(table)
-            continue
+        # try:
+        pd.io.sql.to_sql(data_derivative_variables, table, engine_daily_stock_variabels ,index = None,if_exists = 'replace') ## change
+        # except ValueError:
+        #     error_ticks.append(table)
+        #     continue
 
-        if not error_ticks:
-            msg = 'Stocks variables calculated successed!' + str(core_index)
-            logging.info(msg)
+        # if not error_ticks:
+        #     msg = 'Stocks variables calculated successed!' + str(core_index)
+        #     logging.info(msg)
 
-        else:
-            logging.warning('Some stocks variables claculation failed, check error ticks' + str(core_index))
-            logging.warning(str(error_ticks))
+        # else:
+        #     logging.warning('Some stocks variables claculation failed, check error ticks' + str(core_index))
+        #     logging.warning(str(error_ticks))
          
-    return
+    end = time.time()
+    print ('任务 %s 运行了 %0.2f 秒.' % (core_index, (end - start_time)))
         
                 
 # =============================================================================
@@ -261,7 +267,7 @@ data_base_address['variable_address_1'] = 'stocks_variables_1'
 inc_pct = 0.1
 dec_pct = 0.05
 forward_period = 10
-filename = 'variable_1.log'
+filename = '123.log'
 core_index = cpu_count()
 status = 'qfq'
 
@@ -270,7 +276,7 @@ status = 'qfq'
 # multiprocessing       
 # =============================================================================
 p = Pool(core_index)  
-for i in range(core_index): #4个子进程完成5个任务，所以有一个任务是需要等某个进程空闲再处理
+for i in range(1, core_index + 1): #4个子进程完成5个任务，所以有一个任务是需要等某个进程空闲再处理
     p.apply_async(sampling_merge, args=(status,data_base_address,filename,i,)) #a是进程处理函数long_time_task的返回结果
 print ('等待所有子进程结束...')
 p.close()
