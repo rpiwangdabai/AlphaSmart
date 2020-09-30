@@ -14,6 +14,7 @@ from multiprocessing import cpu_count
 from multiprocessing import Pool
 import time
 import os
+import math
 
 # =============================================================================
 #  samling_merge_dict
@@ -53,8 +54,8 @@ def sampling_merge(status,data_base_address,filename,core_index):
     
     # core number
     core_number = cpu_count()
-    start = int((core_index - 1) * round(len(tables_name) / core_number))
-    end = int(core_index * round(len(tables_name) / core_number))
+    start = int((core_index - 1) * math.ceil(len(tables_name) / core_number))
+    end = int(core_index * math.ceil(len(tables_name) / core_number))
 
     #error ticks list
     error_ticks = []
