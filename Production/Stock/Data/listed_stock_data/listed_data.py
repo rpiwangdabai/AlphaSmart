@@ -67,15 +67,15 @@ class ListedData():
         # download data
         try:
             data = self.ts_pro.stock_basic(exchange='', 
-                                           list_status='L', 
-                                           fields='ts_code,symbol,name,area,industry,list_date')
+                                            list_status='L', 
+                                            fields='ts_code,symbol,name,area,industry,list_date')
             if data.empty:
                 logging.warning('Data set is empty, check code!')
             
             pd.io.sql.to_sql(data, 'liseted stock list', self.conn,index = None,if_exists = 'replace') ## change
             # add log
             logging.info('listed stock list updated successfully!')
-        
+            
         except:
             logging.warning('listed stock list updated ERROR, check code!!')
 
