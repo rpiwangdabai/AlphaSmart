@@ -278,3 +278,6 @@ FileNotFoundError: [Errno 2] No such file or directory: '/Users/Roy/Documents/In
 Tue, 06 Oct 2020 01:08:07 temp_script.py[line:126] INFO stock_daily_basic variable merge ssuccessfully!
 Tue, 06 Oct 2020 01:28:25 temp_script.py[line:126] INFO stock_daily_capital_flow variable merge ssuccessfully!
 Tue, 06 Oct 2020 01:29:08 temp_script.py[line:126] INFO stock_daily_basic variable merge ssuccessfully!
+Tue, 06 Oct 2020 06:48:16 variable_merge_script.py[line:126] INFO stock_daily_capital_flow variable merge ssuccessfully!
+Tue, 06 Oct 2020 20:48:01 variable_merge_script.py[line:126] INFO stock_daily_capital_flow variable merge ssuccessfully!
+Tue, 06 Oct 2020 20:53:45 variable_merge_script.py[line:126] INFO stock_daily_capital_flow variable merge ssuccessfully!

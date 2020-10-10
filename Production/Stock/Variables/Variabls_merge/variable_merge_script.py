@@ -120,7 +120,7 @@ else:
         
     # Saving log
     if not er_list:
-        log_info = data_base_name + ' variable merge ssuccessfully!'
+        log_info = data_base_name + ' variable merge successfully!'
         logging.info(log_info)
 
     else:
@@ -131,6 +131,7 @@ else:
     # Saving  
     # =============================================================================
     for column in columns:
+        print(columns.index(column))
         lc = locals()
         conn = create_engine(saving_address, encoding ='utf8')
         temp_script = "temp = " + column + ".copy()"
@@ -159,6 +160,8 @@ else:
         conn = create_engine(saving_address_statistic, encoding ='utf8')
         pd.io.sql.to_sql(temp[['trade_date','max','min','mean','std']], table_name, conn,index = None,if_exists = 'replace')
 
+    log_info = data_base_name + 'data saving successfully!'
+    logging.info(log_info)
 
 
 
