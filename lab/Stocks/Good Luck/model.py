@@ -129,17 +129,17 @@ def model(train_X, train_y, reg_w):
 
     inputs = Input(name='inputs',shape =[train_X.shape[1], train_X.shape[2]])
 
-    timedistributed = TimeDistributed(Dense(64,activation="sigmoid",name="FC1"),name = 'TimeDistributed_1')(inputs)
+    # timedistributed = TimeDistributed(Dense(64,activation="sigmoid",name="FC1"),name = 'TimeDistributed_1')(inputs)
 
-    LSTM_1 = LSTM(128, recurrent_dropout = 0.5, return_sequences = True, name = 'LSTM_1')(timedistributed)
-    LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
+    LSTM_1 = LSTM(128, recurrent_dropout = 0.5, return_sequences = False, name = 'LSTM_1')(inputs)
+    # LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
 
-    dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_2)
-    FC_1 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_1)
-    BN_1 = BatchNormalization()(FC_1)
-    AC_1 = Activation('sigmoid',name = 'Activation_1')(BN_1)
+    # dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_2)
+    # FC_1 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_1)
+    # BN_1 = BatchNormalization()(FC_1)
+    # AC_1 = Activation('sigmoid',name = 'Activation_1')(BN_1)
    
-    outputs = Dense(train_y.shape[1],activation="softmax",name="msg_category")(AC_1)
+    outputs = Dense(train_y.shape[1],activation="softmax",name="msg_category")(LSTM_1)
     
     model = Model(inputs=inputs,outputs=outputs)
     
@@ -154,9 +154,6 @@ m = model(train_X, train_y, reg_w)
 m.compile(loss="categorical_crossentropy",optimizer='adam',metrics=[keras.metrics.Recall()])
 print(m.summary())
 
-
-
-    
 #train
 m.fit(train_X, train_y, batch_size=32, epochs=15, validation_data=(val_X,val_y),
       callbacks=[EarlyStopping(monitor='val_loss',min_delta=0.0001)])
@@ -167,61 +164,68 @@ m.fit(train_X, train_y, batch_size=32, epochs=15, validation_data=(val_X,val_y),
 # =============================================================================
 meta_predict_prob = m.predict(val_X)
 meta_predict = np.argmax(meta_predict_prob,axis = 1)
-
+meta_predict = meta_predict.reshape(len(meta_predict),1)
 meta_predict = ohe.transform(meta_predict).toarray()
-
-
 
 
 def meta_model(train_X, meta_y,train_y, reg_w):
 
-    inputs = Input(name='inputs',shape =[train_X.shape[1], train_X.shape[2]])
+    inputs_x = Input(name='inputs_x',shape = [train_X.shape[1], train_X.shape[2]])
+    inputs_meta_y = Input(name = 'inputs_meta_y', shape = [meta_y.shape[1]])
 
-    timedistributed = TimeDistributed(Dense(64,activation="sigmoid",name="FC1"),name = 'TimeDistributed_1')(inputs)
+    # timedistributed = TimeDistributed(Dense(64,activation="sigmoid",name="FC1"),name = 'TimeDistributed_1')(inputs_x)
 
-    LSTM_1 = LSTM(128, recurrent_dropout = 0.5, return_sequences = True, name = 'LSTM_1')(timedistributed)
-    LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
+    LSTM_1 = LSTM(128, recurrent_dropout = 0.5, return_sequences = False, name = 'LSTM_1')(inputs_x)
+    # LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
 
-    dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_2)
+    dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_1)
     FC_1 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_1)
     BN_1 = BatchNormalization()(FC_1)
     AC_1 = Activation('sigmoid',name = 'Activation_1')(BN_1)
    
     FC_2 = Dense(10,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_1)
-    FC_2_meta = keras.layers.Concatenate(axis = -1, name = 'mate label concat')([FC_2,meta_y])
+    FC_2_meta = keras.layers.Concatenate(axis = -1, name = 'mate_label_concat')([FC_2,inputs_meta_y])
     AC_1 = Activation('sigmoid',name = 'Activation_1')(FC_2_meta)    
     
     
     outputs = Dense(train_y.shape[1],activation="softmax",name="msg_category")(AC_1)
     
-    model = Model(inputs=inputs,outputs=outputs)
+    model = Model(inputs=[inputs_x, inputs_meta_y], outputs=outputs)
     
     return model
 
 # train
     
 reg_w = 1e-4
-m = meta_model(val_X, meta_predict, val_y, reg_w)
-m.compile(loss="categorical_crossentropy",optimizer='adam',metrics=[keras.metrics.Precision()])
+meta = meta_model(val_X, meta_predict, val_y, reg_w)
+meta.compile(loss="categorical_crossentropy",optimizer='adam',metrics=[keras.metrics.Precision()])
 print(m.summary())
 
-m.fit(val_X, meta_predict, val_y, batch_size=32, epochs=15)
+meta.fit([val_X, meta_predict], val_y, batch_size=32, epochs=30)
 
-# predict
-test_pre =  m.predict(train_X)
 
-y_pre = np.argmax(test_pre,axis = 1)
+# =============================================================================
+# # predict
+# =============================================================================
+# meta predict
+meta_pred_prob =  m.predict(test_X)
+meta_pred = np.argmax(meta_pred_prob,axis = 1)
+meta_pred = meta_pred.reshape(meta_pred.shape[0],1)
+meta_predict = ohe.transform(meta_pred).toarray()
 
-y_true = np.argmax(train_y,axis = 1)
-
+# result predict
+y_pred_prob = meta.predict([test_X, meta_predict])
+y_pred = np.argmax(y_pred_prob,axis = 1)
+y_pred = y_pred.reshape(y_pred.shape[0],1)
+y_pred = ohe.transform(meta_pred).toarray()
 
 from sklearn.metrics import confusion_matrix
 from sklearn import metrics
 
-metrics.accuracy_score(y_true, y_pre)
+metrics.accuracy_score(test_y, y_pred)
 
 
-
+print(metrics.classification_report(y_true=test_y, y_pred=y_pred))
 
 
 
