@@ -7,22 +7,14 @@ Created on Wed Oct  7 21:57:41 2020
 """
 
 import pandas as pd
-import logging
-import traceback
 import numpy as np
 from sqlalchemy import create_engine
-from multiprocessing import cpu_count
-from multiprocessing import Pool
-import time
-import os
-import math
-import numpy as np
+
 
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
-from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 
 
@@ -55,16 +47,16 @@ data_ = data_.reset_index(drop = True)
 print(data_[data_.isnull().T.any()])
 
 dataX = []
-dataY = list(data_[4:]['label'])
+dataY = list(data_[9:]['label'])
 
 
 columns = list(data_.columns)
 columns.remove('label')
 
-for i in range(5, len(data_) + 1):
-    dataX.append(data_[i-5:i][columns].values)
+for i in range(10, len(data_) + 1):
+    dataX.append(data_[i-10:i][columns].values)
 
-X = np.reshape(dataX, (len(dataX), 5, 92))
+X = np.reshape(dataX, (len(dataX), 10, 92))
 
 
 
@@ -94,17 +86,16 @@ model.fit(X, y, epochs=5, batch_size=1, verbose=1)
 print(model.summary())
 
 # summarize performance of the model
-scores = model.evaluate(X, train_y, verbose=0)
+scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
 
 
 
 
-import re
+
 import pandas as pd
 import numpy as np
-import yaml
-import tensorflow as tf
+
 from sklearn import metrics
 from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 from keras.models import Model
@@ -114,13 +105,7 @@ from keras.preprocessing import sequence
 from keras.callbacks import EarlyStopping
 from keras import regularizers
 from sklearn.model_selection import train_test_split
-from sklearn.externals import joblib
-from keras.models import model_from_yaml
-from keras.layers.core import *
-from keras.models import *
-from codecs import open
-import time
-from keras.models import load_model
+
 import keras 
 
 
@@ -155,7 +140,7 @@ m.compile(loss="categorical_crossentropy",optimizer='adam',metrics=[keras.metric
 print(m.summary())
 
 #train
-m.fit(train_X, train_y, batch_size=32, epochs=15, validation_data=(val_X,val_y),
+m.fit(train_X, train_y, batch_size=1, epochs=15, validation_data=(val_X,val_y),
       callbacks=[EarlyStopping(monitor='val_loss',min_delta=0.0001)])
 
 
@@ -217,7 +202,7 @@ meta_predict = ohe.transform(meta_pred).toarray()
 y_pred_prob = meta.predict([test_X, meta_predict])
 y_pred = np.argmax(y_pred_prob,axis = 1)
 y_pred = y_pred.reshape(y_pred.shape[0],1)
-y_pred = ohe.transform(meta_pred).toarray()
+y_pred = ohe.transform(y_pred).toarray()
 
 from sklearn.metrics import confusion_matrix
 from sklearn import metrics
@@ -227,5 +212,5 @@ metrics.accuracy_score(test_y, y_pred)
 
 print(metrics.classification_report(y_true=test_y, y_pred=y_pred))
 
-
+confusion_matrix(np.argmax(test_y), np.argmax(y_pred))
 
