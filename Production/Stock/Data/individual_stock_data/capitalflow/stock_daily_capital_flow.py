@@ -77,8 +77,8 @@ class StockDailyCapitalFlow():
         sql_cmd = "SELECT * FROM `liseted stock list`;"
         ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn_ticks)
         ticks = list(ticks_data['ts_code'])
-        # # for quick testing only
-        # ticks = ticks[:1]
+        # for quick testing only
+        ticks = ticks[:10]
         # id count
         i = 1
         # error ticks
@@ -105,7 +105,7 @@ class StockDailyCapitalFlow():
                 error_ticks.append(tick)
                 continue
         if not error_ticks:
-            logging.info('Stock daily capital flow update successfully!')
+            logging.info('Stock daily capital flow download successfully!')
 
         else:
             logging.warning('some data download failed, check error ticks')

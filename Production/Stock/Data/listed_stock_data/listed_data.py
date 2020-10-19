@@ -74,7 +74,7 @@ class ListedData():
             
             pd.io.sql.to_sql(data, 'liseted stock list', self.conn,index = None,if_exists = 'replace') ## change
             # add log
-            logging.info('listed stock list updated successfully!')
+            logging.info('listed stock list download successfully!')
             
         except:
             logging.warning('listed stock list updated ERROR, check code!!')

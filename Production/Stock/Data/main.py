@@ -42,7 +42,7 @@ s_d_b.run()
 '''------stock daily capital flow update------'''
 # set data_base_address
 stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
-data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stock_daily_capital_flow'
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_capital_flow'
 '''-----------download stock capital flow data and save to sql-----------'''
 s_d_b = StockDailyCapitalFlow(token, data_base_address,stock_ticks_data_base_address,log_file_name)
 s_d_b.run()
@@ -54,7 +54,7 @@ s_d_b.run()
 
 '''------stock daily price update------'''
 # set data_base_address
-data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_none'
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_price_none'
 stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
 '''-----------download stock data and save to sql-----------'''
 s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)
@@ -64,7 +64,7 @@ s_d_b.run('None')
 
 '''------stock daily price update------'''
 # set data_base_address
-data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_qfq'
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_price_qfq'
 stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
 '''-----------download stock data and save to sql-----------'''
 s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)
@@ -74,7 +74,7 @@ s_d_b.run('qfq')
 
 '''------stock daily price update------'''
 # set data_base_address
-data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_hfq'
+data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_price_hfq'
 stock_ticks_data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_basic'
 '''-----------download stock data and save to sql-----------'''
 s_d_b = StockDailyPrice(token, data_base_address,stock_ticks_data_base_address,log_file_name)

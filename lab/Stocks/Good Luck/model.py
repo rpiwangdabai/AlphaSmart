@@ -9,8 +9,6 @@ Created on Wed Oct  7 21:57:41 2020
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
-
-
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense
