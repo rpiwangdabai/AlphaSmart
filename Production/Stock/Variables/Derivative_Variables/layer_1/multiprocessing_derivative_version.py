@@ -100,6 +100,11 @@ def sampling_merge(status,data_base_address,filename,core_index):
         
         if data_merge_2.empty:
             continue
+        '''
+        空置处理
+        交易量较少的处理
+        
+        '''
         
         # list for saving triple barrier labels
         label = []
