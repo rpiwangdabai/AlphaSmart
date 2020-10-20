@@ -19,7 +19,7 @@ import math
 # =============================================================================
 #  samling_merge_dict
 # =============================================================================
-def sampling_merge(status,data_base_address,filename,core_index):
+def sampling_merge(data_base_address,filename,core_index):
     
     print ('运行任务 %s ，子进程号为(%s)...' % (core_index, os.getpid()))
     print ("我就是子进程号为(%s)处理的内容" % (os.getpid()))
@@ -67,7 +67,7 @@ def sampling_merge(status,data_base_address,filename,core_index):
         table = table[0]
         print(table)
         sql_cmd = "SELECT * FROM `" + table + '`;'
-        sql_cmd_price = "SELECT * FROM `" + table + '_' + status + '`;'
+        sql_cmd_price = "SELECT * FROM `" + table  + '`;'
         try:
             # capital flow data
             daily_capital_flow = pd.read_sql(sql = sql_cmd, con = engine_capital_flow)
@@ -260,36 +260,36 @@ def sampling_merge(status,data_base_address,filename,core_index):
 # =============================================================================
 # Data Input
 # =============================================================================
-
-data_base_address = dict()
-data_base_address['capital_flow'] = 'stock_daily_capital_flow'
-data_base_address['daily_basic'] = 'stocks_daily_basic'
-data_base_address['daily_price'] = 'stocks_price_daily_qfq'
-data_base_address['variable_address_1'] = 'stocks_variables_1'
-inc_pct = 0.1
-dec_pct = 0.05
-forward_period = 10
-filename = '123.log'
-core_index = cpu_count()
-status = 'qfq'
-
-
-# =============================================================================
-# multiprocessing       
-# =============================================================================
-p = Pool(core_index)  
-for i in range(1, core_index + 1): #4个子进程完成5个任务，所以有一个任务是需要等某个进程空闲再处理
-    p.apply_async(sampling_merge, args=(status,data_base_address,filename,i,)) #a是进程处理函数long_time_task的返回结果
-print ('等待所有子进程结束...')
-p.close()
-p.join()#等待所有子进程执行完毕。调用join()之前必须先调用close()，调用close()之后就不能继续添加新的Process了。
-print ('所有子进程结束...')
+if __name__ == '__main__':    
+    
+    data_base_address = dict()
+    data_base_address['capital_flow'] = 'stocks_daily_capital_flow'
+    data_base_address['daily_basic'] = 'stocks_daily_basic'
+    data_base_address['daily_price'] = 'stocks_daily_price_qfq'
+    data_base_address['variable_address_1'] = 'stocks_variables_1'
+    inc_pct = 0.1
+    dec_pct = 0.05
+    forward_period = 10
+    filename = '123.log'
+    core_index = cpu_count()
     
     
+    # =============================================================================
+    # multiprocessing       
+    # =============================================================================
+    p = Pool(core_index)  
+    for i in range(1, core_index + 1): #4个子进程完成5个任务，所以有一个任务是需要等某个进程空闲再处理
+        p.apply_async(sampling_merge, args=(data_base_address,filename,i,)) #a是进程处理函数long_time_task的返回结果
+    print ('等待所有子进程结束...')
+    p.close()
+    p.join()#等待所有子进程执行完毕。调用join()之前必须先调用close()，调用close()之后就不能继续添加新的Process了。
+    print ('所有子进程结束...')
+        
+    
                 
-                
-                
-                
+a = 0 
+while True:
+    a += 1
                 
                 
                 

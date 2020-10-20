@@ -75,8 +75,8 @@ class StockDailyPrice():
         sql_cmd = "SELECT * FROM `liseted stock list`;"
         ticks_data = pd.read_sql(sql=sql_cmd, con=self.conn_ticks)
         ticks = list(ticks_data['ts_code'])
-        # for quick testing only
-        ticks = ticks[:10]
+        # # for quick testing only
+        # ticks = ticks[:10]
         # id count
         i = 1
         # error ticks

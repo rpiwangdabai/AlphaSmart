@@ -38,3 +38,12 @@ Fri, 16 Oct 2020 10:29:28 stock_daily_capital_flow.py[line:108] INFO Stock daily
 Fri, 16 Oct 2020 10:29:37 stock_daily_price.py[line:111] INFO Stock daily price_None data download successed!
 Fri, 16 Oct 2020 10:29:46 stock_daily_price.py[line:111] INFO Stock daily price_qfq data download successed!
 Fri, 16 Oct 2020 10:29:55 stock_daily_price.py[line:111] INFO Stock daily price_hfq data download successed!
+Tue, 20 Oct 2020 08:50:42 listed_data.py[line:91] INFO Job starting time at 20/10/2020 08:50:42
+Tue, 20 Oct 2020 08:50:43 listed_data.py[line:77] INFO listed stock list download successfully!
+Tue, 20 Oct 2020 08:52:07 listed_data.py[line:91] INFO Job starting time at 20/10/2020 08:52:07
+Tue, 20 Oct 2020 08:52:08 listed_data.py[line:77] INFO listed stock list download successfully!
+Tue, 20 Oct 2020 09:32:25 stock_daily_basic.py[line:103] INFO Stock daily basic download successed !
+Tue, 20 Oct 2020 10:28:47 stock_daily_capital_flow.py[line:108] INFO Stock daily capital flow download successfully!
+Tue, 20 Oct 2020 11:10:39 stock_daily_price.py[line:111] INFO Stock daily price_None data download successed!
+Tue, 20 Oct 2020 11:54:13 stock_daily_price.py[line:111] INFO Stock daily price_qfq data download successed!
+Tue, 20 Oct 2020 12:34:56 stock_daily_price.py[line:111] INFO Stock daily price_hfq data download successed!
