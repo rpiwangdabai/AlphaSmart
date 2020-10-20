@@ -62,6 +62,7 @@ def sampling_merge(data_base_address,filename,core_index):
     # get data and merge by loop
     t = 1
     for table in tables_name[start:end]:
+
         print(t)
         t += 1
         table = table[0]
@@ -75,6 +76,8 @@ def sampling_merge(data_base_address,filename,core_index):
             daily_basic = pd.read_sql(sql = sql_cmd, con = engine_daily)
             # daily price data 
             daily_price = pd.read_sql(sql = sql_cmd_price, con = engine_daily_price)
+            
+            
         except BaseException:
             continue
 
@@ -98,7 +101,7 @@ def sampling_merge(data_base_address,filename,core_index):
         data_merge_2 = data_merge_1.join(daily_price, lsuffix='_daily_close_price')
         data_merge_2 = data_merge_2.dropna()
         
-        if data_merge_2.empty:
+        if len(data_merge_2) < 10:
             continue
         '''
         空置处理
@@ -241,6 +244,7 @@ def sampling_merge(data_base_address,filename,core_index):
         '''--------------saving-------------'''
         # try:
         pd.io.sql.to_sql(data_derivative_variables, table, engine_daily_stock_variabels ,index = None,if_exists = 'replace') ## change
+
         # except ValueError:
         #     error_ticks.append(table)
         #     continue
@@ -255,13 +259,14 @@ def sampling_merge(data_base_address,filename,core_index):
          
     end = time.time()
     print ('任务 %s 运行了 %0.2f 秒.' % (core_index, (end - start_time)))
+
         
                 
 # =============================================================================
 # Data Input
 # =============================================================================
 if __name__ == '__main__':    
-    
+
     data_base_address = dict()
     data_base_address['capital_flow'] = 'stocks_daily_capital_flow'
     data_base_address['daily_basic'] = 'stocks_daily_basic'
@@ -274,19 +279,19 @@ if __name__ == '__main__':
     core_index = cpu_count()
     
     
+    
     # =============================================================================
     # multiprocessing       
     # =============================================================================
     p = Pool(core_index)  
-    for i in range(1, core_index + 1): #4个子进程完成5个任务，所以有一个任务是需要等某个进程空闲再处理
-        p.apply_async(sampling_merge, args=(data_base_address,filename,i,)) #a是进程处理函数long_time_task的返回结果
+    for i in range(1, core_index + 1):
+        p.apply_async(sampling_merge, args=(data_base_address,filename,i)) 
     print ('等待所有子进程结束...')
     p.close()
-    p.join()#等待所有子进程执行完毕。调用join()之前必须先调用close()，调用close()之后就不能继续添加新的Process了。
+    p.join()
     print ('所有子进程结束...')
-        
     
-                
+
                 
                 
                 
