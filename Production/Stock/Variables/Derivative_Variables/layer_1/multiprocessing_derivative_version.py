@@ -19,7 +19,7 @@ import math
 # =============================================================================
 #  samling_merge_dict
 # =============================================================================
-def sampling_merge(data_base_address,filename,core_index):
+def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,core_index):
     
     print ('运行任务 %s ，子进程号为(%s)...' % (core_index, os.getpid()))
     print ("我就是子进程号为(%s)处理的内容" % (os.getpid()))
@@ -285,7 +285,7 @@ if __name__ == '__main__':
     # =============================================================================
     p = Pool(core_index)  
     for i in range(1, core_index + 1):
-        p.apply_async(sampling_merge, args=(data_base_address,filename,i)) 
+        p.apply_async(sampling_merge, args=(data_base_address,filename,inc_pct,dec_pct,forward_period,i,)) 
     print ('等待所有子进程结束...')
     p.close()
     p.join()
