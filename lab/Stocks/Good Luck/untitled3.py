@@ -26,7 +26,7 @@ def data_concat(core_index):
     #
     
     
-    engine_cstock_daily_price_qfq_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_qfq' 
+    engine_cstock_daily_price_qfq_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_price_qfq' 
     engine_daily_price = create_engine(engine_cstock_daily_price_qfq_address, encoding ='utf8') 
     
     
@@ -95,35 +95,35 @@ def data_concat(core_index):
     return price_all
 
 
+if __name__ == '__main__':
 
-
-# =============================================================================
-# multiprocessing       
-# =============================================================================
-core_index = cpu_count()
-p = Pool(core_index)  
-results = []
-for i in range(1, core_index + 1): 
-    results.append(p.apply_async(data_concat, args=(i,)))
-print ('等待所有子进程结束...')
-p.close()
-p.join()
-print ('所有子进程结束...')
-
-
-# =============================================================================
-# merge
-# =============================================================================
-price_all = pd.DataFrame()
-for i in range(len(results)):
-    price = results[8].get()
-    price_all = pd.concat([price_all, price])
-
-
-price_all.to_csv('/Users/Roy/Desktop/price_lab.csv')
-
-# engine_test_lab_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/lab_test' 
-# engine_test_lab = create_engine(engine_test_lab_address, encoding ='utf8') 
-# pd.io.sql.to_sql(price_all, 'price_with_lab', engine_test_lab ,index = None,if_exists = 'replace') ## change
-
+    # =============================================================================
+    # multiprocessing       
+    # =============================================================================
+    core_index = cpu_count()
+    p = Pool(core_index)  
+    results = []
+    for i in range(1, core_index + 1): 
+        results.append(p.apply_async(data_concat, args=(i,)))
+    print ('等待所有子进程结束...')
+    p.close()
+    p.join()
+    print ('所有子进程结束...')
+    
+    
+    # =============================================================================
+    # merge
+    # =============================================================================
+    price_all = pd.DataFrame()
+    for i in range(len(results)):
+        price = results[8].get()
+        price_all = pd.concat([price_all, price])
+    
+    
+    price_all.to_csv('C:/Users/Lenovo/Desktop/test.csv',index = False)
+    
+    # engine_test_lab_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/lab_test' 
+    # engine_test_lab = create_engine(engine_test_lab_address, encoding ='utf8') 
+    # pd.io.sql.to_sql(price_all, 'price_with_lab', engine_test_lab ,index = None,if_exists = 'replace') ## change
+    
 
