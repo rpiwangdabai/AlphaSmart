@@ -26,7 +26,7 @@ def data_concat(core_index):
     #
     
     
-    engine_cstock_daily_price_qfq_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_daily_price_qfq' 
+    engine_cstock_daily_price_qfq_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_price_daily_qfq' 
     engine_daily_price = create_engine(engine_cstock_daily_price_qfq_address, encoding ='utf8') 
     
     
@@ -95,35 +95,105 @@ def data_concat(core_index):
     return price_all
 
 
-if __name__ == '__main__':
 
-    # =============================================================================
-    # multiprocessing       
-    # =============================================================================
-    core_index = cpu_count()
-    p = Pool(core_index)  
-    results = []
-    for i in range(1, core_index + 1): 
-        results.append(p.apply_async(data_concat, args=(i,)))
-    print ('等待所有子进程结束...')
-    p.close()
-    p.join()
-    print ('所有子进程结束...')
+
+# =============================================================================
+# multiprocessing       
+# =============================================================================
+core_index = cpu_count()
+p = Pool(core_index)  
+results = []
+for i in range(1, core_index + 1): 
+    results.append(p.apply_async(data_concat, args=(i,)))
+print ('等待所有子进程结束...')
+p.close()
+p.join()
+print ('所有子进程结束...')
+
+
+# =============================================================================
+# merge
+# =============================================================================
+price_all = pd.DataFrame()
+for i in range(len(results)):
+    price = results[i].get()
+    price_all = pd.concat([price_all, price])
+
+
+price_all.to_csv('/Users/Roy/Desktop/price_lab.csv')
+
+# engine_test_lab_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/lab_test' 
+# engine_test_lab = create_engine(engine_test_lab_address, encoding ='utf8') 
+# pd.io.sql.to_sql(price_all, 'price_with_lab', engine_test_lab ,index = None,if_exists = 'replace') ## change
+
+
+# =============================================================================
+#  analysis
+# =============================================================================
+from matplotlib import pyplot as plt
+plt.style.use('seaborn-deep')
+
+price_all['trade_date'] = pd.to_datetime(price_all['trade_date'])
+price_all = price_all.set_index(price_all['trade_date'])
+# selected_data = price_all[price_all['label'] == 0]
+
+
+
+for year in range(2010,2021):
+   
     
+    selected_data_yearly = price_all[str(year)]
     
-    # =============================================================================
-    # merge
-    # =============================================================================
-    price_all = pd.DataFrame()
-    for i in range(len(results)):
-        price = results[8].get()
-        price_all = pd.concat([price_all, price])
+    init = selected_data_yearly['amount'].quantile(0.01)
+    end = selected_data_yearly['amount'].quantile(0.9)
     
+    selected_data_yearly_up = selected_data_yearly[selected_data_yearly['label'] == 1]
+    selected_data_yearly_down = selected_data_yearly[selected_data_yearly['label'] == 0]
+    selected_data_yearly_else = selected_data_yearly[(selected_data_yearly['label'] != 1) & 
+                                                     (selected_data_yearly['label'] != 0)]
     
-    price_all.to_csv('C:/Users/Lenovo/Desktop/test.csv',index = False)
+    plt.figure(1,figsize = (20,15)) 
     
-    # engine_test_lab_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/lab_test' 
-    # engine_test_lab = create_engine(engine_test_lab_address, encoding ='utf8') 
-    # pd.io.sql.to_sql(price_all, 'price_with_lab', engine_test_lab ,index = None,if_exists = 'replace') ## change
+    plt.hist([selected_data_yearly_up['amount'], selected_data_yearly_down['amount'],selected_data_yearly_else['amount'],selected_data_yearly['amount']],
+             bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), 
+             label = ['Up', 'Down', 'Else', 'ALL'] ) # 设置直方边线颜色为黑色，不透明度为 0.35
+    # plt.hist(selected_data_yearly_down['open'], bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), label = 'Down' )
+    # plt.hist(selected_data_yearly_else['open'], bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), label = 'Else' )
     
+    plt.legend(loc='upper left')
+    plt.title(str(year) + ' amount distribution')
+    plt.savefig('/Users/Roy/Desktop/analysis_result/plot/'+str(year) + '.png')
+    plt.close()
+    
+    # des_result = selected_data_yearly.describe()
+    # des_result.to_csv('/Users/Roy/Desktop/analysis_result/' + str(year) + '_describle.csv')
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = np.random.normal(0, 3, 3000)
+b = np.random.normal(2, 4, 2000)
+
+bins = np.linspace(-10, 10, 20)
+
+plt.hist(a , bins, label='a')
+plt.hist(b , bins, label='b')
+plt.legend(loc='upper left')
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
