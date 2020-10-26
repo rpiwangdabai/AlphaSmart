@@ -19,7 +19,7 @@ import math
 # =============================================================================
 #  samling_merge_dict
 # =============================================================================
-def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,core_index):
+def sampling_merge(data_base_address,inc_pct,dec_pct,forward_period,core_index):
     
     print ('运行任务 %s ，子进程号为(%s)...' % (core_index, os.getpid()))
     print ("我就是子进程号为(%s)处理的内容" % (os.getpid()))
@@ -236,7 +236,12 @@ def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,cor
         
         # add change percentage
         data_derivative_variables['pct_chg'] = data_merge_2['pct_chg']
-        
+        # add open, high, low, close
+        data_derivative_variables['open'] = data_merge_2['open']
+        data_derivative_variables['high'] = data_merge_2['high']
+        data_derivative_variables['low'] = data_merge_2['low']
+        data_derivative_variables['close'] = data_merge_2['open']
+                
         # =============================================================================
         # add sampling
         # =============================================================================
@@ -245,12 +250,13 @@ def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,cor
             
         
         '''--------------saving-------------'''
-        # try:
-        pd.io.sql.to_sql(data_derivative_variables, table, engine_daily_stock_variabels ,index = None,if_exists = 'replace') ## change
+        data_derivative_variables = data_derivative_variables.reset_index()
+        try:
+            pd.io.sql.to_sql(data_derivative_variables, table, engine_daily_stock_variabels ,index = None,if_exists = 'replace') ## change
 
-        # except ValueError:
-        #     error_ticks.append(table)
-        #     continue
+        except ValueError:
+            error_ticks.append(table)
+            continue
 
         # if not error_ticks:
         #     msg = 'Stocks variables calculated successed!' + str(core_index)
@@ -262,6 +268,7 @@ def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,cor
          
     end = time.time()
     print ('任务 %s 运行了 %0.2f 秒.' % (core_index, (end - start_time)))
+    return error_ticks
 
         
                 
@@ -288,7 +295,7 @@ if __name__ == '__main__':
     # =============================================================================
     p = Pool(core_index)  
     for i in range(1, core_index + 1):
-        p.apply_async(sampling_merge, args=(data_base_address,filename,inc_pct,dec_pct,forward_period,i,)) 
+        p.apply_async(sampling_merge, args=(data_base_address,inc_pct,dec_pct,forward_period,i,)) 
     print ('等待所有子进程结束...')
     p.close()
     p.join()

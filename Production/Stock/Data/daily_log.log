@@ -47,3 +47,7 @@ Tue, 20 Oct 2020 10:28:47 stock_daily_capital_flow.py[line:108] INFO Stock daily
 Tue, 20 Oct 2020 11:10:39 stock_daily_price.py[line:111] INFO Stock daily price_None data download successed!
 Tue, 20 Oct 2020 11:54:13 stock_daily_price.py[line:111] INFO Stock daily price_qfq data download successed!
 Tue, 20 Oct 2020 12:34:56 stock_daily_price.py[line:111] INFO Stock daily price_hfq data download successed!
+Mon, 26 Oct 2020 21:31:06 listed_data.py[line:91] INFO Job starting time at 26/10/2020 09:31:06
+Mon, 26 Oct 2020 21:31:07 listed_data.py[line:77] INFO listed stock list download successfully!
+Mon, 26 Oct 2020 22:09:51 stock_daily_basic.py[line:106] WARNING some data download failed, check error ticks
+Mon, 26 Oct 2020 22:09:51 stock_daily_basic.py[line:107] WARNING ['601187.SH']
