@@ -234,6 +234,9 @@ def sampling_merge(data_base_address,filename,inc_pct,dec_pct,forward_period,cor
             column_name = column + '_z_value'    
             data_derivative_variables[column_name] = (data_derivative_variables[column] - data_derivative_variables[column].rolling(window = 5).median()) / data_derivative_variables[column].rolling(window = 5).std()
         
+        # add change percentage
+        data_derivative_variables['pct_chg'] = data_merge_2['pct_chg']
+        
         # =============================================================================
         # add sampling
         # =============================================================================
