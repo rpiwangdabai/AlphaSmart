@@ -132,43 +132,42 @@ if __name__ == '__main__':
 # # =============================================================================
 # #  analysis
 # # =============================================================================
-# from matplotlib import pyplot as plt
-# plt.style.use('seaborn-deep')
+from matplotlib import pyplot as plt
+plt.style.use('seaborn-deep')
 
-# price_all['trade_date'] = pd.to_datetime(price_all['trade_date'])
-# price_all = price_all.set_index(price_all['trade_date'])
-# # selected_data = price_all[price_all['label'] == 0]
+price_all['trade_date'] = pd.to_datetime(price_all['trade_date'])
+price_all = price_all.set_index(price_all['trade_date'])
+# selected_data = price_all[price_all['label'] == 0]
 
 
 
-# for year in range(2010,2021):
+for year in range(2010,2021):
    
     
-#     selected_data_yearly = price_all[str(year)]
+    selected_data_yearly = price_all[str(year)]
     
-#     init = selected_data_yearly['amount'].quantile(0.01)
-#     end = selected_data_yearly['amount'].quantile(0.9)
+    init = selected_data_yearly['amount'].quantile(0.01)
+    end = selected_data_yearly['amount'].quantile(0.9)
     
-#     selected_data_yearly_up = selected_data_yearly[selected_data_yearly['label'] == 1]
-#     selected_data_yearly_down = selected_data_yearly[selected_data_yearly['label'] == 0]
-#     selected_data_yearly_else = selected_data_yearly[(selected_data_yearly['label'] != 1) & 
-#                                                      (selected_data_yearly['label'] != 0)]
+    selected_data_yearly_up = selected_data_yearly[selected_data_yearly['label'] == 1]
+    selected_data_yearly_down = selected_data_yearly[selected_data_yearly['label'] == 0]
+    selected_data_yearly_else = selected_data_yearly[(selected_data_yearly['label'] != 1) & 
+                                                      (selected_data_yearly['label'] != 0)]
     
-#     plt.figure(1,figsize = (20,15)) 
+    plt.figure(1,figsize = (20,15)) 
     
-#     plt.hist([selected_data_yearly_up['amount'], selected_data_yearly_down['amount'],selected_data_yearly_else['amount'],selected_data_yearly['amount']],
-#              bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), 
-#              label = ['Up', 'Down', 'Else', 'ALL'] ) # 设置直方边线颜色为黑色，不透明度为 0.35
-#     # plt.hist(selected_data_yearly_down['open'], bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), label = 'Down' )
-#     # plt.hist(selected_data_yearly_else['open'], bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), label = 'Else' )
+    plt.hist([selected_data_yearly_up['amount'], selected_data_yearly_down['amount'],selected_data_yearly_else['amount'],selected_data_yearly['amount']],
+              bins = 'auto', edgecolor='k', alpha=0.35, range=(init, end), 
+              label = ['Up', 'Down', 'Else', 'ALL'] ) # 设置直方边线颜色为黑色，不透明度为 0.35
+
     
-#     plt.legend(loc='upper left')
-#     plt.title(str(year) + ' amount distribution')
-#     plt.savefig('/Users/Roy/Desktop/analysis_result/plot/'+str(year) + '.png')
-#     plt.close()
+    plt.legend(loc='upper left')
+    plt.title(str(year) + ' amount distribution')
+    plt.savefig('D:/RoyMa/Python/Investment/lab/Stocks/Good Luck/analysis_result/plot/amount/'+str(year) + '.png')
+    plt.close()
     
-#     # des_result = selected_data_yearly.describe()
-#     # des_result.to_csv('/Users/Roy/Desktop/analysis_result/' + str(year) + '_describle.csv')
+    # des_result = selected_data_yearly.describe()
+    # des_result.to_csv('/Users/Roy/Desktop/analysis_result/' + str(year) + '_describle.csv')
 
 
 

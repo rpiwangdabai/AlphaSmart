@@ -27,7 +27,7 @@ sql_cmd = "SELECT * FROM `" + tables_name[0][0] + '`;'
 daily_price = pd.read_sql(sql = sql_cmd, con = conn)
 
 
-sql_cmd = "SELECT * FROM `000001.sz`;"
+sql_cmd = "SELECT * FROM `000001`;"
 daily_price = pd.read_sql(sql = sql_cmd, con = conn)
               
 
@@ -54,7 +54,7 @@ columns.remove('label')
 for i in range(10, len(data_) + 1):
     dataX.append(data_[i-10:i][columns].values)
 
-X = np.reshape(dataX, (len(dataX), 10, 92))
+X = np.reshape(dataX, (len(dataX), 10, 98))
 
 
 
