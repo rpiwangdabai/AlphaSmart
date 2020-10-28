@@ -19,6 +19,8 @@ from keras import regularizers
 from sklearn.model_selection import train_test_split
 import keras 
 from sqlalchemy import create_engine
+from sklearn.utils import shuffle
+from matplotlib import pyplot
 # =============================================================================
 #  import data
 # =============================================================================
@@ -26,6 +28,8 @@ data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/stocks_variabl
 conn = create_engine(data_base_address, encoding ='utf8')
 cur = conn.execute('''SHOW TABLES''')
 tables_name = cur.fetchall()
+
+tables_name_ = tables_name[:100]
 
 train_X = []
 val_X = []
@@ -36,7 +40,7 @@ val_Y = []
 test_Y = []
 
 t = 0
-for table in tables_name:
+for table in tables_name_:
 
     t += 1
     print(t)
@@ -44,14 +48,20 @@ for table in tables_name:
     sql_cmd = "SELECT * FROM `" + table[0] + '`;'
     variable = pd.read_sql(sql = sql_cmd, con = conn)
     
-    variable = variable[4:]
+    # do not consider stocks which ipo with in 3 month, 60 trading days
+    
+    if len(variable) < 60:
+        continue
+    variable = variable[30:]
     variable = variable.fillna(0)
     
     variable.set_index('trade_date',inplace=True)
-    
-    variable_train = variable['2011':'2016']
-    variable_val = variable['2017':'2018']
-    variable_test = variable['2019']
+    try:
+        variable_train = variable['2011':'2016']
+        variable_val = variable['2017':'2018']
+        variable_test = variable['2019']
+    except KeyError:
+        continue
     # train set
     for i in range(10, len(variable_train) + 1):
         if variable_train.iloc[i-1]['open'] >= 20:
@@ -84,80 +94,59 @@ for table in tables_name:
             test_X.append(variable_test[i-10:i][columns].values)
     
     
-    
-    
-    
-    
-dataX = []
-dataY = list(data_[9:]['label'])
-
-
-columns = list(data_.columns)
-columns.remove('label')
-
-for i in range(10, len(data_) + 1):
-    dataX.append(data_[i-10:i][columns].values)
-
-X = np.reshape(dataX, (len(dataX), 10, 92))
 
     
+# data_dict = {}
+# data_dict['train_X'] = train_X
+# data_dict['val_X'] = val_X
+# data_dict['test_X'] = test_X
+# data_dict['train_Y'] = train_Y
+# data_dict['val_Y'] = val_Y
+# data_dict['test_Y'] = test_Y
     
+data_dict = np.load('C:/Users/Lenovo/Desktop/data_dict.npy', allow_pickle=True).item()
 
-selected_data = all_data[all_data['open'] < 20]
-train_X = selected_data['2011':'2016']
-val_X = selected_data['2017':'2018']
-test_X = selected_data['2019']
-
-                  
-all_data.set_index('trade_date',inplace=True)
-
-all_data['label_dummy'] = all_data['label'].apply(lambda x: x if x == 1 else (-1 if x == 0 else 0))
+train_X = data_dict['train_X']
+val_X = data_dict['val_X'] 
+test_X = data_dict['test_X']
+train_Y = data_dict['train_Y']
+val_Y = data_dict['val_Y']
+test_Y = data_dict['test_Y']
 
 
+# train dataset and label transfer
 
+train_x = np.reshape(train_X, (len(train_X), 10, 93))
+val_x = np.reshape(val_X, (len(val_X), 10, 93))
+test_x = np.reshape(test_X, (len(test_X), 10, 93))
 
-
-
-
-
-dataX = []
-dataY = list(data_[9:]['label'])
-
-
-columns = list(data_.columns)
-columns.remove('label')
-
-for i in range(10, len(data_) + 1):
-    dataX.append(data_[i-10:i][columns].values)
-
-X = np.reshape(dataX, (len(dataX), 10, 92))
-
-
-
-y = []
-
-for label in dataY:
-    if label == 1:
-        y.append(1)
-    elif label == 0:
-        y.append(-1)
+for i in range(len(train_Y)):
+    if train_Y[i] == 1:
+        continue
+    elif train_Y[i] == 0:
+        train_Y[i] = -1
     else:
-        y.append(0)
+        train_Y[i] = 0
+
+for i in range(len(val_Y)):
+    if val_Y[i] == 1:
+        continue
+    elif val_Y[i] == 0:
+        val_Y[i] = -1
+    else:
+        val_Y[i] = 0
+
+for i in range(len(test_Y)):
+    if test_Y[i] == 1:
+        continue
+    elif test_Y[i] == 0:
+        test_Y[i] = -1
+    else:
+        test_Y[i] = 0
 
 
 
 
-
-# data select and train val test split
-
-selected_data = all_data[all_data['open'] < 20]
-train_X = selected_data['2011':'2016']
-val_X = selected_data['2017':'2018']
-test_X = selected_data['2019']
-
-train_Y = list(train_X['label_dummy'])
-val_Y = list(val_X['label_dummy'])
-test_Y = list(test_X['label_dummy'])
 
 # label y to dummy
 
@@ -172,6 +161,15 @@ val_y = ohe.transform(val_y).toarray()
 test_y = le.transform(test_Y).reshape(-1,1)
 test_y = ohe.transform(test_y).toarray()
 
+
+# shuffle
+
+
+train_x, train_y = shuffle(train_x, train_y, random_state=0)
+val_x, val_y = shuffle(val_x, val_y, random_state=0)
+test_x, test_y = shuffle(test_x, test_y, random_state=0)
+
+
 # =============================================================================
 # model
 # =============================================================================
@@ -181,19 +179,19 @@ def model(train_X, train_y, reg_w):
     inputs = Input(name='inputs',shape =[train_X.shape[1], train_X.shape[2]])
 
     LSTM_1 = LSTM(128, recurrent_dropout = 0.5, return_sequences = False, name = 'LSTM_1')(inputs)
-    LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
+    # LSTM_2 = LSTM(64, recurrent_dropout = 0.5, name = 'LSTM_2')(LSTM_1)
 
-    dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_2)
+    dropout_1 = Dropout(0.5, name = 'Dropout_1')(LSTM_1)
     FC_1 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_1)
     BN_1 = BatchNormalization()(FC_1)
     AC_1 = Activation('sigmoid',name = 'Activation_1')(BN_1)
     
-    dropout_2 = Dropout(0.5, name = 'Dropout_2')(AC_1)
-    FC_2 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC1")(dropout_2)
-    BN_2 = BatchNormalization()(FC_2)
-    AC_2 = Activation('sigmoid',name = 'Activation_1')(BN_2)
+    # dropout_2 = Dropout(0.5, name = 'Dropout_2')(AC_1)
+    # FC_2 = Dense(32,kernel_regularizer=regularizers.l2(reg_w),name="FC2")(dropout_2)
+    # BN_2 = BatchNormalization()(FC_2)
+    # AC_2 = Activation('sigmoid',name = 'Activation_2')(BN_2)
    
-    outputs = Dense(train_y.shape[1],activation="softmax",name="msg_category")(AC_2)
+    outputs = Dense(train_y.shape[1],activation="softmax",name="msg_category")(AC_1)
     model = Model(inputs=inputs,outputs=outputs)
 
     return model
@@ -203,13 +201,24 @@ def model(train_X, train_y, reg_w):
 # train_X, val_X, train_y, val_y = train_test_split(train_X, train_y, test_size = 0.2)
 
 reg_w = 1e-4
-model_layer_1 = model(train_X, train_y, reg_w)
-model_layer_1.compile(loss="categorical_crossentropy",optimizer='adam',metrics=[keras.metrics.Recall()])
+model_layer_1 = model(train_x, train_y, reg_w)
+model_layer_1.compile(loss="categorical_crossentropy",optimizer='adam',metrics=['accuracy'])
 print(model_layer_1.summary())
 
 #train
-model_layer_1.fit(train_X, train_y, batch_size=1, epochs=15, validation_data=(val_X,val_y),
-                  callbacks=[EarlyStopping(monitor='val_loss',min_delta=0.0001)])
+history = model_layer_1.fit(train_x, train_y, batch_size=32, epochs=25, validation_data=(val_x,val_y),
+                  callbacks=[EarlyStopping(monitor='val_loss',patience=50)])
+
+#plot loss
+_, train_acc = model_layer_1.evaluate(val_x, val_y, verbose=0)
+_, test_acc = model_layer_1.evaluate(test_x, test_y, verbose=0)
+print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
+# plot training history
+pyplot.plot(history.history['loss'], label='train')
+pyplot.plot(history.history['val_loss'], label='test')
+pyplot.legend()
+pyplot.show()
+
 
 # meta predict
 meta_predict_prob = model_layer_1.predict(train_X)
