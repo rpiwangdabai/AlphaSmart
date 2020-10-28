@@ -294,14 +294,18 @@ if __name__ == '__main__':
     # multiprocessing       
     # =============================================================================
     p = Pool(core_index)  
+    results = []
     for i in range(1, core_index + 1):
-        p.apply_async(sampling_merge, args=(data_base_address,inc_pct,dec_pct,forward_period,i,)) 
+        results.append(p.apply_async(sampling_merge, args=(data_base_address,inc_pct,dec_pct,forward_period,i,)))
     print ('等待所有子进程结束...')
     p.close()
     p.join()
     print ('所有子进程结束...')
     
 
+    error_list = []
+    for i in range(len(results)):
+        error_list.append(results[i].get())
                 
                 
                 
