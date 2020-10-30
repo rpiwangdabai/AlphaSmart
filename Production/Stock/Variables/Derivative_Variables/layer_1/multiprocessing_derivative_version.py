@@ -240,7 +240,7 @@ def sampling_merge(data_base_address,inc_pct,dec_pct,forward_period,core_index):
         data_derivative_variables['open'] = data_merge_2['open']
         data_derivative_variables['high'] = data_merge_2['high']
         data_derivative_variables['low'] = data_merge_2['low']
-        data_derivative_variables['close'] = data_merge_2['open']
+        data_derivative_variables['close'] = data_merge_2['close']
                 
         # =============================================================================
         # add sampling
