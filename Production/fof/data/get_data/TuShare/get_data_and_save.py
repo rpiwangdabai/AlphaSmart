@@ -138,17 +138,17 @@ class GetDataAndSave():
                 if calculate_log_ret:
                     data['log_ret'] = np.log(data.adj_nav) - np.log(data.adj_nav.shift(-1))
                 # set lag
-                time.sleep(0.3)
+                time.sleep(0.1)
                 # save data to sql
                 try:
                     pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
                 except ValueError:
                     error_ticks.append(tick)
                     continue
-                if not error_ticks:
-                    log.warning('funds download successed !')
-                else:
-                    log.warning('some data download failed, check error ticks')      
+            if not error_ticks:
+                log.warning('funds download successed !')
+            else:
+                log.warning('some data download failed, check error ticks')      
         elif types == 'index':
             while ticks:
                 print(i)
@@ -162,17 +162,17 @@ class GetDataAndSave():
                 if calculate_log_ret:
                     data['log_ret'] = np.log(data.close) - np.log(data.close.shift(-1))
                 # set lag
-                time.sleep(0.3)
+                time.sleep(0.1)
                 # save data to sql
                 try:
                     pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
                 except ValueError:
                     error_ticks.append(tick)
                     continue
-                if not error_ticks:
-                    log.warning('funds download successed !')
-                else:
-                    log.warning('some data download failed, check error ticks')
+            if not error_ticks:
+                log.warning('funds download successed !')
+            else:
+                log.warning('some data download failed, check error ticks')
         
         return error_ticks
     
@@ -181,16 +181,16 @@ if __name__ == '__main__':
     
     '''-----------set up-----------'''
     # set token
-    token = '260e5250528465a7bebe4c3f4beaea74d14a3ffcbc8aceab9cd6298c'
+    token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
     # set data_base_address
     data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/fund'
     # ticks data
-    funds_data = pd.read_csv('/Users/Roy/Documents/Investment/Investment/FoF/data/Tushare/fundcode_before1703_1803.csv')
+    funds_data = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/fund_list.csv')
     fund_tick = list(funds_data['ts_code'])
     
     '''-----------download fund data and save to sql-----------'''
     d_a_s = GetDataAndSave(token, data_base_address)
-    failed_ticks = d_a_s.get_data_and_save_bulk(['000215.OF'])
+    failed_ticks = d_a_s.get_data_and_save_bulk(fund_tick, types = 'fund')
     
 
     
