@@ -70,3 +70,23 @@
 2020-11-01 21:59:17,546 - root - WARNING - funds download successed !
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
+2020-11-02 18:10:03,429 - root - WARNING - funds download successed !
+2020-11-02 18:16:54,504 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-02 18:16:54,504 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-02 18:16:54,504 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-02 18:16:54,504 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks
+2020-11-02 18:35:52,438 - root - WARNING - some data download failed, check error ticks

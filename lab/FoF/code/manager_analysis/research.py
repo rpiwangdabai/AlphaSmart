@@ -12,9 +12,6 @@ import time
 # setup tushare token    
 ts.set_token('ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592')
 
-
-    
-
 ts_pro = ts.pro_api()
 fund_basic = ts_pro.fund_basic(market = 'O',status = 'L')
 
@@ -46,11 +43,11 @@ fund_manager['Days'] = fund_manager['Days'].apply(lambda x: x.days)
 
 selected_fund_manager = fund_manager[fund_manager['Days'] > 1000]
 
-selected_fund_manager = selected_fund_manager[selected_fund_manager['end_date'] == datetime.date.today()]
+selected_fund_manager = selected_fund_manager[selected_fund_manager['end_date'].apply(lambda x: x.strftime('%Y-%m-%d')) == datetime.date.today().strftime('%Y-%m-%d')]
 
 selected_fund_manager_dd = selected_fund_manager.drop_duplicates(subset = ('name','end_date','resume'))
 
-selected_fund_manager_dd.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/fund_list.csv', index = False)
+selected_fund_manager_dd.to_csv(r'D:\RoyMa\Python\Investment\lab\FoF\code\manager_analysis\fund_list.csv', index = False)
 
 
 

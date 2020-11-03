@@ -141,7 +141,7 @@ class GetDataAndSave():
                 time.sleep(0.1)
                 # save data to sql
                 try:
-                    pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+                    pd.io.sql.to_sql(data, tick.lower(), self.conn,index = None,if_exists = 'replace') ## change
                 except ValueError:
                     error_ticks.append(tick)
                     continue
@@ -165,7 +165,7 @@ class GetDataAndSave():
                 time.sleep(0.1)
                 # save data to sql
                 try:
-                    pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change
+                    pd.io.sql.to_sql(data, tick.lower(), self.conn,index = None,if_exists = 'replace') ## change
                 except ValueError:
                     error_ticks.append(tick)
                     continue
@@ -185,7 +185,7 @@ if __name__ == '__main__':
     # set data_base_address
     data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/fund'
     # ticks data
-    funds_data = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/fund_list.csv')
+    funds_data = pd.read_csv(r'D:\RoyMa\Python\Investment\lab\FoF\code\manager_analysis\fund_list.csv')
     fund_tick = list(funds_data['ts_code'])
     
     '''-----------download fund data and save to sql-----------'''
