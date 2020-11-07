@@ -70,9 +70,4 @@
 2020-11-01 21:59:17,546 - root - WARNING - funds download successed !
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
-2020-11-01 22:18:14,573 - root - WARNING - some data download failed, check error ticks
+
