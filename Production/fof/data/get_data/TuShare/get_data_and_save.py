@@ -138,7 +138,7 @@ class GetDataAndSave():
                 if calculate_log_ret:
                     data['log_ret'] = np.log(data.adj_nav) - np.log(data.adj_nav.shift(-1))
                 # set lag
-                time.sleep(0.1)
+                time.sleep(0.8)
                 # save data to sql
                 try:
                     pd.io.sql.to_sql(data, tick, self.conn,index = None,if_exists = 'replace') ## change

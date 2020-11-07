@@ -54,8 +54,7 @@ selected_fund_manager_dd.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/ma
 
 
 
-
-
+fund_basic = ts_pro.fund_nav(ts_code = '960014.OF')
 
 
 
