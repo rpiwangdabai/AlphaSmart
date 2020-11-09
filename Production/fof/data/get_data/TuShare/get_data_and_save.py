@@ -191,6 +191,8 @@ if __name__ == '__main__':
     '''-----------download fund data and save to sql-----------'''
     d_a_s = GetDataAndSave(token, data_base_address)
     failed_ticks = d_a_s.get_data_and_save_bulk(fund_tick, types = 'fund')
+    '''-----------download fund data and save to sql-----------'''
+    failed_ticks = d_a_s.get_data_and_save_bulk(['399300.sz'], types = 'index')
     
 
     
