@@ -1,21 +1,22 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May 14 15:34:59 2020
+# @Date    : 2020-11-08 20:48:41
+# @Author  : Hao Wang (tjuhaowang@gmail.com)
+# @Link    : link
+# @Version : 1.0.0
 
-@author: Roy
-"""
+import os
+import sys
 import tushare as ts 
 import pandas as pd
 import numpy as np
 import logging
-from sqlalchemy import create_engine
 import time
+from sqlalchemy import create_engine
 
 class GetDataAndSave():
     """
     Class for downloading data from Tushare.
-    
     Parameters
     --------
         token : str
@@ -24,7 +25,6 @@ class GetDataAndSave():
         data_base_address : str
             Database address for data storage
 
-        
     Attributes
     --------
     
@@ -36,15 +36,16 @@ class GetDataAndSave():
     --------
     """
     
-    def __init__(self, token, data_base_address):
+    def __init__(self, token, dataBaseAddress):
         
         self.token = token
-        self.data_base_address = data_base_address
+        self.dataBaseAddress = dataBaseAddress
         # setup tushare token        
         ts.set_token(token)
         self.ts_pro = ts.pro_api()
         # build up database connection
-        self.conn = create_engine(self.data_base_address, encoding ='utf8')
+        self.conn = create_engine(self.dataBaseAddress, 
+            encoding ='utf8')
         
 
     def logger(self,log_file = './log.txt'):
@@ -89,8 +90,7 @@ class GetDataAndSave():
         return logger
 
 
-
-    def get_data_and_save_bulk(self,ticks, types, calculate_log_ret = True, log_file = './log.txt'):
+    def getDataAndSaveBulk(self, ticks, types, calculateLogRet = True, logFile = './log.txt'):
         """
         Downloadind data from Tushare database and save them to the database
         
@@ -117,35 +117,36 @@ class GetDataAndSave():
         --------
         """
         
-        log_file
+        logFile
         # setup logger
-        log = self.logger(log_file)
+        log = self.logger(logFile)
         # id count
-        i = 1
+        i, n = 1, len(ticks)
         # error ticks
-        error_ticks = []
+        errorTicks = []
         # get fund data and save it to sql
         if types == 'fund':
             while ticks:
                 print(i)
                 i += 1 
                 tick = ticks.pop()
+                print(tick, "{:.0%}".format(i/n))
                 data = self.ts_pro.fund_nav(ts_code=tick)
                 if data.empty:
-                    error_ticks.append(tick)
+                    errorTicks.append(tick)
                     continue
                 # calculate log return
-                if calculate_log_ret:
+                if calculateLogRet:
                     data['log_ret'] = np.log(data.adj_nav) - np.log(data.adj_nav.shift(-1))
                 # set lag
                 time.sleep(0.8)
                 # save data to sql
                 try:
-                    pd.io.sql.to_sql(data, tick.lower(), self.conn,index = None,if_exists = 'replace') ## change
+                    pd.io.sql.to_sql(data, tick.lower(), self.conn, index = None, if_exists = 'replace') ## change
                 except ValueError:
-                    error_ticks.append(tick)
+                    errorTicks.append(tick)
                     continue
-            if not error_ticks:
+            if not errorTicks:
                 log.warning('funds download successed !')
             else:
                 log.warning('some data download failed, check error ticks')      
@@ -156,10 +157,10 @@ class GetDataAndSave():
                 tick = ticks.pop()
                 data = self.ts_pro.index_daily(ts_code=tick)
                 if data.empty:
-                    error_ticks.append(tick)
+                    errorTicks.append(tick)
                     continue
                 # calculate log return
-                if calculate_log_ret:
+                if calculateLogRet:
                     data['log_ret'] = np.log(data.close) - np.log(data.close.shift(-1))
                 # set lag
                 time.sleep(0.1)
@@ -167,34 +168,12 @@ class GetDataAndSave():
                 try:
                     pd.io.sql.to_sql(data, tick.lower(), self.conn,index = None,if_exists = 'replace') ## change
                 except ValueError:
-                    error_ticks.append(tick)
+                    errorTicks.append(tick)
                     continue
-            if not error_ticks:
+            if not errorTicks:
                 log.warning('funds download successed !')
             else:
                 log.warning('some data download failed, check error ticks')
         
-        return error_ticks
-    
-    
-if __name__ == '__main__':
-    
-    '''-----------set up-----------'''
-    # set token
-    token = 'ab6bcb87d10984cd4468d5359ce421d30884253c4826c56fd2f4d592'
-    # set data_base_address
-    data_base_address = 'mysql+pymysql://root:ai3ilove@localhost:3306/fund'
-    # ticks data
-    funds_data = pd.read_csv(r'D:\RoyMa\Python\Investment\lab\FoF\code\manager_analysis\fund_list.csv')
-    fund_tick = list(funds_data['ts_code'])
-    
-    '''-----------download fund data and save to sql-----------'''
-    d_a_s = GetDataAndSave(token, data_base_address)
-    failed_ticks = d_a_s.get_data_and_save_bulk(fund_tick, types = 'fund')
-    
+        return errorTicks
 
-    
-    
-    
-    
-    
