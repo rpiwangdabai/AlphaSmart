@@ -203,14 +203,14 @@ while tables:
     print(i)
     i += 1
     
-sharp_1.to_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2\sharp_1.csv', index = False)
+sharp_1.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/sharp_1.csv', index = False)
 
 
 
 '''-----------layer_two-----------'''
 '''-----------get fund data and calculate sharp ratio, mean and std-----------'''
 
-data = pd.read_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/sharp_1.csv')
+data = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/sharp_1.csv')
 engine = create_engine('mysql+pymysql://root:ai3ilove@localhost:3306/fund', 
                      encoding ='utf8')
 
@@ -264,7 +264,7 @@ data['mean'] = mean
 data['std'] = std
 
 
-data.to_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/diff_sharp_mean_std.csv',index = False)
+data.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/diff_sharp_mean_std.csv',index = False)
 
 # =============================================================================
 # 300 mean std and sharp ratio
@@ -286,13 +286,17 @@ sharp_ratio_index = log_ret_mean / log_ret_std * math.sqrt(252)
 # =============================================================================
 # set criteria
 # =============================================================================
-data = pd.read_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/diff_sharp_mean_std.csv')
+data = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/diff_sharp_mean_std.csv')
 
-selected_data = data[(data['mean'] > 3 * log_ret_mean) & 
+selected_data_1 = data[(data['mean'] > 3 * log_ret_mean) & 
                     (data['std'] <   log_ret_std) &
                     (data['sharp_ratio'] >  sharp_ratio_index)]
 
-selected_data.to_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv',index = False)
+selected_data_2 = selected_data_1[(selected_data_1['mean'] > 0.002) & 
+                                  (selected_data_1['std'] < 0.015)]
+selected_data_2 = selected_data_1[selected_data_1['std'] < 0.015]
+
+selected_data_2.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv',index = False)
 
 
 
