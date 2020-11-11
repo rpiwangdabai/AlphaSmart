@@ -11,5 +11,5 @@ import sys
 # working directory is always project root
 sys.path.append('.')
 
-def createLogger(LoggerName = __name__):
+def createLogger(LoggerName = __name__, logFile = ):
     pass
