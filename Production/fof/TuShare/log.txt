@@ -71,3 +71,15 @@
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
 2020-11-01 21:59:18,336 - root - WARNING - funds download successed !
 
+2020-11-08 13:02:09,049 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 13:02:09,050 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 13:10:02,956 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 13:10:02,957 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 13:11:59,326 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 13:11:59,326 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 14:09:03,500 - root - WARNING - funds download successed !
+2020-11-08 14:12:48,815 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 14:12:48,815 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 16:13:35,567 - root - WARNING - some data download failed, check error ticks
+2020-11-08 17:49:33,174 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 17:49:33,174 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.

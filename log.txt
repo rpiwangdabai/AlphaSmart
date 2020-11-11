@@ -1,0 +1,867 @@
+2020-11-08 19:07:19,371 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 19:07:19,371 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 19:54:40,971 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 19:54:40,972 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 20:02:46,999 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 20:02:46,999 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 20:10:11,231 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 20:10:11,231 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 20:11:10,976 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 20:11:10,977 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 21:18:51,638 - root - WARNING - some data download failed, check error ticks
+2020-11-08 21:19:12,387 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 21:19:12,387 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 22:10:11,276 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 22:10:11,276 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 22:15:36,726 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 22:15:36,726 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 22:19:08,553 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 22:19:08,553 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 22:19:08,852 - root - WARNING - funds download successed !
+2020-11-08 22:24:54,308 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-08 22:24:54,308 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-08 22:24:54,611 - root - WARNING - funds download successed !
+2020-11-09 10:50:42,377 - root - INFO - total 592 ticks
+2020-11-09 10:50:47,942 - numexpr.utils - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2020-11-09 10:50:47,942 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2020-11-09 10:50:48,947 - root - INFO - funds download successed !
+2020-11-09 10:50:52,328 - root - INFO - funds download successed !
+2020-11-09 10:50:55,094 - root - INFO - funds download successed !
+2020-11-09 10:50:58,494 - root - INFO - funds download successed !
+2020-11-09 10:51:10,435 - root - INFO - funds download successed !
+2020-11-09 10:51:13,280 - root - INFO - funds download successed !
+2020-11-09 10:51:17,127 - root - INFO - funds download successed !
+2020-11-09 10:51:19,384 - root - INFO - funds download successed !
+2020-11-09 10:51:22,206 - root - INFO - funds download successed !
+2020-11-09 10:51:26,759 - root - INFO - funds download successed !
+2020-11-09 10:51:31,499 - root - INFO - funds download successed !
+2020-11-09 10:51:33,868 - root - INFO - funds download successed !
+2020-11-09 10:51:38,449 - root - INFO - funds download successed !
+2020-11-09 10:51:40,720 - root - INFO - funds download successed !
+2020-11-09 10:51:44,215 - root - INFO - funds download successed !
+2020-11-09 10:51:48,963 - root - INFO - funds download successed !
+2020-11-09 10:51:52,967 - root - INFO - funds download successed !
+2020-11-09 10:52:06,186 - root - INFO - funds download successed !
+2020-11-09 10:52:08,627 - root - INFO - funds download successed !
+2020-11-09 10:52:10,890 - root - INFO - funds download successed !
+2020-11-09 10:52:16,666 - root - INFO - funds download successed !
+2020-11-09 10:52:23,421 - root - INFO - funds download successed !
+2020-11-09 10:52:29,368 - root - INFO - funds download successed !
+2020-11-09 10:52:32,557 - root - INFO - funds download successed !
+2020-11-09 10:52:35,342 - root - INFO - funds download successed !
+2020-11-09 10:52:37,769 - root - INFO - funds download successed !
+2020-11-09 10:52:40,051 - root - INFO - funds download successed !
+2020-11-09 10:52:42,120 - root - INFO - funds download successed !
+2020-11-09 10:52:45,335 - root - INFO - funds download successed !
+2020-11-09 10:52:48,668 - root - INFO - funds download successed !
+2020-11-09 10:52:51,941 - root - INFO - funds download successed !
+2020-11-09 10:52:54,459 - root - INFO - funds download successed !
+2020-11-09 10:52:56,439 - root - INFO - funds download successed !
+2020-11-09 10:52:58,373 - root - INFO - funds download successed !
+2020-11-09 10:53:02,630 - root - INFO - funds download successed !
+2020-11-09 10:53:09,998 - root - INFO - funds download successed !
+2020-11-09 10:53:14,179 - root - INFO - funds download successed !
+2020-11-09 10:53:16,647 - root - INFO - funds download successed !
+2020-11-09 10:53:20,050 - root - INFO - funds download successed !
+2020-11-09 10:53:23,032 - root - INFO - funds download successed !
+2020-11-09 10:53:24,995 - root - INFO - funds download successed !
+2020-11-09 10:53:27,445 - root - INFO - funds download successed !
+2020-11-09 10:53:31,528 - root - INFO - funds download successed !
+2020-11-09 10:53:37,052 - root - INFO - funds download successed !
+2020-11-09 10:53:40,868 - root - INFO - funds download successed !
+2020-11-09 10:53:42,824 - root - INFO - funds download successed !
+2020-11-09 11:15:05,899 - root - INFO - total 592 ticks
+2020-11-09 11:15:08,843 - root - INFO - 160105.SZ data download successed !
+2020-11-09 11:15:12,443 - root - INFO - 510050.SH data download successed !
+2020-11-09 11:15:17,775 - root - INFO - 163801.SZ data download successed !
+2020-11-09 11:15:22,437 - root - INFO - 160505.SZ data download successed !
+2020-11-09 11:15:31,125 - root - INFO - 162703.SZ data download successed !
+2020-11-09 11:15:34,668 - root - INFO - 162605.SZ data download successed !
+2020-11-09 11:15:38,680 - root - INFO - 161607.SZ data download successed !
+2020-11-09 11:15:43,959 - root - INFO - 160106.SZ data download successed !
+2020-11-09 11:15:48,158 - root - INFO - 161903.SZ data download successed !
+2020-11-09 11:15:55,000 - root - INFO - 160706.SZ data download successed !
+2020-11-09 11:15:59,331 - root - INFO - 163302.SZ data download successed !
+2020-11-09 11:16:13,753 - root - INFO - 163402.SZ data download successed !
+2020-11-09 11:16:16,611 - root - INFO - 161005.SZ data download successed !
+2020-11-09 11:16:22,707 - root - INFO - 161706.SZ data download successed !
+2020-11-09 11:16:25,675 - root - INFO - 163503.SZ data download successed !
+2020-11-09 11:16:30,161 - root - INFO - 162607.SZ data download successed !
+2020-11-09 11:16:38,499 - root - INFO - 159901.SZ data download successed !
+2020-11-09 11:16:43,270 - root - INFO - 510180.SH data download successed !
+2020-11-09 11:16:54,652 - root - INFO - 162207.SZ data download successed !
+2020-11-09 11:16:59,968 - root - INFO - 159902.SZ data download successed !
+2020-11-09 11:17:02,627 - root - INFO - 160607.SZ data download successed !
+2020-11-09 11:17:24,891 - root - INFO - 510880.SH data download successed !
+2020-11-09 11:17:30,067 - root - INFO - 160805.SZ data download successed !
+2020-11-09 11:17:33,625 - root - INFO - 160610.SZ data download successed !
+2020-11-09 11:17:37,504 - root - INFO - 166001.SZ data download successed !
+2020-11-09 11:17:41,602 - root - INFO - 162006.SZ data download successed !
+2020-11-09 11:17:44,024 - root - INFO - 160311.SZ data download successed !
+2020-11-09 11:17:46,700 - root - INFO - 160611.SZ data download successed !
+2020-11-09 11:17:50,670 - root - INFO - 161610.SZ data download successed !
+2020-11-09 11:17:55,786 - root - INFO - 160910.SZ data download successed !
+2020-11-09 11:18:01,715 - root - INFO - 160314.SZ data download successed !
+2020-11-09 11:18:07,080 - root - INFO - 160613.SZ data download successed !
+2020-11-09 11:18:09,357 - root - INFO - 161010.SZ data download successed !
+2020-11-09 11:18:12,225 - root - INFO - 160615.SZ data download successed !
+2020-11-09 11:18:14,952 - root - INFO - 161810.SZ data download successed !
+2020-11-09 11:18:19,310 - root - INFO - 510060.SH data download successed !
+2020-11-09 11:18:23,638 - root - INFO - 510010.SH data download successed !
+2020-11-09 11:18:29,538 - root - INFO - 160119.SZ data download successed !
+2020-11-09 11:18:37,072 - root - INFO - 1618111.SZ data download successed !
+2020-11-09 11:18:40,406 - root - INFO - 160211.SZ data download successed !
+2020-11-09 11:18:49,616 - root - INFO - 162307.SZ data download successed !
+2020-11-09 11:18:52,524 - root - INFO - 165309.SZ data download successed !
+2020-11-09 11:18:54,782 - root - INFO - 162711.SZ data download successed !
+2020-11-09 11:18:57,339 - root - INFO - 159903.SZ data download successed !
+2020-11-09 11:19:01,514 - root - INFO - 510020.SH data download successed !
+2020-11-09 11:19:05,886 - root - INFO - 160716.SZ data download successed !
+2020-11-09 11:19:10,159 - root - INFO - 166006.SZ data download successed !
+2020-11-09 11:19:12,976 - root - INFO - 160616.SZ data download successed !
+2020-11-09 11:19:15,829 - root - INFO - 163001.SZ data download successed !
+2020-11-09 11:19:32,704 - root - INFO - 510130.SH data download successed !
+2020-11-09 11:19:34,190 - root - INFO - 1612111.SZ data download successed !
+2020-11-09 11:19:37,630 - root - INFO - 510030.SH data download successed !
+2020-11-09 11:19:40,362 - root - INFO - 510090.SH data download successed !
+2020-11-09 11:19:42,792 - root - INFO - 161210.SZ data download successed !
+2020-11-09 11:19:45,268 - root - INFO - 1660071.SZ data download successed !
+2020-11-09 11:19:47,462 - root - INFO - 161713.SZ data download successed !
+2020-11-09 11:19:49,323 - root - INFO - 161813.SZ data download successed !
+2020-11-09 11:19:51,892 - root - INFO - 165508.SZ data download successed !
+2020-11-09 11:19:54,381 - root - INFO - 160807.SZ data download successed !
+2020-11-09 11:19:58,209 - root - INFO - 510070.SH data download successed !
+2020-11-09 11:20:00,977 - root - INFO - 1642051.SZ data download successed !
+2020-11-09 11:20:04,972 - root - INFO - 160215.SZ data download successed !
+2020-11-09 11:20:08,762 - root - INFO - 510160.SH data download successed !
+2020-11-09 11:20:11,910 - root - INFO - 164105.SZ data download successed !
+2020-11-09 11:20:19,852 - root - INFO - 510110.SH data download successed !
+2020-11-09 11:20:23,090 - root - INFO - 165509.SZ data download successed !
+2020-11-09 11:20:25,274 - root - INFO - 160717.SZ data download successed !
+2020-11-09 11:20:28,391 - root - INFO - 163407.SZ data download successed !
+2020-11-09 11:20:31,671 - root - INFO - 159905.SZ data download successed !
+2020-11-09 11:20:33,851 - root - INFO - 161115.SZ data download successed !
+2020-11-09 11:20:36,388 - root - INFO - 510190.SH data download successed !
+2020-11-09 11:20:39,224 - root - INFO - 510170.SH data download successed !
+2020-11-09 11:20:45,149 - root - INFO - 166008.SZ data download successed !
+2020-11-09 11:20:47,716 - root - INFO - 160617.SZ data download successed !
+2020-11-09 11:20:51,868 - root - INFO - 161815.SZ data download successed !
+2020-11-09 11:20:55,818 - root - INFO - 510150.SH data download successed !
+2020-11-09 11:20:58,275 - root - INFO - 161213.SZ data download successed !
+2020-11-09 11:21:00,414 - root - INFO - 165510.SZ data download successed !
+2020-11-09 11:21:05,109 - root - INFO - 159906.SZ data download successed !
+2020-11-09 11:21:08,853 - root - INFO - 510220.SH data download successed !
+2020-11-09 11:21:10,785 - root - INFO - 164902.SZ data download successed !
+2020-11-09 11:21:13,087 - root - INFO - 510210.SH data download successed !
+2020-11-09 11:21:17,634 - root - INFO - 166009.SZ data download successed !
+2020-11-09 11:21:20,219 - root - INFO - 164808.SZ data download successed !
+2020-11-09 11:21:22,100 - root - INFO - 161714.SZ data download successed !
+2020-11-09 11:21:24,355 - root - INFO - 161907.SZ data download successed !
+2020-11-09 11:21:27,582 - root - INFO - 161216.SZ data download successed !
+2020-11-09 11:21:31,485 - root - INFO - 510230.SH data download successed !
+2020-11-09 11:21:34,456 - root - INFO - 510260.SH data download successed !
+2020-11-09 11:21:39,125 - root - INFO - 160512.SZ data download successed !
+2020-11-09 11:21:41,315 - root - INFO - 510120.SH data download successed !
+2020-11-09 11:21:48,700 - root - INFO - 163409.SZ data download successed !
+2020-11-09 11:21:50,718 - root - INFO - 161116.SZ data download successed !
+2020-11-09 11:21:52,526 - root - INFO - 1601231.SZ data download successed !
+2020-11-09 11:21:56,832 - root - INFO - 159907.SZ data download successed !
+2020-11-09 11:21:59,551 - root - INFO - 159908.SZ data download successed !
+2020-11-09 11:22:03,928 - root - INFO - 165311.SZ data download successed !
+2020-11-09 11:22:06,365 - root - INFO - 510270.SH data download successed !
+2020-11-09 11:22:11,617 - root - INFO - 163110.SZ data download successed !
+2020-11-09 11:22:13,834 - root - INFO - 159909.SZ data download successed !
+2020-11-09 11:22:29,748 - root - INFO - 161217.SZ data download successed !
+2020-11-09 11:22:33,048 - root - INFO - 159910.SZ data download successed !
+2020-11-09 11:22:34,997 - root - INFO - 165512.SZ data download successed !
+2020-11-09 11:22:41,404 - root - INFO - 160719.SZ data download successed !
+2020-11-09 11:22:43,281 - root - INFO - 510280.SH data download successed !
+2020-11-09 11:22:45,837 - root - INFO - 162712.SZ data download successed !
+2020-11-09 11:22:49,414 - root - INFO - 164701.SZ data download successed !
+2020-11-09 11:22:51,738 - root - INFO - 160415.SZ data download successed !
+2020-11-09 11:22:53,886 - root - INFO - 159911.SZ data download successed !
+2020-11-09 11:22:58,748 - root - INFO - 159916.SZ data download successed !
+2020-11-09 11:23:12,729 - root - INFO - 510290.SH data download successed !
+2020-11-09 11:23:31,965 - root - INFO - 159912.SZ data download successed !
+2020-11-09 11:24:04,206 - root - INFO - 159915.SZ data download successed !
+2020-11-09 11:24:06,053 - root - INFO - 164606.SZ data download successed !
+2020-11-09 11:24:09,997 - root - INFO - 159913.SZ data download successed !
+2020-11-09 11:24:12,170 - root - INFO - 160125.SZ data download successed !
+2020-11-09 11:24:16,398 - root - INFO - 163208.SZ data download successed !
+2020-11-09 11:24:18,316 - root - INFO - 162411.SZ data download successed !
+2020-11-09 11:24:20,797 - root - INFO - 161017.SZ data download successed !
+2020-11-09 11:24:23,348 - root - INFO - 161219.SZ data download successed !
+2020-11-09 11:24:25,809 - root - INFO - 165513.SZ data download successed !
+2020-11-09 11:24:27,685 - root - INFO - 161614.SZ data download successed !
+2020-11-09 11:24:29,574 - root - INFO - 163819.SZ data download successed !
+2020-11-09 11:24:31,060 - root - INFO - 159917.SZ data download successed !
+2020-11-09 11:24:38,652 - root - INFO - 159918.SZ data download successed !
+2020-11-09 11:24:40,489 - root - INFO - 160416.SZ data download successed !
+2020-11-09 11:24:45,607 - root - INFO - 163412.SZ data download successed !
+2020-11-09 11:24:47,833 - root - INFO - 510410.SH data download successed !
+2020-11-09 11:24:51,613 - root - INFO - 160216.SZ data download successed !
+2020-11-09 11:24:55,547 - root - INFO - 510300.SH data download successed !
+2020-11-09 11:24:58,099 - root - INFO - 161019.SZ data download successed !
+2020-11-09 11:25:04,044 - root - INFO - 159919.SZ data download successed !
+2020-11-09 11:25:07,380 - root - INFO - 165516.SZ data download successed !
+2020-11-09 11:25:09,897 - root - INFO - 163821.SZ data download successed !
+2020-11-09 11:25:12,799 - root - INFO - 160128.SZ data download successed !
+2020-11-09 11:25:16,259 - root - INFO - 510420.SH data download successed !
+2020-11-09 11:25:20,712 - root - INFO - 161117.SZ data download successed !
+2020-11-09 11:25:22,861 - root - INFO - 164810.SZ data download successed !
+2020-11-09 11:25:35,959 - root - INFO - 164702.SZ data download successed !
+2020-11-09 11:25:38,151 - root - INFO - 160916.SZ data download successed !
+2020-11-09 11:25:42,493 - root - INFO - 510900.SH data download successed !
+2020-11-09 11:25:48,062 - root - INFO - 161820.SZ data download successed !
+2020-11-09 11:25:51,233 - root - INFO - 159920.SZ data download successed !
+2020-11-09 11:25:54,921 - root - INFO - 510430.SH data download successed !
+2020-11-09 11:25:56,999 - root - INFO - 510440.SH data download successed !
+2020-11-09 11:25:59,568 - root - INFO - 160621.SZ data download successed !
+2020-11-09 11:26:02,158 - root - INFO - 161119.SZ data download successed !
+2020-11-09 11:26:04,231 - root - INFO - 166902.SZ data download successed !
+2020-11-09 11:26:06,157 - root - INFO - 159921.SZ data download successed !
+2020-11-09 11:26:07,806 - root - INFO - 161821.SZ data download successed !
+2020-11-09 11:26:10,118 - root - INFO - 163415.SZ data download successed !
+2020-11-09 11:26:13,186 - root - INFO - 510330.SH data download successed !
+2020-11-09 11:26:17,631 - root - INFO - 511990.SH data download successed !
+2020-11-09 11:26:20,238 - root - INFO - 160720.SZ data download successed !
+2020-11-09 11:26:24,207 - root - INFO - 159922.SZ data download successed !
+2020-11-09 11:26:26,825 - root - INFO - 510500.SH data download successed !
+2020-11-09 11:26:28,927 - root - INFO - 159923.SZ data download successed !
+2020-11-09 11:26:33,246 - root - INFO - 159925.SZ data download successed !
+2020-11-09 11:28:57,245 - root - INFO - 160212.SZ data download successed !
+2020-11-09 11:28:59,607 - root - INFO - 511010.SH data download successed !
+2020-11-09 11:29:02,413 - root - INFO - 510310.SH data download successed !
+2020-11-09 11:29:04,286 - root - INFO - 165313.SZ data download successed !
+2020-11-09 11:29:08,209 - root - INFO - 163210.SZ data download successed !
+2020-11-09 11:29:09,685 - root - INFO - 510610.SH data download successed !
+2020-11-09 11:29:11,960 - root - INFO - 510620.SH data download successed !
+2020-11-09 11:29:16,843 - root - INFO - 510660.SH data download successed !
+2020-11-09 11:29:22,169 - root - INFO - 510650.SH data download successed !
+2020-11-09 11:29:26,315 - root - INFO - 510630.SH data download successed !
+2020-11-09 11:29:30,013 - root - INFO - 163112.SZ data download successed !
+2020-11-09 11:29:37,435 - root - INFO - 159001.SZ data download successed !
+2020-11-09 11:29:41,104 - root - INFO - 511880.SH data download successed !
+2020-11-09 11:29:48,129 - root - INFO - 510510.SH data download successed !
+2020-11-09 11:30:03,357 - root - INFO - 510700.SH data download successed !
+2020-11-09 11:30:05,885 - root - INFO - 160130.SZ data download successed !
+2020-11-09 11:30:23,026 - root - INFO - 513100.SH data download successed !
+2020-11-09 11:30:25,512 - root - INFO - 167901.SZ data download successed !
+2020-11-09 11:30:28,236 - root - INFO - 159924.SZ data download successed !
+2020-11-09 11:30:31,307 - root - INFO - 161911.SZ data download successed !
+2020-11-09 11:30:34,026 - root - INFO - 162715.SZ data download successed !
+2020-11-09 11:30:36,196 - root - INFO - 159926.SZ data download successed !
+2020-11-09 11:30:42,043 - root - INFO - 159003.SZ data download successed !
+2020-11-09 11:30:43,526 - root - INFO - 164815.SZ data download successed !
+2020-11-09 11:30:46,538 - root - INFO - 510450.SH data download successed !
+2020-11-09 11:30:49,614 - root - INFO - 511210.SH data download successed !
+2020-11-09 11:30:53,893 - root - INFO - 518800.SH data download successed !
+2020-11-09 11:30:56,280 - root - INFO - 518880.SH data download successed !
+2020-11-09 11:30:58,060 - root - INFO - 159927.SZ data download successed !
+2020-11-09 11:31:01,579 - root - INFO - 163824.SZ data download successed !
+2020-11-09 11:31:05,732 - root - INFO - 166904.SZ data download successed !
+2020-11-09 11:31:08,178 - root - INFO - 160515.SZ data download successed !
+2020-11-09 11:31:20,162 - root - INFO - 159930.SZ data download successed !
+2020-11-09 11:31:25,431 - root - INFO - 159928.SZ data download successed !
+2020-11-09 11:31:28,108 - root - INFO - 159929.SZ data download successed !
+2020-11-09 11:31:31,140 - root - INFO - 159931.SZ data download successed !
+2020-11-09 11:31:32,973 - root - INFO - 159932.SZ data download successed !
+2020-11-09 11:31:36,193 - root - INFO - 159933.SZ data download successed !
+2020-11-09 11:31:38,327 - root - INFO - 512010.SH data download successed !
+2020-11-09 11:31:41,036 - root - INFO - 150156.SZ data download successed !
+2020-11-09 11:31:42,611 - root - INFO - 160915.SZ data download successed !
+2020-11-09 11:38:10,211 - root - INFO - total 592 ticks
+2020-11-09 11:38:13,111 - root - INFO - 160105.SZ data download successed !
+2020-11-09 11:38:17,543 - root - INFO - 510050.SH data download successed !
+2020-11-09 11:38:22,115 - root - INFO - 163801.SZ data download successed !
+2020-11-09 11:38:26,631 - root - INFO - 160505.SZ data download successed !
+2020-11-09 11:38:32,160 - root - INFO - 162703.SZ data download successed !
+2020-11-09 11:38:34,990 - root - INFO - 162605.SZ data download successed !
+2020-11-09 11:38:39,480 - root - INFO - 161607.SZ data download successed !
+2020-11-09 11:38:42,414 - root - INFO - 160106.SZ data download successed !
+2020-11-09 11:38:46,279 - root - INFO - 161903.SZ data download successed !
+2020-11-09 11:38:49,383 - root - INFO - 160706.SZ data download successed !
+2020-11-09 11:38:54,699 - root - INFO - 163302.SZ data download successed !
+2020-11-09 11:38:58,573 - root - INFO - 163402.SZ data download successed !
+2020-11-09 11:39:04,593 - root - INFO - 161005.SZ data download successed !
+2020-11-09 11:39:07,833 - root - INFO - 161706.SZ data download successed !
+2020-11-09 11:39:10,403 - root - INFO - 163503.SZ data download successed !
+2020-11-09 11:39:13,645 - root - INFO - 162607.SZ data download successed !
+2020-11-09 11:39:18,115 - root - INFO - 159901.SZ data download successed !
+2020-11-09 11:39:21,345 - root - INFO - 510180.SH data download successed !
+2020-11-09 11:39:24,942 - root - INFO - 162207.SZ data download successed !
+2020-11-09 11:39:27,654 - root - INFO - 159902.SZ data download successed !
+2020-11-09 11:39:30,479 - root - INFO - 160607.SZ data download successed !
+2020-11-09 11:39:35,608 - root - INFO - 510880.SH data download successed !
+2020-11-09 11:39:40,370 - root - INFO - 160805.SZ data download successed !
+2020-11-09 11:39:44,493 - root - INFO - 160610.SZ data download successed !
+2020-11-09 11:39:47,665 - root - INFO - 166001.SZ data download successed !
+2020-11-09 11:39:51,414 - root - INFO - 162006.SZ data download successed !
+2020-11-09 11:39:55,570 - root - INFO - 160311.SZ data download successed !
+2020-11-09 11:39:58,764 - root - INFO - 160611.SZ data download successed !
+2020-11-09 11:40:01,285 - root - INFO - 161610.SZ data download successed !
+2020-11-09 11:40:07,968 - root - INFO - 160910.SZ data download successed !
+2020-11-09 11:40:10,599 - root - INFO - 160314.SZ data download successed !
+2020-11-09 11:40:14,345 - root - INFO - 160613.SZ data download successed !
+2020-11-09 11:40:18,696 - root - INFO - 161010.SZ data download successed !
+2020-11-09 11:40:22,139 - root - INFO - 160615.SZ data download successed !
+2020-11-09 11:40:25,013 - root - INFO - 161810.SZ data download successed !
+2020-11-09 11:40:27,908 - root - INFO - 510060.SH data download successed !
+2020-11-09 11:40:30,176 - root - INFO - 510010.SH data download successed !
+2020-11-09 11:40:32,368 - root - INFO - 160119.SZ data download successed !
+2020-11-09 11:40:33,883 - root - INFO - 1618111.SZ data download successed !
+2020-11-09 11:40:36,863 - root - INFO - 160211.SZ data download successed !
+2020-11-09 11:40:39,108 - root - INFO - 162307.SZ data download successed !
+2020-11-09 11:40:41,349 - root - INFO - 165309.SZ data download successed !
+2020-11-09 11:40:43,736 - root - INFO - 162711.SZ data download successed !
+2020-11-09 11:40:45,960 - root - INFO - 159903.SZ data download successed !
+2020-11-09 11:40:50,319 - root - INFO - 510020.SH data download successed !
+2020-11-09 11:40:53,927 - root - INFO - 160716.SZ data download successed !
+2020-11-09 11:40:57,580 - root - INFO - 166006.SZ data download successed !
+2020-11-09 11:41:00,805 - root - INFO - 160616.SZ data download successed !
+2020-11-09 11:41:03,255 - root - INFO - 163001.SZ data download successed !
+2020-11-09 11:41:07,301 - root - INFO - 510130.SH data download successed !
+2020-11-09 11:41:08,839 - root - INFO - 1612111.SZ data download successed !
+2020-11-09 11:41:11,560 - root - INFO - 510030.SH data download successed !
+2020-11-09 11:41:13,794 - root - INFO - 510090.SH data download successed !
+2020-11-09 11:41:16,217 - root - INFO - 161210.SZ data download successed !
+2020-11-09 11:41:18,177 - root - INFO - 1660071.SZ data download successed !
+2020-11-09 11:41:20,129 - root - INFO - 161713.SZ data download successed !
+2020-11-09 11:41:23,581 - root - INFO - 161813.SZ data download successed !
+2020-11-09 11:41:25,790 - root - INFO - 165508.SZ data download successed !
+2020-11-09 11:41:30,189 - root - INFO - 160807.SZ data download successed !
+2020-11-09 11:41:32,382 - root - INFO - 510070.SH data download successed !
+2020-11-09 11:41:34,443 - root - INFO - 1642051.SZ data download successed !
+2020-11-09 11:41:38,528 - root - INFO - 160215.SZ data download successed !
+2020-11-09 11:41:42,829 - root - INFO - 510160.SH data download successed !
+2020-11-09 11:41:44,774 - root - INFO - 164105.SZ data download successed !
+2020-11-09 11:41:46,957 - root - INFO - 510110.SH data download successed !
+2020-11-09 11:41:50,084 - root - INFO - 165509.SZ data download successed !
+2020-11-09 11:41:52,884 - root - INFO - 160717.SZ data download successed !
+2020-11-09 11:41:55,472 - root - INFO - 163407.SZ data download successed !
+2020-11-09 11:41:59,289 - root - INFO - 159905.SZ data download successed !
+2020-11-09 11:42:01,764 - root - INFO - 161115.SZ data download successed !
+2020-11-09 11:42:03,956 - root - INFO - 510190.SH data download successed !
+2020-11-09 11:42:06,182 - root - INFO - 510170.SH data download successed !
+2020-11-09 11:42:08,357 - root - INFO - 166008.SZ data download successed !
+2020-11-09 11:42:10,278 - root - INFO - 160617.SZ data download successed !
+2020-11-09 11:42:12,756 - root - INFO - 161815.SZ data download successed !
+2020-11-09 11:42:18,633 - root - INFO - 510150.SH data download successed !
+2020-11-09 11:42:21,180 - root - INFO - 161213.SZ data download successed !
+2020-11-09 11:42:24,815 - root - INFO - 165510.SZ data download successed !
+2020-11-09 11:42:27,255 - root - INFO - 159906.SZ data download successed !
+2020-11-09 11:42:30,696 - root - INFO - 510220.SH data download successed !
+2020-11-09 11:42:32,870 - root - INFO - 164902.SZ data download successed !
+2020-11-09 11:42:35,034 - root - INFO - 510210.SH data download successed !
+2020-11-09 11:42:38,572 - root - INFO - 166009.SZ data download successed !
+2020-11-09 11:42:40,989 - root - INFO - 164808.SZ data download successed !
+2020-11-09 11:42:42,906 - root - INFO - 161714.SZ data download successed !
+2020-11-09 11:42:46,065 - root - INFO - 161907.SZ data download successed !
+2020-11-09 11:42:48,509 - root - INFO - 161216.SZ data download successed !
+2020-11-09 11:42:51,252 - root - INFO - 510230.SH data download successed !
+2020-11-09 11:42:53,461 - root - INFO - 510260.SH data download successed !
+2020-11-09 11:42:55,634 - root - INFO - 160512.SZ data download successed !
+2020-11-09 11:42:59,219 - root - INFO - 510120.SH data download successed !
+2020-11-09 11:43:02,202 - root - INFO - 163409.SZ data download successed !
+2020-11-09 11:43:04,134 - root - INFO - 161116.SZ data download successed !
+2020-11-09 11:43:05,943 - root - INFO - 1601231.SZ data download successed !
+2020-11-09 11:43:09,817 - root - INFO - 159907.SZ data download successed !
+2020-11-09 11:43:14,603 - root - INFO - 159908.SZ data download successed !
+2020-11-09 11:43:19,073 - root - INFO - 165311.SZ data download successed !
+2020-11-09 11:43:20,953 - root - INFO - 510270.SH data download successed !
+2020-11-09 11:43:23,165 - root - INFO - 163110.SZ data download successed !
+2020-11-09 11:43:25,307 - root - INFO - 159909.SZ data download successed !
+2020-11-09 11:43:29,084 - root - INFO - 161217.SZ data download successed !
+2020-11-09 11:43:33,093 - root - INFO - 159910.SZ data download successed !
+2020-11-09 11:43:35,086 - root - INFO - 165512.SZ data download successed !
+2020-11-09 11:43:36,985 - root - INFO - 160719.SZ data download successed !
+2020-11-09 11:43:38,881 - root - INFO - 510280.SH data download successed !
+2020-11-09 11:43:41,298 - root - INFO - 162712.SZ data download successed !
+2020-11-09 11:43:44,403 - root - INFO - 164701.SZ data download successed !
+2020-11-09 11:43:53,345 - root - INFO - 160415.SZ data download successed !
+2020-11-09 11:43:55,512 - root - INFO - 159911.SZ data download successed !
+2020-11-09 11:43:59,620 - root - INFO - 159916.SZ data download successed !
+2020-11-09 11:44:03,410 - root - INFO - 510290.SH data download successed !
+2020-11-09 11:44:06,106 - root - INFO - 159912.SZ data download successed !
+2020-11-09 11:44:08,310 - root - INFO - 159915.SZ data download successed !
+2020-11-09 11:44:10,202 - root - INFO - 164606.SZ data download successed !
+2020-11-09 11:44:14,091 - root - INFO - 159913.SZ data download successed !
+2020-11-09 11:44:16,312 - root - INFO - 160125.SZ data download successed !
+2020-11-09 11:44:18,183 - root - INFO - 163208.SZ data download successed !
+2020-11-09 11:44:22,965 - root - INFO - 162411.SZ data download successed !
+2020-11-09 11:44:25,019 - root - INFO - 161017.SZ data download successed !
+2020-11-09 11:44:26,929 - root - INFO - 161219.SZ data download successed !
+2020-11-09 11:44:28,799 - root - INFO - 165513.SZ data download successed !
+2020-11-09 11:44:30,876 - root - INFO - 161614.SZ data download successed !
+2020-11-09 11:44:34,598 - root - INFO - 163819.SZ data download successed !
+2020-11-09 11:44:36,116 - root - INFO - 159917.SZ data download successed !
+2020-11-09 11:44:40,449 - root - INFO - 159918.SZ data download successed !
+2020-11-09 11:44:48,087 - root - INFO - 160416.SZ data download successed !
+2020-11-09 11:44:50,111 - root - INFO - 163412.SZ data download successed !
+2020-11-09 11:44:52,849 - root - INFO - 510410.SH data download successed !
+2020-11-09 11:44:57,699 - root - INFO - 160216.SZ data download successed !
+2020-11-09 11:45:01,660 - root - INFO - 510300.SH data download successed !
+2020-11-09 11:45:04,632 - root - INFO - 161019.SZ data download successed !
+2020-11-09 11:45:07,638 - root - INFO - 159919.SZ data download successed !
+2020-11-09 11:45:10,046 - root - INFO - 165516.SZ data download successed !
+2020-11-09 11:45:11,921 - root - INFO - 163821.SZ data download successed !
+2020-11-09 11:45:15,074 - root - INFO - 160128.SZ data download successed !
+2020-11-09 11:45:16,930 - root - INFO - 510420.SH data download successed !
+2020-11-09 11:45:20,050 - root - INFO - 161117.SZ data download successed !
+2020-11-09 11:45:23,464 - root - INFO - 164810.SZ data download successed !
+2020-11-09 11:45:25,355 - root - INFO - 164702.SZ data download successed !
+2020-11-09 11:45:27,248 - root - INFO - 160916.SZ data download successed !
+2020-11-09 11:45:29,132 - root - INFO - 510900.SH data download successed !
+2020-11-09 11:45:30,986 - root - INFO - 161820.SZ data download successed !
+2020-11-09 11:45:33,159 - root - INFO - 159920.SZ data download successed !
+2020-11-09 11:45:35,018 - root - INFO - 510430.SH data download successed !
+2020-11-09 11:45:38,147 - root - INFO - 510440.SH data download successed !
+2020-11-09 11:45:40,031 - root - INFO - 160621.SZ data download successed !
+2020-11-09 11:45:41,923 - root - INFO - 161119.SZ data download successed !
+2020-11-09 11:45:43,783 - root - INFO - 166902.SZ data download successed !
+2020-11-09 11:45:45,301 - root - INFO - 159921.SZ data download successed !
+2020-11-09 11:45:47,356 - root - INFO - 161821.SZ data download successed !
+2020-11-09 11:46:05,460 - root - INFO - 163415.SZ data download successed !
+2020-11-09 11:46:08,496 - root - INFO - 510330.SH data download successed !
+2020-11-09 11:46:10,646 - root - INFO - 511990.SH data download successed !
+2020-11-09 11:46:12,513 - root - INFO - 160720.SZ data download successed !
+2020-11-09 11:46:14,418 - root - INFO - 159922.SZ data download successed !
+2020-11-09 11:46:19,549 - root - INFO - 510500.SH data download successed !
+2020-11-09 11:46:21,495 - root - INFO - 159923.SZ data download successed !
+2020-11-09 11:46:23,381 - root - INFO - 159925.SZ data download successed !
+2020-11-09 11:46:26,607 - root - INFO - 160212.SZ data download successed !
+2020-11-09 11:46:28,940 - root - INFO - 511010.SH data download successed !
+2020-11-09 11:46:30,809 - root - INFO - 510310.SH data download successed !
+2020-11-09 11:46:33,956 - root - INFO - 165313.SZ data download successed !
+2020-11-09 11:46:38,044 - root - INFO - 163210.SZ data download successed !
+2020-11-09 11:46:41,173 - root - INFO - 510610.SH data download successed !
+2020-11-09 11:46:43,205 - root - INFO - 510620.SH data download successed !
+2020-11-09 11:46:47,267 - root - INFO - 510660.SH data download successed !
+2020-11-09 11:46:49,163 - root - INFO - 510650.SH data download successed !
+2020-11-09 11:46:51,054 - root - INFO - 510630.SH data download successed !
+2020-11-09 11:46:52,586 - root - INFO - 163112.SZ data download successed !
+2020-11-09 11:46:54,774 - root - INFO - 159001.SZ data download successed !
+2020-11-09 11:46:56,961 - root - INFO - 511880.SH data download successed !
+2020-11-09 11:46:59,922 - root - INFO - 510510.SH data download successed !
+2020-11-09 11:47:02,514 - root - INFO - 510700.SH data download successed !
+2020-11-09 11:47:04,383 - root - INFO - 160130.SZ data download successed !
+2020-11-09 11:47:06,789 - root - INFO - 513100.SH data download successed !
+2020-11-09 11:47:08,620 - root - INFO - 167901.SZ data download successed !
+2020-11-09 11:47:10,166 - root - INFO - 159924.SZ data download successed !
+2020-11-09 11:47:12,062 - root - INFO - 161911.SZ data download successed !
+2020-11-09 11:47:15,282 - root - INFO - 162715.SZ data download successed !
+2020-11-09 11:47:17,325 - root - INFO - 159926.SZ data download successed !
+2020-11-09 11:47:25,280 - root - INFO - 159003.SZ data download successed !
+2020-11-09 11:47:27,422 - root - INFO - 164815.SZ data download successed !
+2020-11-09 11:47:29,460 - root - INFO - 510450.SH data download successed !
+2020-11-09 11:47:32,547 - root - INFO - 511210.SH data download successed !
+2020-11-09 11:47:35,773 - root - INFO - 518800.SH data download successed !
+2020-11-09 11:47:37,640 - root - INFO - 518880.SH data download successed !
+2020-11-09 11:47:39,443 - root - INFO - 159927.SZ data download successed !
+2020-11-09 11:47:41,293 - root - INFO - 163824.SZ data download successed !
+2020-11-09 11:47:43,718 - root - INFO - 166904.SZ data download successed !
+2020-11-09 11:47:45,580 - root - INFO - 160515.SZ data download successed !
+2020-11-09 11:47:48,738 - root - INFO - 159930.SZ data download successed !
+2020-11-09 11:47:52,171 - root - INFO - 159928.SZ data download successed !
+2020-11-09 11:47:54,048 - root - INFO - 159929.SZ data download successed !
+2020-11-09 11:47:58,299 - root - INFO - 159931.SZ data download successed !
+2020-11-09 11:48:00,153 - root - INFO - 159932.SZ data download successed !
+2020-11-09 11:48:02,054 - root - INFO - 159933.SZ data download successed !
+2020-11-09 11:48:04,798 - root - INFO - 512010.SH data download successed !
+2020-11-09 11:48:06,317 - root - INFO - 150156.SZ data download successed !
+2020-11-09 11:48:08,429 - root - INFO - 160915.SZ data download successed !
+2020-11-09 11:48:11,339 - root - INFO - 510680.SH data download successed !
+2020-11-09 11:48:12,922 - root - INFO - 160131.SZ data download successed !
+2020-11-09 11:48:17,827 - root - INFO - 159934.SZ data download successed !
+2020-11-09 11:48:19,287 - root - INFO - 512110.SH data download successed !
+2020-11-09 11:48:22,372 - root - INFO - 512120.SH data download successed !
+2020-11-09 11:48:25,478 - root - INFO - 513500.SH data download successed !
+2020-11-09 11:48:27,846 - root - INFO - 159935.SZ data download successed !
+2020-11-09 11:48:32,116 - root - INFO - 160220.SZ data download successed !
+2020-11-09 11:48:33,903 - root - INFO - 510520.SH data download successed !
+2020-11-09 11:48:36,266 - root - INFO - 164705.SZ data download successed !
+2020-11-09 11:48:37,709 - root - INFO - 000064.OF data download successed !
+2020-11-09 11:48:39,582 - root - INFO - 000127.OF data download successed !
+2020-11-09 11:48:41,033 - root - INFO - 000200.OF data download successed !
+2020-11-09 11:48:42,573 - root - INFO - 000195.OF data download successed !
+2020-11-09 11:48:45,331 - root - INFO - 000060.OF data download successed !
+2020-11-09 11:48:48,098 - root - INFO - 000196.OF data download successed !
+2020-11-09 11:48:51,891 - root - INFO - 000175.OF data download successed !
+2020-11-09 11:48:53,713 - root - INFO - 000197.OF data download successed !
+2020-11-09 11:48:56,652 - root - INFO - 000174.OF data download successed !
+2020-11-09 11:49:00,332 - root - INFO - 000124.OF data download successed !
+2020-11-09 11:49:04,610 - root - INFO - 400020.OF data download successed !
+2020-11-09 11:49:06,484 - root - INFO - 000264.OF data download successed !
+2020-11-09 11:49:10,099 - root - INFO - 000212.OF data download successed !
+2020-11-09 11:49:12,841 - root - INFO - 000213.OF data download successed !
+2020-11-09 11:49:14,648 - root - INFO - 400022.OF data download successed !
+2020-11-09 11:49:16,565 - root - INFO - 519660.OF data download successed !
+2020-11-09 11:49:20,665 - root - INFO - 519661.OF data download successed !
+2020-11-09 11:49:27,359 - root - INFO - 000209.OF data download successed !
+2020-11-09 11:49:29,426 - root - INFO - 000125.OF data download successed !
+2020-11-09 11:49:32,498 - root - INFO - 000245.OF data download successed !
+2020-11-09 11:49:34,320 - root - INFO - 000244.OF data download successed !
+2020-11-09 11:49:38,453 - root - INFO - 000086.OF data download successed !
+2020-11-09 11:49:41,558 - root - INFO - 000153.OF data download successed !
+2020-11-09 11:49:44,484 - root - INFO - 000152.OF data download successed !
+2020-11-09 11:49:46,891 - root - INFO - 000203.OF data download successed !
+2020-11-09 11:49:48,813 - root - INFO - 000204.OF data download successed !
+2020-11-09 11:49:51,884 - root - INFO - 167502.OF data download successed !
+2020-11-09 11:49:54,585 - root - INFO - 1675011.OF data download successed !
+2020-11-09 11:49:57,496 - root - INFO - 000207.OF data download successed !
+2020-11-09 11:49:59,008 - root - INFO - 000246.OF data download successed !
+2020-11-09 11:50:02,796 - root - INFO - 000208.OF data download successed !
+2020-11-09 11:50:05,584 - root - INFO - 1676011.OF data download successed !
+2020-11-09 11:50:07,999 - root - INFO - 000219.OF data download successed !
+2020-11-09 11:50:09,592 - root - INFO - 000111.OF data download successed !
+2020-11-09 11:50:11,488 - root - INFO - 000182.OF data download successed !
+2020-11-09 11:50:12,994 - root - INFO - 000112.OF data download successed !
+2020-11-09 11:50:14,851 - root - INFO - 000183.OF data download successed !
+2020-11-09 11:50:16,677 - root - INFO - 000181.OF data download successed !
+2020-11-09 11:50:18,182 - root - INFO - 0001661.OF data download successed !
+2020-11-09 11:50:20,713 - root - INFO - 000241.OF data download successed !
+2020-11-09 11:50:23,483 - root - INFO - 000138.OF data download successed !
+2020-11-09 11:50:26,512 - root - INFO - 000137.OF data download successed !
+2020-11-09 11:50:29,221 - root - INFO - 161718.OF data download successed !
+2020-11-09 11:50:31,655 - root - INFO - 040047.OF data download successed !
+2020-11-09 11:50:33,519 - root - INFO - 040048.OF data download successed !
+2020-11-09 11:50:37,518 - root - INFO - 040046.OF data download successed !
+2020-11-09 11:50:39,357 - root - INFO - 000172.OF data download successed !
+2020-11-09 11:50:41,431 - root - INFO - 000193.OF data download successed !
+2020-11-09 11:50:43,946 - root - INFO - 000220.OF data download successed !
+2020-11-09 11:50:47,553 - root - INFO - 000194.OF data download successed !
+2020-11-09 11:50:49,702 - root - INFO - 000242.OF data download successed !
+2020-11-09 11:50:51,534 - root - INFO - 000179.OF data download successed !
+2020-11-09 11:50:54,251 - root - INFO - 000226.OF data download successed !
+2020-11-09 11:50:56,074 - root - INFO - 519662.OF data download successed !
+2020-11-09 11:50:59,475 - root - INFO - 519663.OF data download successed !
+2020-11-09 11:51:01,485 - root - INFO - 000225.OF data download successed !
+2020-11-09 11:51:04,639 - root - INFO - 000180.OF data download successed !
+2020-11-09 11:51:06,074 - root - INFO - 0001991.OF data download successed !
+2020-11-09 11:51:07,872 - root - INFO - 166905.OF data download successed !
+2020-11-09 11:51:11,568 - root - INFO - 519731.OF data download successed !
+2020-11-09 11:51:13,570 - root - INFO - 519730.OF data download successed !
+2020-11-09 11:51:15,427 - root - INFO - 000121.OF data download successed !
+2020-11-09 11:51:18,869 - root - INFO - 000236.OF data download successed !
+2020-11-09 11:51:22,754 - root - INFO - 519507.OF data download successed !
+2020-11-09 11:51:24,605 - root - INFO - 519501.OF data download successed !
+2020-11-09 11:51:26,419 - root - INFO - 161826.OF data download successed !
+2020-11-09 11:51:32,450 - root - INFO - 165519.OF data download successed !
+2020-11-09 11:51:34,265 - root - INFO - 000104.OF data download successed !
+2020-11-09 11:51:40,720 - root - INFO - 166020.OF data download successed !
+2020-11-09 11:51:42,844 - root - INFO - 000059.OF data download successed !
+2020-11-09 11:51:44,307 - root - INFO - 000268.OF data download successed !
+2020-11-09 11:51:48,488 - root - INFO - 000259.OF data download successed !
+2020-11-09 11:51:49,948 - root - INFO - 000235.OF data download successed !
+2020-11-09 11:51:52,659 - root - INFO - 000238.OF data download successed !
+2020-11-09 11:51:54,637 - root - INFO - 000237.OF data download successed !
+2020-11-09 11:51:58,253 - root - INFO - 000177.OF data download successed !
+2020-11-09 11:51:59,705 - root - INFO - 000267.OF data download successed !
+2020-11-09 11:52:01,517 - root - INFO - 000216.OF data download successed !
+2020-11-09 11:52:03,905 - root - INFO - 000217.OF data download successed !
+2020-11-09 11:52:05,709 - root - INFO - 000171.OF data download successed !
+2020-11-09 11:52:07,545 - root - INFO - 000147.OF data download successed !
+2020-11-09 11:52:09,359 - root - INFO - 000148.OF data download successed !
+2020-11-09 11:52:11,453 - root - INFO - 000252.OF data download successed !
+2020-11-09 11:52:14,144 - root - INFO - 000253.OF data download successed !
+2020-11-09 11:52:16,044 - root - INFO - 000251.OF data download successed !
+2020-11-09 11:52:18,372 - root - INFO - 000257.OF data download successed !
+2020-11-09 11:52:20,444 - root - INFO - 000258.OF data download successed !
+2020-11-09 11:52:22,638 - root - INFO - 160219.OF data download successed !
+2020-11-09 11:52:26,289 - root - INFO - 165520.OF data download successed !
+2020-11-09 11:52:27,780 - root - INFO - 000278.OF data download successed !
+2020-11-09 11:52:31,595 - root - INFO - 000188.OF data download successed !
+2020-11-09 11:52:33,404 - root - INFO - 000187.OF data download successed !
+2020-11-09 11:52:35,310 - root - INFO - 000270.OF data download successed !
+2020-11-09 11:52:39,324 - root - INFO - 519732.OF data download successed !
+2020-11-09 11:52:41,177 - root - INFO - 000211.OF data download successed !
+2020-11-09 11:52:43,539 - root - INFO - 000210.OF data download successed !
+2020-11-09 11:52:46,641 - root - INFO - 000254.OF data download successed !
+2020-11-09 11:52:48,286 - root - INFO - 000222.OF data download successed !
+2020-11-09 11:52:50,109 - root - INFO - 000221.OF data download successed !
+2020-11-09 11:52:52,191 - root - INFO - 000255.OF data download successed !
+2020-11-09 11:52:53,679 - root - INFO - 1610142.OF data download successed !
+2020-11-09 11:52:56,589 - root - INFO - 000296.OF data download successed !
+2020-11-09 11:53:07,034 - root - INFO - 000206.OF data download successed !
+2020-11-09 11:53:10,462 - root - INFO - 000205.OF data download successed !
+2020-11-09 11:53:12,027 - root - INFO - 0001901.OF data download successed !
+2020-11-09 11:53:15,297 - root - INFO - 000295.OF data download successed !
+2020-11-09 11:53:17,261 - root - INFO - 000273.OF data download successed !
+2020-11-09 11:53:18,793 - root - INFO - 000247.OF data download successed !
+2020-11-09 11:53:20,604 - root - INFO - 000306.OF data download successed !
+2020-11-09 11:53:24,762 - root - INFO - 000167.OF data download successed !
+2020-11-09 11:53:28,695 - root - INFO - 000215.OF data download successed !
+2020-11-09 11:53:31,151 - root - INFO - 519158.OF data download successed !
+2020-11-09 11:53:33,920 - root - INFO - 000260.OF data download successed !
+2020-11-09 11:53:35,415 - root - INFO - 163910.OF data download successed !
+2020-11-09 11:53:37,238 - root - INFO - 000330.OF data download successed !
+2020-11-09 11:53:39,278 - root - INFO - 163909.OF data download successed !
+2020-11-09 11:53:41,674 - root - INFO - 161022.OF data download successed !
+2020-11-09 11:53:43,165 - root - INFO - 000281.OF data download successed !
+2020-11-09 11:53:45,788 - root - INFO - 000202.OF data download successed !
+2020-11-09 11:53:47,308 - root - INFO - 000280.OF data download successed !
+2020-11-09 11:53:50,820 - root - INFO - 000301.OF data download successed !
+2020-11-09 11:53:52,812 - root - INFO - 000300.OF data download successed !
+2020-11-09 11:53:58,421 - root - INFO - 530030.OF data download successed !
+2020-11-09 11:54:00,284 - root - INFO - 000279.OF data download successed !
+2020-11-09 11:54:02,104 - root - INFO - 531030.OF data download successed !
+2020-11-09 11:54:04,886 - root - INFO - 164211.OF data download successed !
+2020-11-09 11:54:06,338 - root - INFO - 1642101.OF data download successed !
+2020-11-09 11:54:08,874 - root - INFO - 000256.OF data download successed !
+2020-11-09 11:54:12,019 - root - INFO - 000286.OF data download successed !
+2020-11-09 11:54:13,994 - root - INFO - 000338.OF data download successed !
+2020-11-09 11:54:15,973 - root - INFO - 000303.OF data download successed !
+2020-11-09 11:54:17,460 - root - INFO - 163826.OF data download successed !
+2020-11-09 11:54:19,257 - root - INFO - 000289.OF data download successed !
+2020-11-09 11:54:23,742 - root - INFO - 000308.OF data download successed !
+2020-11-09 11:54:25,827 - root - INFO - 1638251.OF data download successed !
+2020-11-09 11:54:27,263 - root - INFO - 000304.OF data download successed !
+2020-11-09 11:54:29,175 - root - INFO - 000141.OF data download successed !
+2020-11-09 11:54:33,158 - root - INFO - 000139.OF data download successed !
+2020-11-09 11:54:35,022 - root - INFO - 000313.OF data download successed !
+2020-11-09 11:54:37,985 - root - INFO - 000312.OF data download successed !
+2020-11-09 11:54:40,009 - root - INFO - 000165.OF data download successed !
+2020-11-09 11:54:43,114 - root - INFO - 000371.OF data download successed !
+2020-11-09 11:54:44,986 - root - INFO - 000331.OF data download successed !
+2020-11-09 11:54:47,369 - root - INFO - 000332.OF data download successed !
+2020-11-09 11:54:50,478 - root - INFO - 000389.OF data download successed !
+2020-11-09 11:54:53,184 - root - INFO - 000277.OF data download successed !
+2020-11-09 11:54:56,000 - root - INFO - 0002911.OF data download successed !
+2020-11-09 11:54:57,574 - root - INFO - 000292.OF data download successed !
+2020-11-09 11:54:59,439 - root - INFO - 000290.OF data download successed !
+2020-11-09 11:55:05,732 - root - INFO - 000293.OF data download successed !
+2020-11-09 11:55:07,176 - root - INFO - 519051.OF data download successed !
+2020-11-09 11:55:09,538 - root - INFO - 000359.OF data download successed !
+2020-11-09 11:55:13,019 - root - INFO - 000343.OF data download successed !
+2020-11-09 11:55:16,448 - root - INFO - 000285.OF data download successed !
+2020-11-09 11:55:17,923 - root - INFO - 000284.OF data download successed !
+2020-11-09 11:55:23,695 - root - INFO - 000353.OF data download successed !
+2020-11-09 11:55:25,510 - root - INFO - 000324.OF data download successed !
+2020-11-09 11:55:29,206 - root - INFO - 000325.OF data download successed !
+2020-11-09 11:55:31,059 - root - INFO - 000311.OF data download successed !
+2020-11-09 11:55:32,922 - root - INFO - 000309.OF data download successed !
+2020-11-09 11:55:34,856 - root - INFO - 000184.OF data download successed !
+2020-11-09 11:55:36,670 - root - INFO - 000185.OF data download successed !
+2020-11-09 11:55:39,844 - root - INFO - 000336.OF data download successed !
+2020-11-09 11:55:42,937 - root - INFO - 000347.OF data download successed !
+2020-11-09 11:55:45,993 - root - INFO - 161825.OF data download successed !
+2020-11-09 11:55:48,492 - root - INFO - 161211.OF data download successed !
+2020-11-09 11:55:50,476 - root - INFO - 000272.OF data download successed !
+2020-11-09 11:55:51,928 - root - INFO - 000271.OF data download successed !
+2020-11-09 11:55:55,014 - root - INFO - 000346.OF data download successed !
+2020-11-09 11:55:57,029 - root - INFO - 000201.OF data download successed !
+2020-11-09 11:55:59,765 - root - INFO - 1647031.OF data download successed !
+2020-11-09 11:56:01,221 - root - INFO - 164704.OF data download successed !
+2020-11-09 11:56:03,054 - root - INFO - 000314.OF data download successed !
+2020-11-09 11:56:06,303 - root - INFO - 000368.OF data download successed !
+2020-11-09 11:56:07,738 - root - INFO - 000348.OF data download successed !
+2020-11-09 11:56:09,179 - root - INFO - 000349.OF data download successed !
+2020-11-09 11:56:10,651 - root - INFO - 000372.OF data download successed !
+2020-11-09 11:56:12,124 - root - INFO - 000335.OF data download successed !
+2020-11-09 11:56:15,417 - root - INFO - 000310.OF data download successed !
+2020-11-09 11:56:17,172 - root - INFO - 000178.OF data download successed !
+2020-11-09 11:56:19,580 - root - INFO - 000263.OF data download successed !
+2020-11-09 11:56:22,698 - root - INFO - 000355.OF data download successed !
+2020-11-09 11:56:24,564 - root - INFO - 000356.OF data download successed !
+2020-11-09 11:56:30,003 - root - INFO - 000354.OF data download successed !
+2020-11-09 11:56:33,255 - root - INFO - 519161.OF data download successed !
+2020-11-09 11:56:34,690 - root - INFO - 519160.OF data download successed !
+2020-11-09 11:56:37,780 - root - INFO - 000186.OF data download successed !
+2020-11-09 11:56:40,868 - root - INFO - 000385.OF data download successed !
+2020-11-09 11:56:43,258 - root - INFO - 000386.OF data download successed !
+2020-11-09 11:56:46,048 - root - INFO - 000387.OF data download successed !
+2020-11-09 11:56:47,547 - root - INFO - 000388.OF data download successed !
+2020-11-09 11:56:50,004 - root - INFO - 000430.OF data download successed !
+2020-11-09 11:56:51,999 - root - INFO - 000227.OF data download successed !
+2020-11-09 11:56:55,498 - root - INFO - 000428.OF data download successed !
+2020-11-09 11:56:57,541 - root - INFO - 000429.OF data download successed !
+2020-11-09 11:57:00,287 - root - INFO - 000440.OF data download successed !
+2020-11-09 11:57:03,071 - root - INFO - 000302.OF data download successed !
+2020-11-09 11:57:04,518 - root - INFO - 000357.OF data download successed !
+2020-11-09 11:57:07,897 - root - INFO - 000345.OF data download successed !
+2020-11-09 11:57:11,503 - root - INFO - 000352.OF data download successed !
+2020-11-09 11:57:13,488 - root - INFO - 000351.OF data download successed !
+2020-11-09 11:57:17,880 - root - INFO - 000317.OF data download successed !
+2020-11-09 11:57:19,393 - root - INFO - 0003161.OF data download successed !
+2020-11-09 11:57:21,441 - root - INFO - 000318.OF data download successed !
+2020-11-09 11:57:22,988 - root - INFO - 000396.OF data download successed !
+2020-11-09 11:57:26,392 - root - INFO - 000395.OF data download successed !
+2020-11-09 11:57:29,374 - root - INFO - 000328.OF data download successed !
+2020-11-09 11:57:30,816 - root - INFO - 0003411.OF data download successed !
+2020-11-09 11:57:32,214 - root - INFO - 000340.OF data download successed !
+2020-11-09 11:57:34,090 - root - INFO - 000381.OF data download successed !
+2020-11-09 11:57:36,194 - root - INFO - 000380.OF data download successed !
+2020-11-09 11:57:37,630 - root - INFO - 519192.OF data download successed !
+2020-11-09 11:57:39,160 - root - INFO - 000360.OF data download successed !
+2020-11-09 11:57:40,948 - root - INFO - 000361.OF data download successed !
+2020-11-09 11:57:44,146 - root - INFO - 000274.OF data download successed !
+2020-11-09 11:57:45,972 - root - INFO - 000275.OF data download successed !
+2020-11-09 11:57:47,859 - root - INFO - 000294.OF data download successed !
+2020-11-09 11:57:52,582 - root - INFO - 166021.OF data download successed !
+2020-11-09 11:57:56,198 - root - INFO - 166022.OF data download successed !
+2020-11-09 11:57:59,321 - root - INFO - 000404.OF data download successed !
+2020-11-09 11:58:00,784 - root - INFO - 150159.OF data download successed !
+2020-11-09 11:58:04,185 - root - INFO - 519972.OF data download successed !
+2020-11-09 11:58:05,624 - root - INFO - 519973.OF data download successed !
+2020-11-09 11:58:08,753 - root - INFO - 519858.OF data download successed !
+2020-11-09 11:58:10,634 - root - INFO - 519859.OF data download successed !
+2020-11-09 11:58:14,614 - root - INFO - 000401.OF data download successed !
+2020-11-09 11:58:16,090 - root - INFO - 000400.OF data download successed !
+2020-11-09 11:58:20,187 - root - INFO - 000406.OF data download successed !
+2020-11-09 11:58:22,327 - root - INFO - 000379.OF data download successed !
+2020-11-09 11:58:27,798 - root - INFO - 000407.OF data download successed !
+2020-11-09 11:58:29,636 - root - INFO - 000434.OF data download successed !
+2020-11-09 11:58:34,118 - root - INFO - 519162.OF data download successed !
+2020-11-09 11:58:36,547 - root - INFO - 519163.OF data download successed !
+2020-11-09 11:58:37,979 - root - INFO - 519052.OF data download successed !
+2020-11-09 11:58:39,420 - root - INFO - 5190551.OF data download successed !
+2020-11-09 11:58:43,227 - root - INFO - 519053.OF data download successed !
+2020-11-09 11:58:52,692 - root - INFO - 519125.OF data download successed !
+2020-11-09 11:58:54,354 - root - INFO - 000305.OF data download successed !
+2020-11-09 11:58:56,768 - root - INFO - 000414.OF data download successed !
+2020-11-09 11:58:58,613 - root - INFO - 000424.OF data download successed !
+2020-11-09 11:59:06,380 - root - INFO - 000382.OF data download successed !
+2020-11-09 11:59:15,781 - root - INFO - 000425.OF data download successed !
+2020-11-09 11:59:19,655 - root - INFO - 000384.OF data download successed !
+2020-11-09 11:59:21,822 - root - INFO - 000383.OF data download successed !
+2020-11-09 11:59:23,895 - root - INFO - 000369.OF data download successed !
+2020-11-09 11:59:25,734 - root - INFO - 000370.OF data download successed !
+2020-11-09 11:59:29,014 - root - INFO - 1616261.OF data download successed !
+2020-11-09 11:59:30,479 - root - INFO - 1616271.OF data download successed !
+2020-11-09 11:59:31,892 - root - INFO - 0003661.OF data download successed !
+2020-11-09 11:59:35,886 - root - INFO - 000435.OF data download successed !
+2020-11-09 11:59:38,259 - root - INFO - 000377.OF data download successed !
+2020-11-09 11:59:41,377 - root - INFO - 000214.OF data download successed !
+2020-11-09 11:59:45,570 - root - INFO - 519808.OF data download successed !
+2020-11-09 11:59:48,284 - root - INFO - 000391.OF data download successed !
+2020-11-09 11:59:50,228 - root - INFO - 519809.OF data download successed !
+2020-11-09 11:59:52,963 - root - INFO - 000392.OF data download successed !
+2020-11-09 11:59:54,445 - root - INFO - 000393.OF data download successed !
+2020-11-09 11:59:57,674 - root - INFO - 000390.OF data download successed !
+2020-11-09 11:59:59,478 - root - INFO - 000378.OF data download successed !
+2020-11-09 12:00:03,813 - root - INFO - 000408.OF data download successed !
+2020-11-09 12:00:06,071 - root - INFO - 000418.OF data download successed !
+2020-11-09 12:00:08,024 - root - INFO - 000397.OF data download successed !
+2020-11-09 12:00:12,554 - root - INFO - 000410.OF data download successed !
+2020-11-09 12:00:14,423 - root - INFO - 000439.OF data download successed !
+2020-11-09 12:00:16,312 - root - INFO - 000436.OF data download successed !
+2020-11-09 12:00:20,223 - root - INFO - 000363.OF data download successed !
+2020-11-09 12:00:22,077 - root - INFO - 000362.OF data download successed !
+2020-11-09 12:00:23,915 - root - INFO - 000323.OF data download successed !
+2020-11-09 12:00:25,331 - root - INFO - 0003981.OF data download successed !
+2020-11-09 12:00:31,414 - root - INFO - 000399.OF data download successed !
+2020-11-09 12:00:33,262 - root - INFO - 000464.OF data download successed !
+2020-11-09 12:00:34,386 - root - WARNING - 0003221.OF data download failed!
+2020-11-09 12:00:39,310 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:42,966 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:44,422 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:46,695 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:48,554 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:50,267 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:53,691 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:58,500 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:00:59,907 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:01,345 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:04,478 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:22,272 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:24,129 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:25,780 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:28,688 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:31,551 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:34,365 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:43,866 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:47,401 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:51,898 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:56,555 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:01:58,444 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:04,568 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:06,160 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:09,083 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:11,515 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:14,396 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:16,286 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:18,809 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:21,390 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:23,358 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:27,235 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:28,697 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:30,566 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:33,066 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:35,622 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:37,436 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:40,368 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:43,312 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:45,523 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:53,071 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:54,929 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:02:56,452 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:00,252 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:02,064 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:04,716 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:09,371 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:11,914 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:15,292 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:19,236 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:35,459 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:38,648 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:42,543 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:45,418 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:50,863 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:03:53,912 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:04,961 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:07,841 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:13,467 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:16,452 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:19,321 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:54,766 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:56,593 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:04:58,497 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:07,215 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:11,107 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:16,782 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:33,363 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:35,740 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:39,618 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:41,492 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:43,019 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:45,921 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:48,772 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:05:54,413 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:02,394 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:08,395 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:15,276 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:20,831 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:24,647 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:26,520 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:27,969 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:31,850 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:33,685 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:35,510 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:39,112 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:44,027 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:45,874 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:50,797 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:06:58,778 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:00,213 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:03,706 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:08,819 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:11,508 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:13,355 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:17,260 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:18,704 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:20,275 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:22,907 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:25,878 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:27,495 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:28,990 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:31,130 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:36,290 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:41,813 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:46,329 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:50,214 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:52,060 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:54,921 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:56,749 - root - WARNING - some data download failed, check error ticks
+2020-11-09 12:07:58,846 - root - WARNING - some data download failed, check error ticks
+2020-11-10 11:10:30,794 - root - INFO - total 4 ticks
+2020-11-10 11:10:49,855 - root - INFO - 399300.SZ data download successed !
