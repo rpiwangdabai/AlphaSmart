@@ -14,14 +14,13 @@ import pandas as pd
 import math
 import collections
 import matplotlib.patches as mpatches
-from mlfinlab.portfolio_optimization.hcaa import HierarchicalClusteringAssetAllocation
+from mlfinlab.portfolio_optimization.clustering import HierarchicalEqualRiskContribution
 
-from mlfinlab.portfolio_optimization.hrp import HierarchicalRiskParity
-
+from mlfinlab.portfolio_optimization.clustering import HierarchicalRiskParity
 # =============================================================================
 # import data
 # =============================================================================
-selected_data_2 = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv',index = False)
+selected_data_2 = pd.read_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv')
 
 
 
@@ -69,10 +68,11 @@ portfolio_adj_nav = portfolio_adj_nav.dropna()
 # =============================================================================
 #  colculation weights
 # =============================================================================
-herc = HierarchicalClusteringAssetAllocation()
+herc = HierarchicalEqualRiskContribution()
 herc.allocate(asset_names=portfolio_adj_nav.columns, 
               asset_prices=portfolio_adj_nav, 
-              linkage="average")
+              risk_measure = 'standard_deviation',
+              linkage="ward")
 # plotting our optimal portfolio
 herc_weights = herc.weights
 y_pos = np.arange(len(herc_weights.columns))
@@ -85,8 +85,8 @@ plt.title('HERC Portfolio Weights', size=20)
 plt.show()
 
 
-plt.figure(figsize=(17,7))
-herc.plot_clusters(assets=stock_prices.columns)
+plt.figure(figsize=(30,17))
+herc.plot_clusters(assets=portfolio_adj_nav.columns)
 plt.title('HERC Dendrogram', size=18)
 plt.xticks(rotation=45)
 plt.show()
