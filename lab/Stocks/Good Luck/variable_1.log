@@ -1,5 +1,0 @@
-Tue, 22 Sep 2020 15:11:07 utils.py[line:129] INFO Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-Tue, 22 Sep 2020 15:11:07 utils.py[line:141] INFO NumExpr defaulting to 8 threads.
-Thu, 24 Sep 2020 14:25:34 utils.py[line:129] INFO Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-Thu, 24 Sep 2020 14:25:34 utils.py[line:141] INFO NumExpr defaulting to 8 threads.
-Thu, 24 Sep 2020 14:25:35 multiprocessing_sampling_version.py[line:243] INFO Stocks variables calculated successed!1
