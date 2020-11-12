@@ -19,7 +19,7 @@ from mlfinlab.portfolio_optimization.clustering import HierarchicalRiskParity
 # =============================================================================
 # import data
 # =============================================================================
-selected_data_2 = pd.read_csv('D:/RoyMa/Python/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv')
+selected_data_2 = pd.read_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv')
 
 
 
@@ -36,7 +36,7 @@ while ticks:
     tick = ticks.popleft()
     sql_cmd = "SELECT * FROM `" + tick + '`;'
     fund_data = pd.read_sql(sql=sql_cmd, con=engine)
-    fund_data = fund_data[fund_data['end_date'] < '20200101']
+    # fund_data = fund_data[fund_data['end_date'] < '20200101']
     fund_data = fund_data.drop_duplicates(subset = ['end_date'])
 
     if i == 0:

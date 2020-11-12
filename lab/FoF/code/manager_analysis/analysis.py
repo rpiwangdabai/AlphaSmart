@@ -294,7 +294,6 @@ selected_data_1 = data[(data['mean'] > 3 * log_ret_mean) &
 
 selected_data_2 = selected_data_1[(selected_data_1['mean'] > 0.002) & 
                                   (selected_data_1['std'] < 0.015)]
-selected_data_2 = selected_data_1[selected_data_1['std'] < 0.015]
 
 selected_data_2.to_csv('/Users/Roy/Documents/Investment/lab/FoF/code/manager_analysis/select_method_2/selected_fund_by_sharp.csv',index = False)
 
