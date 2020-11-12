@@ -37,6 +37,7 @@ while ticks:
     tick = ticks.popleft()
     sql_cmd = "SELECT * FROM `" + tick + '`;'
     fund_data = pd.read_sql(sql=sql_cmd, con=engine)
+    fund_data = fund_data[fund_data['end_date'] < 20200101]
     fund_init_date = fund_data.iloc[-1]['end_date']
     if i == 0:
         portfolio_adj_nav['end_date'] = fund_data['end_date']
@@ -61,8 +62,6 @@ portfolio_adj_nav['end_date'] = pd.to_datetime(portfolio_adj_nav['end_date'])
 portfolio_adj_nav = portfolio_adj_nav.set_index('end_date')
 portfolio_adj_nav = portfolio_adj_nav.dropna()
     
-
-
 
 
 # =============================================================================
