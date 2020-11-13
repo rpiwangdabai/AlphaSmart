@@ -11,8 +11,9 @@ import keyring
 mysqlPassword = keyring.get_password("mysql", "root")
 mysqlServer =  {
     'password':mysqlPassword,
-    'fundDatabase': 'mysql+pymysql://root:'+mysqlPassword+'@localhost:3306/fund',
-    'indexesDatabase': 'mysql+pymysql://root:'+mysqlPassword+'@localhost:3306/indexes',
+    'tushare':{
+        'fund': 'mysql+pymysql://root:'+mysqlPassword+'@localhost:3306/fund',
+        'indexes': 'mysql+pymysql://root:'+mysqlPassword+'@localhost:3306/indexes'}
 }
 
 # tushare
