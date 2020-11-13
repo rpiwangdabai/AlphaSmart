@@ -3,10 +3,10 @@
     //"python.linting.pylintPath": "venv/bin/pylint",
     "terminal.integrated.env.osx": {"PYTHONPATH": "${workspaceRoot}"},
     "python.linting.pylintArgs": [
-        "--init-hook",
-        "import sys; sys.path.append('.')",
-        //"--module-naming-style=camelCase",
-        //"--class-naming-style=PascalCase",
-        //"--variable-naming-style=camelCase"
+       "--init-hook",
+       "import sys; sys.path.append('.')",
+        // "--module-naming-style=camelCase",
+        // "--class-naming-style=PascalCase",
+        // "--variable-naming-style=camelCase"
     ]
 }
