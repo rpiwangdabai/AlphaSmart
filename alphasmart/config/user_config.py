@@ -24,5 +24,5 @@ tushare  =  {
 
 # logger
 log = {
-    'logFile':r'./log.txt'
+    'log_file':r'./log.txt'
 }
