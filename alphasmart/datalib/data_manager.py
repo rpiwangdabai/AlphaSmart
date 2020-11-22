@@ -30,19 +30,20 @@ class MysqlDatabaseManager():
         if active_database is not None and (active_database not in database_dict):
             raise ValueError("Active database is not in database dictionary!")
 
-        self._engine_dict = {}
-        self._connection_dict = {} 
-        self._meta_dict = {}
+        self._engine_dict = dict()
+        self._connection_dict = dict()
+        self._meta_dict = dict()
         for database_name in database_dict:
             database_address = database_dict[database_name]
-            
+
             try:
                 # build up database connection engine
                 self._engine_dict[database_name] = create_engine(database_address, encoding ='utf8')
                 # self._session_dict.update({database_name: sessionmaker(bind = engine)()})
                 # connections are kept to keep MetaData not for io
                 self._connection_dict[database_name] = self._engine_dict[database_name].connect()
-                self._meta_dict[database_name] = MetaData(self._connection_dict[database_name])
+                self._meta_dict[database_name] = MetaData(self._connection_dict[database_name],
+                    reflect = True)
             except ConnectionError as conn_error:
                 logger.error("Failed to connect to %s !", database_name)
                 for conn in self._connection_dict[database_name]:
@@ -73,17 +74,17 @@ class MysqlDatabaseManager():
         logger = logging.getLogger(__name__)
         try:
             with self._engine_dict[database_name].connect() as connection:
-                results = connection.excute(statement)  
+                results = connection.execute(statement)  
         except ConnectionError:
             logger.error("Failed to run query at %s !", database_name)
 
         return results
 
-    def get_select_dataframe(self, database_name:str, statment:str):
+    def get_select_dataframe(self, database_name:str, select_statment:str):
         """
         get_select_dataframe(self, database_name:str, statment:str):
         """
-        results = self.run_query(database_name, statment)
+        results = self.run_query(database_name, select_statment)
         data = results.fetchall()
         dataframe = pd.DataFrame()
         if len(data) > 0:
@@ -230,7 +231,32 @@ class TushareDatabaseManager(MysqlDatabaseManager):
         update_tick_data_and_save(self)
         """
     # local read
+
     def get_local_single_tick_dataframe(self, tick:str, start_date:str = None, end_date:str = None):
         """
         get_single_tick_dataframe(self, tick:str, start_date:str = None, end_date:str = None)
         """
+        # find corresponding db name
+        #SELECT table_name,
+        #table_schema AS dbname
+        #FROM INFORMATION_SCHEMA.TABLES
+        #WHERE table_name='searched table name'
+        logger = logging.getLogger(__name__)
+        table_name = tick.lower().replace('.',  '')
+        tick_database_name = None
+        for database_name in self._meta_dict:
+            #rint(database_name)
+            #print(self._meta_dict[database_name].tables)
+            if table_name in self._meta_dict[database_name].tables:
+                #print(table_name)
+                tick_database_name = database_name
+                break
+        data = pd.DataFrame()
+        if tick_database_name is None:
+            logger.warning("table %s is not found in any database.", table_name)
+        else:
+            table = self._meta_dict[tick_database_name].tables[table_name]
+            statement = table.select()
+            data = self.get_select_dataframe(tick_database_name, statement)
+        return data
+        
