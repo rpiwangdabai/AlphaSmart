@@ -10,23 +10,18 @@ import sys
 import logging
 # working directory is always project root
 sys.path.append('.')
-import alphasmart.config.user_config as ucfg
-import alphasmart.config.data_config as dcfg
-from alphasmart.datalib.data_manager import TushareDatabaseManager
+from alphasmart.config import setting
+
 logging.basicConfig(level=logging.DEBUG)
+setting.init()
 
 if __name__ == '__main__':
     # set up
-    manager = TushareDatabaseManager(token = ucfg.tushare['token'],
-        database_dict= ucfg.mysqlServer['tushare'], active_database = 'fund')
+
     # get basics
-    manager.download_basics('fund')
+    setting.TUSHARE_MANAGER.download_basics('fund')
     # select ticks
-    manager.set_ticks_filter(arket_types = dcfg.tushare['fund']['market_types'],
-        invest_types = dcfg.tushare['fund']['invest_types'],
-        fund_types = dcfg.tushare['fund']['fund_types'],
-        date_limit = dcfg.tushare['fund']['date_limit'])
     # download fund data and save to sql
-    failedTicks = manager.download_multi_ticks_data_save('fund')
+    failedTicks = setting.TUSHARE_MANAGER.download_multi_ticks_data_save('fund')
     print(failedTicks)
     

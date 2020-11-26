@@ -5,15 +5,15 @@
 # @Link    : link
 # @Version : 1.0.0
 
-import os
-import pandas as pd
-import numpy as np
 
-from alphasmart.datalib.data_manager import TushareDatabaseManager
-import alphasmart.config.user_config as ucfg
-import alphasmart.config.data_config as dcfg
+from alphasmart.config import setting
+from alphasmart.portfoliolib.securities import Security
+setting.init()
 
-tushare_manager = TushareDatabaseManager(token = ucfg.tushare['token'],
-        database_dict= ucfg.mysqlServer['tushare'], active_database = 'indexes')
-data = tushare_manager.get_local_single_tick_dataframe("399300.SZ")
+# import alphasmart.config.data_config as dcfg
+data = setting.TUSHARE_MANAGER.get_local_single_tick_dataframe("399300.SZ", '20100101',
+    '20121231')
 print(data)
+
+my_security = Security("399300.SZ")
+my_security.get_security_data()

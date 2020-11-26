@@ -22,6 +22,7 @@ def create_logger(logger_name = __name__, log_file = ucfg.log['log_file']):
     """
     print(f'logger called at {__name__}')
     logger_current = logging.getLogger(logger_name)
+    logger_current.propagate = False
     # level is not set. It depends on basicConfig in running time
     if not logger_current.handlers:
         file_handler = logging.FileHandler(log_file)

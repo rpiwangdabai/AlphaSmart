@@ -23,12 +23,12 @@ class MysqlDatabaseManager():
     '''
     Basic Class for mysql data manager
     '''
-    def __init__(self, database_dict:dict, active_database:str = None):
+    def __init__(self, database_dict:dict):
         logger = logging.getLogger(__name__)
         if not database_dict:
             raise ValueError("database dictionary is empyt!")
-        if active_database is not None and (active_database not in database_dict):
-            raise ValueError("Active database is not in database dictionary!")
+        #if active_database is not None and (active_database not in database_dict):
+        #    raise ValueError("Active database is not in database dictionary!")
 
         self._engine_dict = dict()
         self._connection_dict = dict()
@@ -98,12 +98,12 @@ class TushareDatabaseManager(MysqlDatabaseManager):
     '''
     DataBase Manager for Tushare
     '''
-    def __init__(self, database_dict:dict, token:str, active_database:str):
+    def __init__(self, database_dict:dict, token:str):
         MysqlDatabaseManager.__init__(self, database_dict)
         # setup tushare
         ts.set_token(token)
         self._api = ts.pro_api()
-        self._active_database = active_database
+        #self._active_database = active_database
         self.target_ticks = []
         self.error_ticks = []
         self.filter = dict()
@@ -164,7 +164,7 @@ class TushareDatabaseManager(MysqlDatabaseManager):
 
         return self.target_ticks
 
-    def download_single_tick_data(self, tick:str)->pd.DataFrame:
+    def download_single_tick_data(self, tick:str, database_name:str)->pd.DataFrame:
         """
         download_single_tick_data(self, tick = None):
         """
@@ -172,9 +172,9 @@ class TushareDatabaseManager(MysqlDatabaseManager):
         # print(tick)
         data = pd.DataFrame()
         try:
-            if self._active_database == 'fund':
+            if database_name == 'fund':
                 data = self._api.fund_nav(ts_code = tick)
-            elif self._active_database == 'indexes':
+            elif database_name == 'indexes':
                 data = self._api.index_daily(ts_code = tick)
         except TimeoutError:
             logger.error('TimeoutError in %s ! No data downloaded', tick)
@@ -201,7 +201,7 @@ class TushareDatabaseManager(MysqlDatabaseManager):
             i += 1
             tick = self.target_ticks.pop()
             print(tick, "{:.0%}".format(i/num_ticks))
-            data = self.download_single_tick_data(tick)
+            data = self.download_single_tick_data(tick, database_name)
             if data.empty:
                 self.error_ticks.append(tick)
                 logger.warning('%s data download failed!', tick)
@@ -258,5 +258,13 @@ class TushareDatabaseManager(MysqlDatabaseManager):
             table = self._meta_dict[tick_database_name].tables[table_name]
             statement = table.select()
             data = self.get_select_dataframe(tick_database_name, statement)
-        return data
         
+        if tick_database_name == 'indexes':
+            date_name = 'trade_date' 
+        elif tick_database_name == 'fund':
+            date_name = 'end_date'
+
+        data = data[data[date_name] > start_date] if start_date else data
+        data = data[data[date_name] < end_date] if end_date else data
+        return data
+  
