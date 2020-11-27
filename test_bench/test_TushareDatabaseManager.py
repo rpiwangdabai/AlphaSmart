@@ -4,16 +4,13 @@
 # @Author  : Hao Wang (tjuhaowang@gmail.com)
 # @Link    : link
 # @Version : 1.0.0
-
-
+import logging
 from alphasmart.config import setting
-from alphasmart.portfoliolib.securities import Security
+import alphasmart.config.data_config as dcfg
+
 setting.init()
+logging.basicConfig(level = logging.DEBUG)
 
-# import alphasmart.config.data_config as dcfg
-data = setting.TUSHARE_MANAGER.get_local_single_tick_dataframe("399300.SZ", '20100101',
-    '20121231')
+data = setting.TUSHARE_MANAGER.get_local_single_tick_dataframe("399300.SZ", 
+    'trade_date''20100101', '20121231')
 print(data)
-
-my_security = Security("399300.SZ")
-my_security.get_security_data()

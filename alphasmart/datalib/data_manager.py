@@ -232,7 +232,8 @@ class TushareDatabaseManager(MysqlDatabaseManager):
         """
     # local read
 
-    def get_local_single_tick_dataframe(self, tick:str, start_date:str = None, end_date:str = None):
+    def get_local_single_tick_dataframe(self, tick:str, date_field:str,
+        start_date:str = None, end_date:str = None):
         """
         get_single_tick_dataframe(self, tick:str, start_date:str = None, end_date:str = None)
         """
@@ -258,13 +259,8 @@ class TushareDatabaseManager(MysqlDatabaseManager):
             table = self._meta_dict[tick_database_name].tables[table_name]
             statement = table.select()
             data = self.get_select_dataframe(tick_database_name, statement)
-        
-        if tick_database_name == 'indexes':
-            date_name = 'trade_date' 
-        elif tick_database_name == 'fund':
-            date_name = 'end_date'
 
-        data = data[data[date_name] > start_date] if start_date else data
-        data = data[data[date_name] < end_date] if end_date else data
+        data = data[data[date_field] > start_date] if start_date else data
+        data = data[data[date_field] < end_date] if end_date else data
         return data
   
