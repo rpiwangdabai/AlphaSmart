@@ -74,7 +74,7 @@ class MysqlDatabaseManager():
         logger = logging.getLogger(__name__)
         try:
             with self._engine_dict[database_name].connect() as connection:
-                results = connection.execute(statement)  
+                results = connection.execute(statement)
         except ConnectionError:
             logger.error("Failed to run query at %s !", database_name)
 

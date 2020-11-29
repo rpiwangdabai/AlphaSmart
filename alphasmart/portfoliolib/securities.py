@@ -9,11 +9,13 @@ module includes all securites
 """
 from __future__ import annotations
 # import os
-import pandas as pd
 import logging
 from typing import List
+import pandas as pd
 from alphasmart.config import setting
 from alphasmart.utils.logger import logger_decorator
+
+
 
 
 class Security():
@@ -36,10 +38,11 @@ class Security():
         self.date_field = None
 
     @logger_decorator(__name__)
-    def get_security_tushare_data(self, date_field:str, start_date:str = None, 
+    def get_security_tushare_data(self, date_field:str, start_date:str = None,
         end_date:str = None):
         """
-        get_security_data(self:
+        get_security_tushare_data(self, date_field:str, start_date:str = None,
+        end_date:str = None)
         """
         self._dataframe = setting.TUSHARE_MANAGER.get_local_single_tick_dataframe(self.tick,
             date_field, start_date, end_date)
@@ -47,6 +50,9 @@ class Security():
         self.end_date = max(self._dataframe[self.date_field])
 
     def check_date(self, start_date:str = None, end_date:str = None):
+        """
+        check_date(self, start_date:str = None, end_date:str = None):
+        """
         logger = logging.getLogger(__name__)
         if self._dataframe.empty:
             logger.error("Dataframe of tick %s is None", self.tick)
@@ -54,10 +60,11 @@ class Security():
         return (self.start_date < start_date) and (self.end_date > end_date)
 
     @logger_decorator(__name__)
-    def get_series(self, price_field:str, start_date:str = '00000000', 
+    def get_series(self, price_field:str, start_date:str = '00000000',
         end_date:str = '99999999')->pd.Series:
         """
-        get_series(self, start_date:str, end_date:str):
+        get_series(self, price_field:str, start_date:str = '00000000',
+        end_date:str = '99999999')->pd.Series
         """
         condition_start = self._dataframe[self.date_field] > start_date
         condition_end = self._dataframe[self.date_field] < end_date
@@ -71,16 +78,19 @@ class Security():
         alculate_security_correlation(self, pair_security)
         """
         logger = logging.getLogger(__name__)
+        if isinstance(pair_security, Cash):
+            return 0
         [start_date, end_date] = date_range
         [base_price_field, pair_price_field] = price_fields
-        if not (self.check_date(start_date, end_date) and pair_security.check_date(start_date, 
+        if not (self.check_date(start_date, end_date) and pair_security.check_date(start_date,
             end_date)):
             logger.error("start date: %s and end date %s must be within both security range!\n \
                 base: start_date: %s, end date:%s, pari: start_date: %s, end date:%s", start_date,
-                end_date, self.start_date, self.end_date, pair_security.start_date, pair_security.end_date)
+                end_date, self.start_date, self.end_date, pair_security.start_date,
+                pair_security.end_date)
             raise ValueError("start date and end date must be within both security range!")
-        return self.get_series(base_price_field, start_date, end_date).corr(pair_security.get_series(
-            pair_price_field, start_date, end_date), method = method)
+        return self.get_series(base_price_field, start_date, end_date).corr(
+            pair_security.get_series(pair_price_field, start_date, end_date), method = method)
 
 
     def calculate_security_std(self):
@@ -95,9 +105,60 @@ class Index(Security):
     def __init__(self, tick:str):
         Security.__init__(self, tick = tick)
         self.date_field = "trade_date"
+
     def get_index_tushare_data(self,  start_date:str = None, end_date:str = None):
         """
         get_security_tushare_data(self, start_date:str = None, end_date:str = None)
         """
         return Security.get_security_tushare_data(self, self.date_field, start_date,
             end_date)
+
+class Fund(Security):
+    """
+    Fund class. Derived from seucrities"
+    """
+    def __init__(self, tick:str):
+        Security.__init__(self, tick = tick)
+        self.date_field = "end_date"
+
+    def get_fund_tushare_data(self,  start_date:str = None, end_date:str = None):
+        """
+        get_security_tushare_data(self, start_date:str = None, end_date:str = None)
+        """
+        return Security.get_security_tushare_data(self, self.date_field, start_date,
+            end_date)
+
+class Cash(Security):
+    """
+    cash class
+    """
+    def __init__(self, currency:str):
+        Security.__init__(self, currency)
+        self.currency = currency
+        self.rate = 0
+
+    def get_security_tushare_data(self, date_field:str, start_date:str = None,
+        end_date:str = None):
+        """
+        get_security_tushare_data() is not available for cash
+        """
+        raise RuntimeError()
+
+
+    def check_date(self, start_date:str = None, end_date:str = None):
+        """
+        check_date() is not available for cash
+        """
+        raise RuntimeError()
+
+    @logger_decorator(__name__)
+    def get_series(self, price_field:str, start_date:str = '00000000',
+        end_date:str = '99999999')->pd.Series:
+        """
+        get_series() is not available for cash
+        """
+        raise RuntimeError()
+
+    def calculate_security_correlation(self, pair_security:Security, price_fields:List(str),
+        date_range:List(str),  method ='pearson'):
+        return 0
